@@ -307,7 +307,7 @@ def apidoc_extract_task(bld, src):
         for o in task.outputs:
             name = os.path.splitext(o.name)[0] # remove .apidoc
             docs = all_docs[name]
-            with open(str(o.get_bld()), 'w+') as out_f:
+            with open(str(o.get_bld()), 'w+',encoding='utf-8') as out_f:
                 out_f.write('\n'.join(docs))
 
     if not getattr(Options.options, 'skip_apidocs', False):
@@ -982,21 +982,21 @@ Task.task_factory('codesign',
 def app_bundle(task):
     task.info_plist.parent.mkdir()
 
-    info_plist_file = open(task.info_plist.abspath(), 'w')
+    info_plist_file = open(task.info_plist.abspath(), 'w',encoding='utf-8')
     bundleid = 'com.defold.%s' % task.exe_name
     if task.bundleid:
         bundleid = task.bundleid
     info_plist_file.write(INFO_PLIST % { 'executable' : task.exe_name, 'bundleid' : bundleid })
     info_plist_file.close()
 
-    resource_rules_plist_file = open(task.resource_rules_plist.abspath(), 'w')
+    resource_rules_plist_file = open(task.resource_rules_plist.abspath(), 'w',encoding='utf-8')
     resource_rules_plist_file.write(RESOURCE_RULES_PLIST)
     resource_rules_plist_file.close()
 
     return 0
 
 def create_export_symbols(task):
-    with open(task.outputs[0].abspath(), 'w') as out_f:
+    with open(task.outputs[0].abspath(), 'w',encoding='utf-8') as out_f:
         for name in Utils.to_list(task.exported_symbols):
             print ('extern "C" void %s();' % name, file=out_f)
         print ('extern "C" void dmExportedSymbols() {', file=out_f)
@@ -1237,13 +1237,13 @@ def android_package(task):
         error('Error stripping file %s' % path)
         return 1
 
-    with open(task.android_mk.abspath(), 'w') as f:
+    with open(task.android_mk.abspath(), 'w',encoding='utf-8') as f:
         print ('APP_ABI := %s' % getAndroidArch(build_util.get_target_architecture()), file=f)
 
-    with open(task.application_mk.abspath(), 'w') as f:
+    with open(task.application_mk.abspath(), 'w',encoding='utf-8') as f:
         print ('', file=f)
 
-    with open(task.gdb_setup.abspath(), 'w') as f:
+    with open(task.gdb_setup.abspath(), 'w',encoding='utf-8') as f:
         if 'arm64' == build_util.get_target_architecture():
             print ('set solib-search-path ./libs/arm64-v8a:./obj/local/arm64-v8a/', file=f)
         else:
@@ -1306,7 +1306,7 @@ def create_android_package(self):
     self.android_package_task = android_package_task
 
 def copy_stub(task):
-    with open(task.outputs[0].abspath(), 'w') as out_f:
+    with open(task.outputs[0].abspath(), 'w',encoding='utf-8') as out_f:
         out_f.write(ANDROID_STUB)
 
     return 0

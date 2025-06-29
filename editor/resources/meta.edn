@@ -1,65 +1,78 @@
 {:settings
  [{:type :string,
-   :help "the title of the application",
+   :help "应用标题",
    :default "unnamed",
+   :label "标题",
    :path ["project" "title"]}
   {:type :string,
-   :help "application version",
+   :help "应用版本",
    :default "1.0",
+   :label "版本",
    :path ["project" "version"]}
   {:type :string,
-   :help "publisher name",
+   :help "发行商名称",
    :default "",
+   :label "发行商"
    :path ["project" "publisher"]}
   {:type :string,
-   :help "developer name",
+   :help "开发者名称",
    :default "",
+   :label "开发者"
    :path ["project" "developer"]}
   {:type :boolean,
-   :help "Write log file to disk",
+   :help "将日志信息写入磁盘",
    :default false,
+   :label "记录日志",
    :path ["project" "write_log"]}
   {:type :string,
-   :help "only the minimum log level and higher levels will be shown",
+   :help "‌仅显示最低日志级别及更高级别的日志",
    :default "1",
+   :label "最低日志级别",
    :path ["project" "minimum_log_level"]
    :options [["0" "DEBUG = 0"] ["1" "USER DEBUG = 1"] ["2" "INFO = 2"] ["3" "WARNING = 3"] ["4" "ERROR = 4"] ["5" "FATAL = 5"]]}
   {:type :boolean,
-   :help "compress archive (not for Android)",
+   :help "压缩制品，非安卓",
    :default true,
+   :label "压缩制品",
    :path ["project" "compress_archive"]}
   {:type :list,
    :help
-   "a comma separated list of URL:s to projects required by this project",
+   "‌本项目所需依赖项目的 URL 列表，以逗号分隔",
+   :label "依赖",
    :path ["project" "dependencies"]
    :element {:type :url
              :default "https://url.to/library"}}
   {:type :string,
    :help
-   "a comma separated list of resources that will be included in the project. If directories are specified, all files and directories in that directory are recursively included",
+   "项目资源包含列表，以逗号分隔。若指定目录，则该目录下的所有文件及子目录将被递归包含",
    :default "",
+   :label "自定义资源",
    :path ["project" "custom_resources"]}
   {:type :string,
    :help
-   "A directory containing resource files and folders that should be copied as-is into the resulting package when bundling.\nSee documentation for details",
+   "一个包含资源文件和文件夹的目录，在打包时被原样复制到结果包中。详见文档",
    :default "",
+   :label "打包资源",
    :path ["project" "bundle_resources"]}
   {:type :string,
    :help
-   "A comma separated list of resources that should not be included in the bundle",
+   "不应包含在打包产物中的资源列表，即被排除。以逗号分隔",
    :default "",
+   :label "打包排除资源",
    :path ["project" "bundle_exclude_resources"]}
   {:type :resource,
    :filter "collection",
    :help
-   "file reference of the collection to use for starting the application, /logic/main.collection by default",
+   "‌应用启动时使用的集合文件，默认为 /logic/main.collection",
    :default "/logic/main.collection",
+   :label "启动集合",
    :path ["bootstrap" "main_collection"]}
   {:type :resource,
    :filter "render",
    :help
-   "which render file to use, which defines the render pipeline, /builtins/render/default.render by default",
+   "使用渲染文件定义渲染管线，默认为 /builtins/render/default.render",
    :default "/builtins/render/default.render",
+   :label "渲染器",
    :path ["bootstrap" "render"]}
   {:type :resource,
    :filter "lua",
@@ -68,85 +81,100 @@
    :path ["bootstrap" "debug_init_script"]
    :hidden? true}
   {:type :string,
-   :help "dirs to include in this project when used as a library",
+   :help "将此项目作为库使用时需要包含的目录",
    :default "",
+   :label "库目录",
    :path ["library" "include_dirs"]}
   {:type :boolean,
-   :help "use single Lua state shared between all script types",
+   :help "所有脚本类型共享同一个 Lua 状态机",
    :default false,
+   :label "共享状态",
    :path ["script" "shared_state"]}
   {:type :boolean,
-   :help "allow the engine to continue running while iconfied (desktop platforms only)",
+   :help "允许窗口最小化时保持引擎运行，仅限桌面平台",
    :default false,
+   :label "后台运行",
    :path ["engine" "run_while_iconified"]}
   {:type :integer,
-   :help "enables some components to use a fixed frame rate. 0 means it's disabled. (Hz)",
+   :help "允许部分组件使用固定帧率，0 表示禁用此功能，单位：赫兹",
    :default 60,
+   :label "固定帧率",
    :path ["engine" "fixed_update_frequency"]}
   {:type :number,
-   :help "If the time step is too large, it will be capped to this max value (seconds)",
+   :help "若单帧时间过长，将被限制为此最大值，单位：秒",
    :default 0.5,
+   :label "单帧最大时间",
    :path ["engine" "max_time_step"]}
   {:type :integer,
    :help
-   "the width in pixels of the application window, 960 by default",
+   "‌应用程序窗口宽度，默认为 960 像素",
    :default 960,
+   :label "宽度",
    :path ["display" "width"]}
   {:type :integer,
    :help
-   "the height in pixels of the application window, 640 by default",
+   "应用程序窗口高度，默认为 640  像素",
    :default 640,
+   :label "高度",
    :path ["display" "height"]}
   {:type :boolean,
-   :help "enable high DPI backbuffer where available",
+   :help "‌在可用时启用高 DPI 后缓冲区",
    :default false,
+   :label "高 DPI",
    :path ["display" "high_dpi"]}
   {:type :integer,
    :help
-   "how many samples to use for super sampling anti-aliasing, 0 by default, which means it is turned off",
+   "‌超采样抗锯齿 SSAA 的采样数设置，默认为 0 ，表示关闭该功能",
    :default 0,
    :path ["display" "samples"]}
   {:type :boolean,
    :help
-   "start the application full screen instead of windowed",
+   "以全屏模式启动应用程序",
    :default false,
+   :label "全屏",
    :path ["display" "fullscreen"]}
   {:type :resource,
    :filter "display_profiles",
    :help
-   "file reference of the display profiles to use for the application",
+   "此应用所使用的显示配置文件",
    :default "/builtins/render/default.display_profiles",
+   :label "显示配置",
    :path ["display" "display_profiles"]}
   {:type :boolean,
-   :help "dynamic screen orientation support",
+   :help "‌动态屏幕方向支持",
    :default false,
+   :label "动态方向",
    :path ["display" "dynamic_orientation"]}
   {:type :integer,
-   :help "Number of game loop updates per seconds. Set to 0 for variable frame rate. Set to e.g. 30 to throttle the update frequency.",
+   :help "‌游戏主循环每秒更新次数。设为 0 表示可变帧率，设为 30 则限制更新频率",
    :default 0,
+   :label "刷新率",
    :path ["display" "update_frequency"]}
   {:type :integer,
-   :help "the vsync interval. 0 means it's disabled",
+   :help "‌垂直同步间隔时间。设为 0 表示禁用此功能",
    :default 1,
+   :label "同步间隔",
    :path ["display" "swap_interval"]}
   {:type :boolean,
-   :help "Vertical sync, rely on hardware vsync for frame timing. Can be overridden depending on graphics driver and platform specifics. For deprecated 'variable_dt' behavior, uncheck this setting and set frame cap 0",
+   :help "垂直同步，依赖硬件垂直同步进行帧计时。具体实现可能因显卡驱动和平台差异而被覆盖。如需模拟已弃用的 'variable_dt' 行为，请取消勾选此设置并将帧上限设为 0 ",
    :default true,
+   :label "垂直同步",
    :path ["display" "vsync"]}
   {:type :boolean
    :default false
    :deprecated true
    :severity-override :fatal
    :severity-default :warning
-   :help "This setting is deprecated. When checked, will disable \"Vsync\" and set \"Frame cap\" to 0 for equivalent behaviour."
+   :help "‌此设置已弃用。勾选后，将禁用垂直同步并将帧数上限设为 0 ，以实现等效的运行效果"
    :path ["display" "variable_dt"]}
   {:type :boolean,
-   :help "output gpu info to console at startup",
+   :help "在启动时将 GPU 信息输出到控制台",
    :default false,
+   :label "显示硬件信息",
    :path ["display" "display_device_info"]}
   {:type :number,
-   :help "Render clear color - red channel",
-   :label "Clear Color Red"
+   :help "渲染清除色 - 红色通道",
+   :label "清除色红"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,

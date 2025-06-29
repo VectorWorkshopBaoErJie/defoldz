@@ -523,11 +523,11 @@ if __name__ == '__main__':
 
     doc_str = ''
     for name in args[:-1]:
-        with open(name, 'r') as f:
+        with open(name, 'r',encoding='utf-8',) as f:
             doc_str += f.read()
 
     output_file = args[-1]
-    f = open(output_file, "w")
+    f = open(output_file, "w", encoding='utf-8')
     if options.type == 'protobuf':
         doc_msg = parse_document(doc_str)
         f.write(str(doc_msg))
