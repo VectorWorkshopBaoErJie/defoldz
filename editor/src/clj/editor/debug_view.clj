@@ -46,16 +46,16 @@
 
 (set! *warn-on-reflection* true)
 
-(def ^:private break-label "Break")
-(def ^:private continue-label "Continue")
-(def ^:private detach-debugger-label "Detach Debugger")
-(def ^:private start-debugger-label "Start/Attach")
-(def ^:private step-into-label "Step Into")
-(def ^:private step-out-label "Step Out")
-(def ^:private step-over-label "Step Over")
-(def ^:private stop-debugger-label "Stop Debugger")
-(def ^:private open-engine-profiler-label "Open Web Profiler")
-(def ^:private open-engine-resource-profiler-label "Open Resource Profiler")
+(def ^:private break-label "中断") ; Break
+(def ^:private continue-label "继续") ; Continue
+(def ^:private detach-debugger-label "分离调试器") ; Detach Debugger
+(def ^:private start-debugger-label "启动/附加调试器") ; Start/Attach
+(def ^:private step-into-label "步入") ; Step Into
+(def ^:private step-out-label "步出") ; Step Out
+(def ^:private step-over-label "步过") ; Step Over
+(def ^:private stop-debugger-label "停止调试器") ; Stop Debugger
+(def ^:private open-engine-profiler-label "打开Web分析器") ; Open Web Profiler
+(def ^:private open-engine-resource-profiler-label "打开资源分析器") ; Open Resource Profiler
 
 (defn- single [coll]
   (when (nil? (next coll)) (first coll)))
@@ -637,7 +637,7 @@
 (handler/defhandler :run.set-resolution :global
   (options [user-data]
     (when-not user-data
-      [{:label "Custom Resolution..."
+      [{:label "自定义分辨率..."
         :command :run.set-resolution
         :user-data :custom
         :check true}
@@ -877,7 +877,7 @@
   (enabled? [] false))
 
 (handler/register-menu! ::menubar :editor.defold-project/project
-  [{:label "Debug"
+  [{:label "调试"
     :id ::debug
     :children [{:label start-debugger-label
                 :command :debugger.start}
@@ -902,12 +902,12 @@
                {:label open-engine-resource-profiler-label
                 :command :run.open-resource-profiler}
                {:label :separator}
-               {:label "Reset Simulated Resolution"
+               {:label "重置模拟分辨率"
                 :command :run.reset-resolution}
-               {:label "Set Resolution"
+               {:label "设置分辨率"
                 :command :run.set-resolution
                 :expand true}
-               {:label "Rotated Device"
+               {:label "旋转设备"
                 :command :run.toggle-device-rotated
                 :check true}
                {:label :separator

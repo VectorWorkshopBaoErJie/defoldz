@@ -78,52 +78,52 @@
         touch-values (butlast (protobuf/enum-values Input$Touch)) ; skip MAX_TOUCH_COUNT
         text-values (butlast (protobuf/enum-values Input$Text))] ; skip MAX_TEXT_COUNT
     {:navigation false
-     :sections [{:title "Input Bindings"
+     :sections [{:title "输入绑定配置"
                  :fields [{:path [:key-trigger]
-                           :label "Key Triggers"
+                           :label "键盘触发"
                            :type :table
                            :columns [{:path [:input]
-                                      :label "Input"
+                                      :label "输入"
                                       :type :choicebox
                                       :options (sort-by first (make-options key-values))
                                       :default (ffirst key-values)}
-                                     {:path [:action] :label "Action" :type :string}]}
+                                     {:path [:action] :label "动作" :type :string}]}
                           {:path [:mouse-trigger]
-                           :label "Mouse Triggers"
+                           :label "鼠标触发"
                            :type :table
                            :columns [{:path [:input]
-                                      :label "Input"
+                                      :label "输入"
                                       :type :choicebox
                                       :options (sort-by first (make-options mouse-values))
                                       :default (ffirst mouse-values)}
-                                     {:path [:action] :label "Action" :type :string}]}
+                                     {:path [:action] :label "动作" :type :string}]}
                           {:path [:gamepad-trigger]
-                           :label "Gamepad Triggers"
+                           :label "手柄触发"
                            :type :table
                            :columns [{:path [:input]
-                                      :label "Input"
+                                      :label "输入"
                                       :type :choicebox
                                       :options (sort-by first (make-options gamepad-values))
                                       :default (ffirst gamepad-values)}
-                                     {:path [:action] :label "Action" :type :string}]}
+                                     {:path [:action] :label "动作" :type :string}]}
                           {:path [:touch-trigger]
-                           :label "Touch Triggers"
+                           :label "触控触发"
                            :type :table
                            :columns [{:path [:input]
-                                      :label "Input"
+                                      :label "输入"
                                       :type :choicebox
                                       :options (sort-by first (make-options touch-values))
                                       :default (ffirst touch-values)}
-                                     {:path [:action] :label "Action" :type :string}]}
+                                     {:path [:action] :label "动作" :type :string}]}
                           {:path [:text-trigger]
-                           :label "Text Triggers"
+                           :label "文本触发"
                            :type :table
                            :columns [{:path [:input]
-                                      :label "Input"
+                                      :label "输入"
                                       :type :choicebox
                                       :options (make-options text-values) ; Unsorted.
                                       :default (ffirst text-values)}
-                                     {:path [:action] :label "Action" :type :string}]}]}]}))
+                                     {:path [:action] :label "动作" :type :string}]}]}]}))
 
 (defn- gamepad-pb->form-pb [pb]
   (letfn [(mods->bools [modlist]

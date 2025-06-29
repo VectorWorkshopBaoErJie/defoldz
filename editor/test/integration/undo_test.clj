@@ -93,7 +93,7 @@
                     (g/tx-nodes-added
                      (g/transact
                       (concat
-                       (g/operation-label "Add Component")
+                       (g/operation-label "添加组件")
                        (g/operation-sequence op-seq)
                        (g/make-nodes proj-graph
                                      [comp-node DummyComponent]
@@ -101,7 +101,7 @@
     (g/transact
      (concat
       (g/operation-sequence op-seq)
-      (g/operation-label "Add Component")
+      (g/operation-label "添加组件")
       (select-fn [component])))
     component))
 

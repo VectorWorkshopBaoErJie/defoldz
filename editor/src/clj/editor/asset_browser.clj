@@ -89,48 +89,48 @@
   [menu-items/open-selected
    menu-items/open-as
    menu-items/separator
-   {:label "Copy Resource Path"
+   {:label "复制资源路径" ; Copy Resource Path
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径" ; Copy Full Path
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径" ; Copy Require Path
     :command :edit.copy-require-path}
    menu-items/separator
-   {:label "Show in Desktop"
+   {:label "在桌面显示ʾ" ; Show in Desktop
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..." ; Referencing Files...
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..." ; Dependencies...
     :command :file.show-dependencies}
    menu-items/separator
    menu-items/show-overrides
    menu-items/pull-up-overrides
    menu-items/push-down-overrides
    menu-items/separator
-   {:label "New"
+   {:label "新建" ; New (likely a submenu trigger)
     :command :file.new
     :expand true
     :icon "icons/64/Icons_29-AT-Unknown.png"}
-   {:label "New File"
+   {:label "新建文件" ; New File
     :command :file.new
     :user-data {:any-file true}
     :icon "icons/64/Icons_29-AT-Unknown.png"}
-   {:label "New Folder"
+   {:label "新建文件夹" ; New Folder
     :command :file.new-folder
     :icon "icons/32/Icons_01-Folder-closed.png"}
    menu-items/separator
-   {:label "Cut"
+   {:label "剪切" ; Cut
     :command :edit.cut}
-   {:label "Copy"
+   {:label "复制" ; Copy
     :command :edit.copy}
-   {:label "Paste"
+   {:label "粘贴" ; Paste
     :command :edit.paste}
-   {:label "Delete"
+   {:label "删除" ; Delete
     :command :edit.delete
     :icon "icons/32/Icons_M_06_trash.png"}
    menu-items/separator
-   {:label "Rename..."
+   {:label "重命名..." ; Rename...
     :command :edit.rename}
    (menu-items/separator-with-id ::context-menu-end)])
 
@@ -444,9 +444,9 @@
                             name
                             :title (cond
                                      dir "Rename Folder"
-                                     (= 1 (count selection)) "Rename File"
-                                     :else "Rename Files")
-                            :label (if dir "New Folder Name" "New File Name")
+                                     (= 1 (count selection)) "重命令文件"
+                                     :else "重命令这此文件")
+                            :label (if dir "New Folder Name" "新文件名")
                             :extensions extensions
                             :validate (fn [file-name]
                                         (some #(validate-new-resource-name project-directory % file-name) parent-paths)))]
@@ -459,31 +459,31 @@
                    (handler/adapt-single resource/Resource))]
       (when (if (= 1 (count selection))
               (dialogs/make-confirmation-dialog
-                {:title "Delete File?"
+                {:title "删除文件?"
                  :icon :icon/circle-question
-                 :header (format "Are you sure you want to delete %s?"
+                 :header (format "确认删除 %s?"
                                  (resource/resource-name (first selection)))
-                 :buttons [{:text "Cancel"
+                 :buttons [{:text "取消"
                             :cancel-button true
                             :default-button true
                             :result false}
-                           {:text "Delete"
+                           {:text "删除"
                             :variant :danger
                             :result true}]})
               (dialogs/make-info-dialog
-                {:title "Delete Files?"
+                {:title "删除这些文件?"
                  :icon :icon/circle-question
-                 :header "Are you sure you want to delete these files?"
-                 :content {:text (str "You are about to delete:\n"
+                 :header "确认要删除这些文件?"
+                 :content {:text (str "您即将删除:\n"
                                       (->> selection
                                            (map #(str "\u00A0\u00A0\u2022\u00A0"
                                                       (resource/resource-name %)))
                                            (string/join "\n")))}
-                 :buttons [{:text "Cancel"
+                 :buttons [{:text "取消"
                             :cancel-button true
                             :default-button true
                             :result false}
-                           {:text "Delete"
+                           {:text "删除"
                             :variant :danger
                             :result true}]}))
         (when (and (delete selection) next)
@@ -496,7 +496,7 @@
 
 (handler/defhandler :file.new :global
   (label [user-data] (if-not user-data
-                       "New..."
+                       "新建..."
                        (let [rt (:resource-type user-data)]
                          (or (:label rt) (:ext rt)))))
   (active? [selection selection-context] (or (= :global selection-context) (and (= :asset-browser selection-context)
@@ -537,7 +537,7 @@
   (options [workspace selection user-data]
     (when (not user-data)
       (sort-by (comp string/lower-case :label)
-               (into [{:label "File"
+               (into [{:label "文件"
                        :icon "icons/64/Icons_29-AT-Unknown.png"
                        :command :file.new
                        :user-data {:any-file true}}]

@@ -62,31 +62,31 @@
               :set protobuf-forms-util/set-form-op
               :clear protobuf-forms-util/clear-form-op}
    :navigation false
-   :sections [{:title "Camera"
-               :fields [{:path [:aspect-ratio]
-                         :label "Aspect Ratio"
-                         :type :number}
-                        {:path [:fov]
-                         :label "FOV"
-                         :type :number}
-                        {:path [:near-z]
-                         :label "Near-Z"
-                         :type :number}
-                        {:path [:far-z]
-                         :label "Far-Z"
-                         :type :number}
-                        {:path [:auto-aspect-ratio]
-                         :label "Auto Aspect Ratio"
-                         :type :boolean}
-                        {:path [:orthographic-projection]
-                         :label "Orthographic Projection"
-                         :type :boolean}
-                        {:path [:orthographic-mode]
-                         :label "Orthographic Zoom Mode"
-                         :type :choicebox
+  :sections [{:title "ÉãÏñ»ú"
+                :fields [{:path [:aspect-ratio]
+                          :label "¿í¸ß±È"
+                          :type :number}
+                          {:path [:fov]
+                          :label "ÊÓÒ° (FOV)"
+                          :type :number}
+                          {:path [:near-z]
+                          :label "½üÆ½Ãæ (Near-Z)"
+                          :type :number}
+                          {:path [:far-z]
+                          :label "Ô¶Æ½Ãæ (Far-Z)"
+                          :type :number}
+                          {:path [:auto-aspect-ratio]
+                          :label "×Ô¶¯¿í¸ß±È"
+                          :type :boolean}
+                          {:path [:orthographic-projection]
+                          :label "Õý½»Í¶Ó°"
+                          :type :boolean}
+                          {:path [:orthographic-mode]
+                          :label "Õý½»Ä£Ê½"
+                          :type :choicebox}]}]
                          :options (sort-by first (protobuf-forms/make-enum-options Camera$OrthoZoomMode))}
                         {:path [:orthographic-zoom]
-                         :label "Orthographic Zoom"
+                         :label "Õý½»Ëõ·Å"
                          :type :number}]}]
    :values {[:aspect-ratio] aspect-ratio
             [:fov] fov
@@ -307,7 +307,7 @@
   (output node-outline outline/OutlineData :cached (g/fnk [_node-id]
                                                      {:node-id _node-id
                                                       :node-outline-key "Camera"
-                                                      :label "Camera"
+                                                      :label "æ‘„ç›¸æœº"
                                                       :icon camera-icon}))
 
   (output save-value g/Any :cached produce-save-value)
@@ -327,4 +327,4 @@
     :view-opts {}
     :tags #{:component}
     :tag-opts {:component {:transform-properties #{}}}
-    :label "Camera"))
+    :label "æ‘„ç›¸æœº"))

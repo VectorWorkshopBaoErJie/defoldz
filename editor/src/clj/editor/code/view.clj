@@ -2815,19 +2815,19 @@
 (handler/defhandler :code.convert-indentation :code-view
   (label [user-data]
     (case user-data
-      :tabs "To Tabs"
-      :two-spaces "To Two Spaces"
-      :four-spaces "To Four Spaces"
-      nil "Convert Indentation"))
+      :tabs "转换为制表符"
+      :two-spaces "转换为两个空格"
+      :four-spaces "转换为四个空格"
+      nil "转换缩进"))
   (options [user-data]
     (when-not user-data
-      [{:label "To Tabs"
+      [{:label "转换为制表符"
         :command :code.convert-indentation
         :user-data :tabs}
-       {:label "To Two Spaces"
+       {:label "转换为两个空格"
         :command :code.convert-indentation
         :user-data :two-spaces}
-       {:label "To Four Spaces"
+       {:label "转换为四个空格"
         :command :code.convert-indentation
         :user-data :four-spaces}]))
   (active? [editable] editable)
@@ -2955,15 +2955,15 @@
 (handler/defhandler :code.sort-lines :code-view
   (label [user-data]
     (case user-data
-      :case-insensitive "Sort Lines"
-      :case-sensitive "Sort Lines (Case Sensitive)"
-      nil "Sort Lines"))
+      :case-insensitive "排序行"
+      :case-sensitive "以区分大小写排序行"
+      nil "排序行"))
   (options [user-data]
     (when-not user-data
-      [{:label "Case Insensitive"
+      [{:label "不区分大小写"
         :command :code.sort-lines
         :user-data :case-insensitive}
-       {:label "Case Sensitive"
+       {:label "区分大小写"
         :command :code.sort-lines
         :user-data :case-sensitive}]))
   (active? [editable] editable)
@@ -3334,42 +3334,41 @@
   (run [view-node] (replace-all! view-node)))
 
 ;; -----------------------------------------------------------------------------
-
 (handler/register-menu! ::menubar-edit :editor.app-view/edit-end
-  [{:command :edit.find :label "Find..."}
-   {:command :code.find-next :label "Find Next"}
-   {:command :code.find-previous :label "Find Previous"}
+[{:command :edit.find :label "查找..."}
+   {:command :code.find-next :label "查找下一个"}
+   {:command :code.find-previous :label "查找上一个"}
    {:label :separator}
-   {:command :code.replace-text :label "Replace..."}
-   {:command :code.replace-next :label "Replace Next"}
+   {:command :code.replace-text :label "替换..."}
+   {:command :code.replace-next :label "替换下一个"}
    {:label :separator}
-   {:command :code.toggle-comment :label "Toggle Comment"}
-   {:command :code.reindent :label "Reindent Lines"}
+   {:command :code.toggle-comment :label "切换注释"}
+   {:command :code.reindent :label "重新缩进行"}
    {:command :code.convert-indentation :expand true}
    {:label :separator}
    {:command :code.sort-lines :user-data :case-insensitive}
    {:command :code.sort-lines :user-data :case-sensitive}
    {:label :separator}
-   {:command :code.select-next-occurrence :label "Select Next Occurrence"}
-   {:command :code.split-selection-into-lines :label "Split Selection Into Lines"}
+   {:command :code.select-next-occurrence :label "选择下一个匹配项"}
+   {:command :code.split-selection-into-lines :label "将选区拆分为多行"}
    {:label :separator}
-   {:command :edit.rename :label "Rename"}
-   {:command :code.goto-definition :label "Go to Definition"}
-   {:command :code.show-references :label "Find References"}
+   {:command :edit.rename :label "重命名"}
+   {:command :code.goto-definition :label "转到定义"}
+   {:command :code.show-references :label "查找引用"}
    {:label :separator}
-   {:command :debugger.toggle-breakpoint :label "Toggle Breakpoint"}
-   {:command :debugger.edit-breakpoint :label "Edit Breakpoint"}])
+   {:command :debugger.toggle-breakpoint :label "切换断点"}
+   {:command :debugger.edit-breakpoint :label "编辑断点"}])
 
 (handler/register-menu! ::menubar-view :editor.app-view/view-end
-  [{:command :code.toggle-minimap :label "Minimap" :check true}
-   {:command :code.toggle-indentation-guides :label "Indentation Guides" :check true}
-   {:command :code.toggle-visible-whitespace :label "Visible Whitespace" :check true}
+  [{:command :code.toggle-minimap :label "缩略图" :check true}
+   {:command :code.toggle-indentation-guides :label "缩进参考线" :check true}
+   {:command :code.toggle-visible-whitespace :label "显示空白字符" :check true}
    {:label :separator}
-   {:command :code.zoom.increase :label "Increase Font Size"}
-   {:command :code.zoom.decrease :label "Decrease Font Size"}
-   {:command :code.zoom.reset :label "Reset Font Size"}
+   {:command :code.zoom.increase :label "增大字体"}
+   {:command :code.zoom.decrease :label "减小字体"}
+   {:command :code.zoom.reset :label "重置字体大小"}
    {:label :separator}
-   {:command :code.goto-line :label "Go to Line..."}])
+   {:command :code.goto-line :label "转到行号..."}])
 
 ;; -----------------------------------------------------------------------------
 

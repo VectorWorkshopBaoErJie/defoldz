@@ -121,10 +121,10 @@
 (def ^:private form-sections
   {:navigation false
    :sections
-   [{:title "Animation Set"
+   [{:title "动画集"
      :fields [{:path [:animations]
                :type :list
-               :label "Animations"
+               :label "动画"
                :element {:type :resource
                          :filter model-scene/animation-file-types
                          :default nil}}]}]})
@@ -186,7 +186,7 @@
     :ext "animationset"
     :icon animation-set-icon
     :icon-class :property
-    :label "Animation Set"
+    :label "动画集"
     :load-fn load-animation-set
     :sanitize-fn sanitize-animation-set
     :node-type AnimationSetNode

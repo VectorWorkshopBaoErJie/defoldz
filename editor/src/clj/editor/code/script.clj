@@ -205,17 +205,17 @@
                    :tags #{:component :debuggable :non-embeddable :overridable-properties}
                    :tag-opts {:component {:transform-properties #{}}}}
                   {:ext "render_script"
-                   :label "Render Script"
+                   :label "渲染脚本"
                    :icon "icons/32/Icons_12-Script-type.png"
                    :icon-class :script
                    :tags #{:debuggable}}
                   {:ext "gui_script"
-                   :label "Gui Script"
+                   :label "界面脚本"
                    :icon "icons/32/Icons_12-Script-type.png"
                    :icon-class :script
                    :tags #{:debuggable}}
                   {:ext "lua"
-                   :label "Lua Module"
+                   :label "Lua模块"
                    :icon "icons/32/Icons_11-Script-general.png"
                    :icon-class :script
                    :annotations true

@@ -267,7 +267,7 @@
 (g/defnk produce-node-outline [_node-id]
   {:node-id _node-id
    :node-outline-key "Non-Editable Collection"
-   :label "Non-Editable Collection"
+   :label "不可编辑集合"
    :icon collection-common/collection-icon})
 
 (defn- make-desc->instance-scene [node-id desc->source-scene child-id->desc]
@@ -431,7 +431,7 @@
     (resource-node/register-ddf-resource-type workspace
       :editable false
       :ext "collection"
-      :label "Non-Editable Collection"
+      :label "不可编辑集合"
       :node-type NonEditableCollectionNode
       :ddf-type GameObject$CollectionDesc
       :dependencies-fn (collection-common/make-collection-dependencies-fn #(workspace/get-resource-type workspace :non-editable "go"))

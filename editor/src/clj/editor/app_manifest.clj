@@ -661,7 +661,7 @@
     workspace
     :ext "appmanifest"
     :language "yaml"
-    :label "App Manifest"
+    :label "应用清单"
     :icon "icons/32/Icons_05-Project-info.png"
     :node-type AppManifestNode
     :view-types [:code :default]

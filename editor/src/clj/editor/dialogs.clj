@@ -420,7 +420,7 @@
                                     :image "logo.png"}]}
                        {:fx/type fxui/legacy-label
                         :variant :header
-                        :text "Loading project"}]}
+                        :text "加载项目"}]}
    :content {:fx/type fx.v-box/lifecycle
              :style-class ["dialog-content-padding" "spacing-smaller"]
              :children [{:fx/type fxui/legacy-label
@@ -433,7 +433,7 @@
    :footer {:fx/type dialog-buttons
             :children [{:fx/type fxui/button
                         :disable true
-                        :text "Cancel"}]}})
+                        :text "取消"}]}})
 
 (defn make-load-project-dialog [worker-fn]
   (ui/run-now

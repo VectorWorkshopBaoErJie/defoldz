@@ -1,205 +1,204 @@
 {:new-project
- {:categories [{:label "From Template"
-                :templates [{:name "Empty project"
-                             :description "Choose this template if you want to start from a completely blank slate."
-                             :image "empty.svg"
-                             :duration "Short"
-                             :user-level "Beginner"
-                             :zip-url "https://github.com/defold/template-empty/archive/master.zip"
+ {:categories [{:label "项目模版"
+                :templates [{:name "空白项目" ; Empty project
+                            :description "如果您想完全从头开始，请选择此模板。"
+                            :image "empty.svg"
+                            :duration "Short"
+                            :user-level "Beginner"
+                            :zip-url "https://github.com/defold/template-empty/archive/master.zip"
                              :bundle true
                              :skip-root? true}
 
-                            {:name "Mobile game"
-                             :description "This template contains useful settings and assets if you want to start building a game for mobile devices."
-                             :image "mobile.svg"
-                             :duration "Medium"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/defold/template-mobile/archive/master.zip"
-                             :skip-root? true}
+                            {:name "移动游戏项目" ; Mobile game
+                            :description "此模板包含有用的设置和资源，适合用于开始构建移动设备游戏。"
+                            :image "mobile.svg"
+                            :duration "Medium"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/defold/template-mobile/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Desktop game"
-                             :description "This template contains useful settings and assets if you want to start building a game for desktop."
-                             :image "desktop.svg"
-                             :duration "Long"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/template-desktop/archive/master.zip"
-                             :skip-root? true}
+                            {:name "桌面游戏项目" ; Desktop game
+                            :description "此模板包含有用的设置和资源，适合用于开始构建桌面游戏。"
+                            :image "desktop.svg"
+                            :duration "Long"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/template-desktop/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Poki HTML5 game"
-                             :description "This template includes the Poki SDK, designed for both desktop and mobile web games. It also provides a quick export option to the Poki for Developers platform."
-                             :image "poki.svg"
-                             :duration "Medium"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/defold/template-html5-poki/archive/master.zip"
-                             :skip-root? true}
+                            {:name "Poki HTML5 游戏项目" ; Poki HTML5 game
+                            :description "此模板包含 Poki SDK，专为桌面和移动网页游戏设计，并提供快速导出到 Poki for Developers 平台的选项。"
+                            :image "poki.svg"
+                            :duration "Medium"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/defold/template-html5-poki/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Native Extension"
-                             :description "This template contains the basic setup if you want to start creating a native extension."
-                             :image "extension.svg"
-                             :duration "Long"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/template-native-extension/archive/master.zip"
-                             :skip-root? true}
+                            {:name "原生扩展项目" ; Native Extension
+                            :description "此模板包含创建原生扩展所需的基本设置。"
+                            :image "extension.svg"
+                            :duration "Long"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/template-native-extension/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Basic 3D project"
-                             :description "This template contains a basic setup for doing 3D rendering."
-                             :image "3d.svg"
-                             :duration "Short"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/template-basic-3d/archive/master.zip"
-                             :skip-root? true}
+                            {:name "基础 3D 项目" ; Basic 3D project
+                            :description "此模板包含进行 3D 渲染的基础设置。"
+                            :image "3d.svg"
+                            :duration "Short"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/template-basic-3d/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Platformer game"
-                             :description "This template contains a basic setup if you want to start building a platformer game."
-                             :image "platformer.svg"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/template-platformer/archive/main.zip"
-                             :skip-root? true}
+                            {:name "平台跳跃游戏项目" ; Platformer game
+                            :description "此模板包含开始构建平台跳跃游戏所需的基础设置。"
+                            :image "platformer.svg"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/template-platformer/archive/main.zip"
+                            :skip-root? true}
 
-                             {:name "Rive project"
-                             :description "This template uses the rive extension to get you started."
-                             :image "rive.svg"
-                             :duration "Medium"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/defold/template-rive/archive/master.zip"
-                             :skip-root? true}]}
+                            {:name "Rive 动画项目" ; Rive project
+                            :description "此模板利用 Rive 扩展帮助您快速上手。"
+                            :image "rive.svg"
+                            :duration "Medium"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/defold/template-rive/archive/master.zip"
+                            :skip-root? true}]}
 
-               {:label "From Tutorial"
-                :templates [{:name "Side scroller tutorial"
-                             :description "In this beginner's tutorial you get a taste of how to build a game in Defold by modifying a very simple side scroller game."
-                             :image "side-scroller.png"
-                             :duration "Short"
-                             :user-level "Beginner"
-                             :zip-url "https://github.com/defold/tutorial-side-scroller/archive/master.zip"
-                             :skip-root? true}
+               {:label "教学项目"
+                :templates [{:name "横向卷轴游戏教程" ; Side scroller tutorial
+                            :description "本新手教程通过修改简单的横向卷轴游戏，让您初步体验如何使用 Defold 构建游戏。"
+                            :image "side-scroller.png"
+                            :duration "Short"
+                            :user-level "Beginner"
+                            :zip-url "https://github.com/defold/tutorial-side-scroller/archive/master.zip"
+                            :skip-root? true}
 
-                             {:name "Walking astronaut tutorial"
-                             :description "In this beginner's tutorial you learn how to capture player input and make a character move and animate. You will also learn about the core building blocks in Defold: game objects, components and collections."
-                             :image "astronaut.png"
-                             :duration "Medium"
-                             :user-level "Beginner"
-                             :zip-url "https://github.com/defold/tutorial-astronaut/archive/master.zip"
-                             :skip-root? true}
+                            {:name "宇航员移动教程" ; Walking astronaut tutorial
+                            :description "本新手教程将教会您如何捕获玩家输入、实现角色移动与动画，并学习 Defold 的核心构建模块：游戏对象、组件和集合。"
+                            :image "astronaut.png"
+                            :duration "Medium"
+                            :user-level "Beginner"
+                            :zip-url "https://github.com/defold/tutorial-astronaut/archive/master.zip"
+                            :skip-root? true}
 
+                            {:name "物理运动教程" ; Movement tutorial
+                            :description "本新手教程将指导您使用向量和基础向量代数实现真实的物理运动效果。"
+                            :image "movement.png"
+                            :duration "Medium"
+                            :user-level "Beginner"
+                            :zip-url "https://github.com/defold/tutorial-movement/archive/master.zip"
+                            :skip-root? true}
 
-                             {:name "Movement tutorial"
-                             :description "In this beginner's tutorial you learn how to make realistic movement using vectors and some simple vector algebra."
-                             :image "movement.png"
-                             :duration "Medium"
-                             :user-level "Beginner"
-                             :zip-url "https://github.com/defold/tutorial-movement/archive/master.zip"
-                             :skip-root? true}
+                            {:name "战争战役游戏教程" ; War battles tutorial
+                            :description "本中级教程基于《战争战役》RTS资源包，带您构建俯视角射击游戏的基础框架。"
+                            :image "war-battles.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/tutorial-war-battles/archive/master.zip"
+                            :skip-root? true}
 
-                             {:name "War battles tutorial"
-                             :description "In this medium difficulty tutorial you build the foundation for a top down shooter game based on the \"War Battles\" RTS asset pack."
-                             :image "war-battles.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/tutorial-war-battles/archive/master.zip"
-                             :skip-root? true}
+                            {:name "色彩滑动游戏教程" ; Colorslide tutorial
+                            :description "本中级教程将指导您为简易多关卡手机游戏创建游戏内GUI、关卡选择界面和开始屏幕。"
+                            :image "colorslide.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/tutorial-colorslide/archive/master.zip"
+                            :skip-root? true}]}
 
-                            {:name "Colorslide tutorial"
-                             :description "In this medium difficulty tutorial you build an in-game GUI, a GUI screen for level selection and a start screen for a simple multi level mobile game."
-                             :image "colorslide.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/tutorial-colorslide/archive/master.zip"
-                             :skip-root? true}]}
+                {:label "游戏实例"
+                :templates [{:name "连连看示例游戏"
+                            :description "这是一个完整的消除类游戏示例，通过点击拖动连接同色鱼类将其消除。长链消除可生成强力道具。"
+                            :image "linker.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-linker/archive/master.zip"
+                            :skip-root? true}
 
-               {:label "From Sample"
-                :templates [{:name "Linker sample game"
-                             :description "This is a complete sample game where you click and drag to link fish of the same color to remove them from the board. Long chains of fish yields boosters."
-                             :image "linker.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-linker/archive/master.zip"
-                             :skip-root? true}
+                            {:name "陨石风暴示例游戏"
+                            :description "这是一个完整的太空射击游戏示例，您将操控宇宙飞船在陨石群中穿行并开火求生。"
+                            :image "roids.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-roids/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Roids sample game"
-                             :description "This is a complete sample game where you steer a space ship and fire your way through a storm of meteors."
-                             :image "roids.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-roids/archive/master.zip"
-                             :skip-root? true}
+                            {:name "像素风平台游戏"
+                            :description "这是Kenney创作的现代像素风平台游戏完整示例。"
+                            :image "pixelline.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-pixel-line-platformer/archive/refs/heads/main.zip"
+                            :skip-root? true}
 
-                            {:name "Pixel line platformer"
-                             :description "This is a complete platformer game where with a modern pixel art style created by Kenney."
-                             :image "pixelline.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-pixel-line-platformer/archive/refs/heads/main.zip"
-                             :skip-root? true}
+                            {:name "主菜单动画示例"
+                            :description "本示例展示如何实现动态主菜单呈现效果。"
+                            :image "screen_menu_animation.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-main-menu-animation/archive/refs/heads/master.zip"
+                            :skip-root? true}
 
-                            {:name "Main menu animation"
-                             :description "In this sample, we demonstrate effects to present a main menu."
-                             :image "screen_menu_animation.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-main-menu-animation/archive/refs/heads/master.zip"
-                             :skip-root? true}
+                            {:name "视差滚动示例"
+                            :description "本示例演示如何运用视差效果营造游戏场景的层次感。"
+                            :image "screen_parallax.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-parallax/archive/refs/heads/master.zip"
+                            :skip-root? true}
 
-                            {:name "Parallax"
-                             :description "In this sample, we demonstrate how to use a parallax effect to simulate depth in the game world."
-                             :image "screen_parallax.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-parallax/archive/refs/heads/master.zip"
-                             :skip-root? true}
+                            {:name "HUD界面示例"
+                            :description "本示例展示游戏内分数统计的动态效果实现。"
+                            :image "screen_hud.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-hud/archive/refs/heads/master.zip"
+                            :skip-root? true}
 
-                            {:name "HUD"
-                             :description "In this sample, we demonstrate effects for score counting."
-                             :image "screen_hud.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-hud/archive/refs/heads/master.zip"
-                             :skip-root? true}
+                            {:name "关卡完成效果示例"
+                            :description "本示例演示关卡结束时分数统计的动态展示效果。"
+                            :image "screen_lvlcomplete.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-levelcomplete/archive/refs/heads/master.zip"
+                            :skip-root? true}
 
-                            {:name "Level complete"
-                             :description "In this sample, we demonstrate effects to show the score counting that could occur when a level has been completed."
-                             :image "screen_lvlcomplete.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-levelcomplete/archive/refs/heads/master.zip"
-                             :skip-root? true}
+                            {:name "RPG地图示例"
+                            :description "本示例展示如何创建随英雄移动逐屏滚动的大型RPG地图。"
+                            :image "rpg-map.png"
+                            :duration "Medium"
+                            :user-level "Intermediate"
+                            :zip-url "https://github.com/defold/sample-rpgmap/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "RPG map sample"
-                             :description "This sample shows how you can create a large RPG map that scrolls one screen at a time as the hero progresses."
-                             :image "rpg-map.png"
-                             :duration "Medium"
-                             :user-level "Intermediate"
-                             :zip-url "https://github.com/defold/sample-rpgmap/archive/master.zip"
-                             :skip-root? true}
+                            {:name "Shadertoy着色器示例"
+                            :description "本示例包含从Shadertoy移植到Defold的GLSL着色器，展示Defold中材质与着色器的应用。"
+                            :image "shadertoy.png"
+                            :duration "Short"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/defold/sample-shadertoy/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Shadertoy sample"
-                             :description "This sample contains a GLSL shader that was taken from Shadertoy and converted to Defold. It showcases how to work with materials and shaders in Defold."
-                             :image "shadertoy.png"
-                             :duration "Short"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/defold/sample-shadertoy/archive/master.zip"
-                             :skip-root? true}
+                            {:name "3D宝藏场景示例"
+                            :description "本示例展示风格化3D场景及其动画效果。"
+                            :image "treasurescene.png"
+                            :duration "Short"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/FlexYourBrain/Basic3d_TreasureScene/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "3d treasure scene"
-                             :description "This sample shows a stylized 3d scene with animation."
-                             :image "treasurescene.png"
-                             :duration "Short"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/FlexYourBrain/Basic3d_TreasureScene/archive/master.zip"
-                             :skip-root? true}
+                            {:name "透视视差示例"
+                            :description "本示例展示透视相机下的视差滚动效果实现。"
+                            :image "perspectiveparallax.png"
+                            :duration "Short"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/FlexYourBrain/sample-perspective_parallax/archive/master.zip"
+                            :skip-root? true}
 
-                            {:name "Perspective Parallax"
-                             :description "This sample shows a perspective camera parallax effect"
-                             :image "perspectiveparallax.png"
-                             :duration "Short"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/FlexYourBrain/sample-perspective_parallax/archive/master.zip"
-                             :skip-root? true}
-
-                            {:name "Lightning VFX"
-                             :description "Sample shows a lightning effect in a 2d scrolling shooter and how the mesh component is setup to be manipulated during gameplay."
-                             :image "sample_lightningvfx.png"
-                             :duration "Long"
-                             :user-level "Advanced"
-                             :zip-url "https://github.com/FlexYourBrain/sample_LightningVFX/archive/master.zip"
-                             :skip-root? true}]}]}}
+                            {:name "闪电特效示例"
+                            :description "本示例展示2D射击游戏中的闪电特效，以及如何配置网格组件实现实时动态效果。"
+                            :image "sample_lightningvfx.png"
+                            :duration "Long"
+                            :user-level "Advanced"
+                            :zip-url "https://github.com/FlexYourBrain/sample_LightningVFX/archive/master.zip"
+                            :skip-root? true}]}]}}

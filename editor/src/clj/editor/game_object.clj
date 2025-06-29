@@ -441,7 +441,7 @@
 (g/defnk produce-go-outline [_node-id child-outlines]
   {:node-id _node-id
    :node-outline-key "Game Object"
-   :label "Game Object"
+   :label "游戏对象"
    :icon game-object-common/game-object-icon
    :children (outline/natural-sort child-outlines)
    :child-reqs [{:node-type ReferencedComponent
@@ -502,11 +502,11 @@
   (let [id (gen-component-id go-id (resource/base-name resource))]
     (g/transact
       (concat
-        (g/operation-label "Add Component")
+        (g/operation-label "添加组件")
         (add-component go-id resource id nil nil select-fn)))))
 
 (defn add-component-handler [workspace project go-id select-fn]
-  (when-let [resources (resource-dialog/make workspace project {:ext (get-all-comp-exts workspace) :title "Select Component File" :selection :multiple})]
+  (when-let [resources (resource-dialog/make workspace project {:ext (get-all-comp-exts workspace) :title "选择组件文件" :selection :multiple})]
     (doseq [resource resources]
       (add-referenced-component! go-id resource select-fn))))
 
@@ -515,7 +515,7 @@
 
 (handler/defhandler :edit.add-referenced-component :workbench
   (active? [selection] (selection->game-object selection))
-  (label [] "Add Component File")
+  (label [] "添加组件文件")
   (run [workspace project selection app-view]
        (add-component-handler workspace project (selection->game-object selection) (fn [node-ids] (app-view/select app-view node-ids)))))
 
@@ -553,7 +553,7 @@
         id (gen-component-id go-id (:ext resource-type))]
     (g/transact
       (concat
-        (g/operation-label "Add Component")
+        (g/operation-label "添加组件")
         (add-embedded-component go-id project (:ext resource-type) pb-map id nil select-fn)))))
 
 (defn- add-embedded-component-handler [user-data select-fn]
@@ -563,7 +563,7 @@
 
 (defn add-embedded-component-label [user-data]
   (if-not user-data
-    "Add Component"
+    "添加组件"
     (let [rt (:resource-type user-data)]
       (or (:label rt) (:ext rt)))))
 

@@ -1,0 +1,1374 @@
+{:settings
+ [{:type :string,
+   :help "应用标题",
+   :default "unnamed",
+   :label "标题",
+   :path ["project" "title"]}
+  {:type :string,
+   :help "应用版本",
+   :default "1.0",
+   :label "版本",
+   :path ["project" "version"]}
+  {:type :string,
+   :help "发行商名称",
+   :default "",
+   :label "发行商"
+   :path ["project" "publisher"]}
+  {:type :string,
+   :help "开发者名称",
+   :default "",
+   :label "开发者"
+   :path ["project" "developer"]}
+  {:type :boolean,
+   :help "将日志信息写入磁盘",
+   :default false,
+   :label "记录日志",
+   :path ["project" "write_log"]}
+  {:type :string,
+   :help "?仅显示最低日志级别及更高级别的日志",
+   :default "1",
+   :label "最低日志级别",
+   :path ["project" "minimum_log_level"]
+   :options [["0" "DEBUG = 0"] ["1" "USER DEBUG = 1"] ["2" "INFO = 2"] ["3" "WARNING = 3"] ["4" "ERROR = 4"] ["5" "FATAL = 5"]]}
+  {:type :boolean,
+   :help "压缩制品，非安卓",
+   :default true,
+   :label "压缩制品",
+   :path ["project" "compress_archive"]}
+  {:type :list,
+   :help
+   "?本项目所需依赖项目的 URL 列表，以逗号分隔",
+   :label "依赖",
+   :path ["project" "dependencies"]
+   :element {:type :url
+             :default "https://url.to/library"}}
+  {:type :string,
+   :help
+   "项目资源包含列表，以逗号分隔。若指定目录，则该目录下的所有文件及子目录将被递归包含",
+   :default "",
+   :label "自定义资源",
+   :path ["project" "custom_resources"]}
+  {:type :string,
+   :help
+   "一个包含资源文件和文件夹的目录，在打包时被原样复制到结果包中。详见文档",
+   :default "",
+   :label "打包资源",
+   :path ["project" "bundle_resources"]}
+  {:type :string,
+   :help
+   "不应包含在打包产物中的资源列表，即被排除。以逗号分隔",
+   :default "",
+   :label "打包排除资源",
+   :path ["project" "bundle_exclude_resources"]}
+  {:type :resource,
+   :filter "collection",
+   :help
+   "?应用启动时使用的集合文件，默认为 /logic/main.collection",
+   :default "/logic/main.collection",
+   :label "启动集合",
+   :path ["bootstrap" "main_collection"]}
+  {:type :resource,
+   :filter "render",
+   :help
+   "使用渲染文件定义渲染管线，默认为 /builtins/render/default.render",
+   :default "/builtins/render/default.render",
+   :label "渲染器",
+   :path ["bootstrap" "render"]}
+  {:type :resource,
+   :filter "lua",
+   :help ""
+   :default "",
+   :path ["bootstrap" "debug_init_script"]
+   :hidden? true}
+  {:type :string,
+   :help "将此项目作为库使用时需要包含的目录",
+   :default "",
+   :label "库目录",
+   :path ["library" "include_dirs"]}
+  {:type :boolean,
+   :help "所有脚本类型共享同一个 Lua 状态机",
+   :default false,
+   :label "共享状态",
+   :path ["script" "shared_state"]}
+  {:type :boolean,
+   :help "允许窗口最小化时保持引擎运行，仅限桌面平台",
+   :default false,
+   :label "后台运行",
+   :path ["engine" "run_while_iconified"]}
+  {:type :integer,
+   :help "允许部分组件使用固定帧率，0 表示禁用此功能，单位：赫兹",
+   :default 60,
+   :label "固定帧率",
+   :path ["engine" "fixed_update_frequency"]}
+  {:type :number,
+   :help "若单帧时间过长，将被限制为此最大值，单位：秒",
+   :default 0.033333,
+   :label "单帧最大时间",
+   :path ["engine" "max_time_step"]}
+  {:type :integer,
+   :help
+   "?应用程序窗口宽度，默认为 960 像素",
+   :default 960,
+   :label "宽度",
+   :path ["display" "width"]}
+  {:type :integer,
+   :help
+   "应用程序窗口高度，默认为 640  像素",
+   :default 640,
+   :label "高度",
+   :path ["display" "height"]}
+  {:type :boolean,
+   :help "?在可用时启用高 DPI 后缓冲区",
+   :default false,
+   :label "高 DPI",
+   :path ["display" "high_dpi"]}
+  {:type :integer,
+   :help
+   "?超采样抗锯齿 SSAA 的采样数设置，默认为 0 ，表示关闭该功能",
+   :default 0,
+   :path ["display" "samples"]}
+  {:type :boolean,
+   :help
+   "以全屏模式启动应用程序",
+   :default false,
+   :label "全屏",
+   :path ["display" "fullscreen"]}
+  {:type :resource,
+   :filter "display_profiles",
+   :help
+   "此应用所使用的显示配置文件",
+   :default "/builtins/render/default.display_profiles",
+   :label "显示配置",
+   :path ["display" "display_profiles"]}
+  {:type :boolean,
+   :help "?动态屏幕方向支持",
+   :default false,
+   :label "动态方向",
+   :path ["display" "dynamic_orientation"]}
+  {:type :integer,
+   :help "?游戏主循环每秒更新次数。设为 0 表示可变帧率，设为 30 则限制更新频率",
+   :default 0,
+   :label "刷新率",
+   :path ["display" "update_frequency"]}
+  {:type :integer,
+   :help "?垂直同步间隔时间。设为 0 表示禁用此功能",
+   :default 1,
+   :label "同步间隔",
+   :path ["display" "swap_interval"]}
+  {:type :boolean,
+   :help "垂直同步，依赖硬件垂直同步进行帧计时。具体实现可能因显卡驱动和平台差异而被覆盖。如需模拟已弃用的 'variable_dt' 行为，请取消勾选此设置并将帧上限设为 0 ",
+   :default true,
+   :label "垂直同步",
+   :path ["display" "vsync"]}
+  {:type :boolean
+   :default false
+   :deprecated true
+   :severity-override :fatal
+   :severity-default :warning
+   :help "?此设置已弃用。勾选后，将禁用垂直同步并将帧数上限设为 0 ，以实现等效的运行效果"
+   :path ["display" "variable_dt"]}
+  {:type :boolean,
+   :help "在启动时将 GPU 信息输出到控制台",
+   :default false,
+   :label "显示硬件信息",
+   :path ["display" "display_device_info"]}
+  {:type :boolean,
+   :help "运行时生成字体",
+   :label "运行时生成"
+   :default false,
+   :path ["font" "runtime_generation"]}
+  {:type :number,
+   :help "渲染清除色 - 红色通道",
+   :label "清除色红"
+   :default 0,
+   :minimum 0.0,
+   :maximum 1.0,
+   :path ["render" "clear_color_red"]}
+  {:type :number,
+   :help "渲染清除色 - 绿色通道",
+   :label "清除色绿"
+   :default 0,
+   :minimum 0.0,
+   :maximum 1.0,
+   :path ["render" "clear_color_green"]}
+  {:type :number,
+   :help "渲染清除色 - 蓝色通道",
+   :label "清除色蓝"
+   :default 0,
+   :minimum 0.0,
+   :maximum 1.0,
+   :path ["render" "clear_color_blue"]}
+  {:type :number,
+   :help "渲染清除色 - 透明通道",
+   :label "清除色透明"
+   :default 1.0,
+   :minimum 0.0,
+   :maximum 1.0,
+   :path ["render" "clear_color_alpha"]}
+  {:type :integer,
+   :help "默认最多 128 个碰撞物体",
+   :default 128,
+   :label "最大碰撞对象数",
+   :path ["physics" "max_collision_object_count"]}
+  {:type :string,
+   :help "?使用何种物理系统：2D（默认）或3D",
+   :default "2D",
+   :label "类型",
+   :path ["physics" "type"]
+   :options [["2D" "2D"] ["3D" "3D"]]}
+  {:type :boolean,
+   :help "物理引擎是否采用固定时间步长，详见 engine.fixed_update_frequency",
+   :default false,
+   :label "使用固定时间步长",
+   :path ["physics" "use_fixed_timestep"]}
+  {:type :boolean,
+   :help
+   "?可视化物理数据用于调试",
+   :default false,
+   :label "调试",
+   :path ["physics" "debug"]}
+  {:type :number,
+   :help
+   "?可视化物理数据的透明度，范围 0 至 1，默认为 0.9",
+   :default 0.9,
+   :label "调试透明度",
+   :path ["physics" "debug_alpha"]}
+  {:type :number,
+   :help
+   "物理调试基准图元的绘制尺寸，默认为 30 单位",
+   :default 30.0,
+   :label "调试尺寸",
+   :path ["physics" "debug_scale"]}
+  {:type :integer,
+   :help
+   "最大并行物理世界数量，默认为 4 ，注意：该设置会显著增加内存占用",
+   :default 4,
+   :label "世界数量",
+   :path ["physics" "world_count"]}
+  {:type :number,
+   :help "?物理世界 X 轴方向的重力值，默认为 0",
+   :default 0.0,
+   :label "X 轴重力",
+   :path ["physics" "gravity_x"]}
+  {:type :number,
+   :help
+   "物理世界 Y 轴方向的重力值，默认为 -10，即自然重力值",
+   :default -10.0,
+   :label "Y 轴重力",
+   :path ["physics" "gravity_y"]}
+  {:type :number,
+   :help "?物理世界 Z 轴方向的重力值，默认为 0",
+   :default 0.0,
+   :label "Z 轴重力",
+   :path ["physics" "gravity_z"]}
+  {:type :number,
+   :help
+   "?物理世界相对于游戏世界的缩放比例，用于提升数值精度，取值范围 0.01~1 ，默认为 1",
+   :default 1.0,
+   :label "缩放",
+   :path ["physics" "scale"]}
+  {:type :boolean,
+   :help
+   "若启用，允许设置动态刚体的缩放、位置及旋转，默认值为 true",
+   :default true,
+   :label "允许动态变换",
+   :path ["physics" "allow_dynamic_transforms"]}
+  {:type :integer,
+   :help
+   "脚本可接收的碰撞事件数量上限，默认为 64",
+   :default 64,
+   :label "最大碰撞值",
+   :path ["physics" "max_collisions"]}
+  {:type :integer,
+   :help
+   "?脚本可接收的接触点数量上限，默认为 128，即碰撞发生时两个碰撞体之间的精确接触位置集合",
+   :default 128,
+   :label "最大触点值",
+   :path ["physics" "max_contacts"]}
+  {:type :number,
+   :help "冲量低于此阈值的接触点不会上报至脚本，默认值 0 表示禁用过滤",
+   :default 0.0,
+   :label "接触冲量阈值",  ; 原配置已存在标签
+   :path ["physics" "contact_impulse_limit"]}
+
+  {:type :integer,
+   :help "2D 物理系统每帧最大射线投射数量",
+   :default 64,
+   :label "2D 射线投射上限",  ; 原配置已存在标签
+   :path ["physics" "ray_cast_limit_2d"]}
+
+  {:type :integer,
+   :help "3D 物理系统单帧最大射线投射数量",
+   :default 128,
+   :label "3D 射线投射上限",  ; 原配置已存在标签
+   :path ["physics" "ray_cast_limit_3d"]}
+
+  {:type :integer,
+   :help "可检测的重叠触发器最大数量，默认为 16",
+   :default 16,
+   :label "触发器重叠容量上限", 
+   :path ["physics" "trigger_overlap_capacity"]}
+
+  {:type :number,
+   :help "导致弹性碰撞所需的最小速度阈值", 
+   :default 1.0,
+   :label "速度阈值", 
+   :path ["physics" "velocity_threshold"]}
+ 
+  {:type :integer,
+   :help "使用固定时间步长时模拟的最大步数（仅限 3D）", 
+   :default 2,
+   :label "最大固定时间步", 
+   :path ["physics" "max_fixed_timesteps"]}
+  
+  {:type :string,
+   :help "纹理缩小过滤的默认过滤方式，默认为线性过滤",
+   :default "linear",
+   :label "纹理缩小过滤方式", 
+   :path ["graphics" "default_texture_min_filter"]
+   :options [["linear" "linear"]
+             ["nearest" "nearest"]
+             ["nearest_mipmap_nearest" "nearest mipmap nearest"]
+             ["nearest_mipmap_linear" "nearest mipmap linear"]
+             ["linear_mipmap_nearest" "linear mipmap nearest"]
+             ["linear_mipmap_linear" "linear mipmap linear"]]}
+  
+  {:type :string,
+   :help "纹理放大过滤的默认过滤方式，线性（默认）或邻近",
+   :default "linear",
+   :label "纹理放大过滤方式", 
+   :path ["graphics" "default_texture_mag_filter"]
+   :options [["linear" "linear"] ["nearest" "nearest"]]}
+  
+  {:type :integer,
+   :help "每帧最大绘制调用次数",
+   :default 1024,
+   :label "最大绘制调用数", 
+   :path ["graphics" "max_draw_calls"]}
+  
+  {:type :integer,
+   :help "每帧可显示的最大字符数（文本）",
+   :default 8192,
+   :label "最大字符数", 
+   :path ["graphics" "max_characters"]}
+  
+  {:type :integer,
+   :help "每帧可显示的最大文本批次数量",
+   :default 128,
+   :label "最大字体批次", 
+   :path ["graphics" "max_font_batches"]}
+  
+  {:type :integer,
+   :help "调试顶点的最大数量（用于物理形状渲染等），默认为 10000",
+   :default 10000,
+   :label "最大调试顶点数", 
+   :path ["graphics" "max_debug_vertices"]}
+  
+  {:type :resource,
+   :filter "texture_profiles",
+   :preserve-extension true,
+   :help "指定资源路径使用的纹理配置文件（格式、Mipmap和最大纹理尺寸）",
+   :default "/builtins/graphics/default.texture_profiles",
+   :label "纹理配置文件", 
+   :path ["graphics" "texture_profiles"]}
+  
+  {:type :boolean,
+   :help "在每次图形调用后验证返回值",
+   :default true,
+   :label "验证图形调用", 
+   :path ["graphics" "verify_graphics_calls"]}
+  
+  {:type :string,
+   :help "OpenGL 上下文版本提示。若指定版本，将作为最低要求版本（不适用于 OpenGL ES），默认为 OpenGL 3.3",
+   :default "33",
+   :path ["graphics" "opengl_version_hint"]
+   :options [["33" "OpenGL 3.3"]
+             ["40" "OpenGL 4.0"]
+             ["41" "OpenGL 4.1"]
+             ["42" "OpenGL 4.2"]
+             ["43" "OpenGL 4.3"]
+             ["44" "OpenGL 4.4"]
+             ["45" "OpenGL 4.5"]
+             ["46" "OpenGL 4.6"]
+             ["0" "当前最高版本"]]} 
+  
+  {:type :boolean,
+   :help "创建上下文时设置 'core' OpenGL 配置提示。核心配置移除了OpenGL中所有过时功能（如即时渲染模式），不适用于OpenGL ES",
+   :default true,
+   :label "OpenGL核心配置提示", 
+   :path ["graphics" "opengl_core_profile_hint"]}
+  
+  {:type :boolean,
+   :help "此设置已弃用。编译并输出SPIR-V着色器以供Metal或Vulkan使用",
+   :default false,
+   :deprecated true,
+   :label "输出SPIR-V", 
+   :path ["shader" "output_spirv"]}
+  {:type :boolean
+   :help "不为运行 OpenGLES 2.0 / WebGL 1.0 的设备编译着色器"
+   :default false
+   :label "排除 GLES 2.0"
+   :path ["shader" "exclude_gles_sm100"]}
+  {:type :number,
+   :help "键盘按键持续按住后、开始重复触发前的等待时间（秒）",
+   :default 0.5,
+   :label "按键重复延迟", 
+   :path ["input" "repeat_delay"]}
+  
+  
+   {:type :number,
+   :help "键盘按键持续按住后，每次重复触发之间的等待时间（秒）",
+   :default 0.2,
+   :label "按键重复间隔",
+   :path ["input" "repeat_interval"]}
+  
+  {:type :resource,
+   :filter "gamepads",
+   :help "游戏手柄配置文件引用（将手柄信号映射到操作系统），默认为 /builtins/input/default.gamepads",
+   :default "/builtins/input/default.gamepads",
+   :label "手柄配置文件", 
+   :path ["input" "gamepads"]}
+  
+  {:type :resource,
+   :filter "input_binding",
+   :help "输入配置文件引用（将硬件输入映射到操作指令），默认为 /input/game.input_binding",
+   :default "/input/game.input_binding",
+   :label "输入绑定配置", 
+   :path ["input" "game_binding"]}
+  
+  {:type :boolean,
+   :help "是否启用加速度计事件接收",
+   :default true,
+   :label "启用加速度计", 
+   :path ["input" "use_accelerometer"]}
+  
+  {:type :boolean,
+   :help "使用HTTP缓存加速网络资源加载",
+   :default false,
+   :label "HTTP缓存", 
+   :path ["resource" "http_cache"]}
+  
+  {:type :string,
+   :help "game.project文件位置（URI格式）",
+   :default "",
+   :label "项目文件URI", 
+   :path ["resource" "uri"]}
+  
+  {:type :integer,
+   :help "可同时加载的最大资源数量，默认为1024",
+   :default 1024,
+   :label "最大资源加载数", 
+   :path ["resource" "max_resources"]}
+  
+  {:type :number,
+   :help "HTTP超时时长（秒），0表示禁用超时",
+   :default 0.0,
+   :label "HTTP超时", 
+   :path ["network" "http_timeout"]}
+  
+  {:type :resource,
+   :filter "pem",
+   :default "",
+   :help "SSL证书PEM文件引用",
+   :preserve-extension true,
+   :label "SSL证书文件", 
+   :path ["network" "ssl_certificates"]}
+  
+  {:type :integer,
+   :default 4,
+   :help "HTTP服务的工作线程数量",
+   :label "HTTP工作线程数", 
+   :path ["network" "http_thread_count"]}
+  
+  {:type :boolean,
+   :default true,
+   :help "是否持久化下载数据以加速后续检索",
+   :label "HTTP缓存持久化", 
+   :path ["network" "http_cache_enabled"]}
+  
+  {:type :integer,
+   :help "每个集合的最大实例数量，默认为1024",
+   :default 1024,
+   :minimum 1,
+   :maximum 32765,
+   :label "最大实例数", 
+   :path ["collection" "max_instances"]}
+  
+  {:type :integer,
+   :help "输入栈中游戏对象的最大数量，默认为16",
+   :default 16,
+   :label "输入栈容量", 
+   :path ["collection" "max_input_stack_entries"]}
+  
+  {:type :number,
+   :help "全局音量增益值，默认为1.0",
+   :default 1.0,
+   :label "全局音量增益", 
+   :path ["sound" "gain"]}
+  
+  {:type :boolean,
+   :help "启用时使用线性增益（0.5表示半音量），禁用时使用指数曲线，默认为启用",
+   :default true,
+   :label "线性音量增益", 
+   :path ["sound" "use_linear_gain"]}
+  
+  {:type :integer,
+   :help "最大音效资源数量，默认为128",
+   :default 128,
+   :label "最大音效数", 
+   :path ["sound" "max_sound_data"]}
+  
+  {:type :integer,
+   :help "最大并发音效缓冲区数量，默认为32",
+   :default 32,
+   :label "音效缓冲区上限", 
+   :path ["sound" "max_sound_buffers"]}
+  
+  {:type :integer,
+   :help "最大并发播放音源数，默认为16",
+   :default 16,
+   :label "并发音源上限", 
+   :path ["sound" "max_sound_sources"]}
+  
+  {:type :integer,
+   :help "最大并发音效实例数（声道），默认为256",
+   :default 256,
+   :label "最大音效实例", 
+   :path ["sound" "max_sound_instances"]}
+  
+  {:type :integer,
+   :help "单个集合中音效组件的最大数量，默认为32",
+   :default 32,
+   :label "集合音效组件上限", 
+   :path ["sound" "max_component_count"]}
+  
+   {:type :integer,
+   :help "每次音频更新使用的采样帧数（0表示自动配置：48kHz设备用1024，44.1kHz设备用768）",
+   :default 0,
+   :label "采样帧数", 
+   :path ["sound" "sample_frame_count"]}
+  
+  {:type :boolean,
+   :help "启用声音处理线程",
+   :default true,
+   :label "声音多线程", 
+   :path ["sound" "use_thread"]}
+  
+  {:type :boolean,
+   :help "启用声音流式加载",
+   :default false,
+   :label "声音流式加载", 
+   :path ["sound" "stream_enabled"]}
+  
+  {:type :integer,
+   :help "从声音文件加载的每个数据块大小（字节），默认为16384",
+   :default 16384,
+   :label "流数据块大小", 
+   :path ["sound" "stream_chunk_size"]}
+  
+  {:type :integer,
+   :help "每个声音文件初始预加载数据块大小（字节），默认为16384",
+   :default 16384,
+   :label "流预加载大小", 
+   :path ["sound" "stream_preload_size"]}
+  
+  {:type :integer,
+   :help "声音流缓存总容量（字节），默认为 2MB",
+   :default 2097152,
+   :label "流缓存容量", 
+   :path ["sound" "stream_cache_size"]}
+  
+  {:type :integer,
+   :help "最大精灵数量，默认为128",
+   :default 128,
+   :label "最大精灵数", 
+   :path ["sprite" "max_count"]}
+  
+  {:type :boolean,
+   :help "允许精灵显示亚像素级位置（非像素对齐）",
+   :default true,
+   :label "亚像素渲染", 
+   :path ["sprite" "subpixels"]}
+  
+  {:type :integer,
+   :help "最大模型数量，默认为128",
+   :default 128,
+   :label "最大模型数", 
+   :path ["model" "max_count"]}
+  
+  {:type :boolean,
+   :help "将超过65536顶点的网格分割为新网格（默认禁用）",
+   :default false,
+   :label "网格自动分割", 
+   :path ["model" "split_meshes"]}
+  
+  {:type :integer,
+   :help "骨骼矩阵纹理最大宽度（默认1024），实际使用尺寸按动画需求计算并向上取整至最近PO2值",
+   :default 1024,
+   :label "骨骼纹理宽度", 
+   :path ["model" "max_bone_matrix_texture_width"]}
+  
+  {:type :integer,
+   :help "骨骼矩阵纹理最大高度（默认1024），实际使用尺寸按动画需求计算并向上取整至最近PO2值",
+   :default 1024,
+   :label "骨骼纹理高度", 
+   :path ["model" "max_bone_matrix_texture_height"]}
+  
+  {:type :integer,
+   :help "最大网格组件数量，默认为128",
+   :default 128,
+   :label "最大网格组件", 
+   :path ["mesh" "max_count"]}
+  
+  {:type :integer,
+   :help "每个集合的最大GUI组件数量，默认为64",
+   :default 64,
+   :label "GUI组件上限", 
+   :path ["gui" "max_count"]}
+  
+  {:type :integer,
+   :help "存活粒子总数上限（决定GPU顶点缓冲区大小），默认为1024",
+   :default 1024,
+   :label "最大粒子总数", 
+   :path ["particle_fx" "max_particle_count"]}
+  
+  {:type :integer,
+   :help "每次上传GPU的粒子数量上限（限制CPU内存占用），默认为1024",
+   :default 1024,
+   :label "粒子缓冲区上限", 
+   :path ["particle_fx" "max_particle_buffer_count"]}
+  
+  {:type :integer,
+   :help "GUI中最大活动动画总数，默认为1024",
+   :default 1024,
+   :label "GUI动画上限", 
+   :path ["gui" "max_animation_count"]}
+  
+  {:type :integer,
+   :help "每个集合GUI粒子最大存活数量，默认为1024",
+   :default 1024,
+   :label "GUI粒子上限", 
+   :path ["gui" "max_particle_count"]}
+  
+  {:type :integer,
+   :help "最大文本标签数量，默认为64",
+   :default 64,
+   :label "最大标签数", 
+   :path ["label" "max_count"]}
+  
+  {:type :boolean,
+   :help "允许文本标签显示亚像素级位置（此效果同时受相机位置对齐影响）",
+   :default true,
+   :label "标签亚像素渲染", 
+   :path ["label" "subpixels"]}
+  
+  {:type :integer,
+   :help "最大粒子特效组件数量，默认为64",
+   :default 64,
+   :label "粒子组件上限", 
+   :path ["particle_fx" "max_count"]}
+  
+  {:type :integer,
+   :help "最大粒子发射器数量，默认为64",
+   :default 64,
+   :label "粒子发射器上限", 
+   :path ["particle_fx" "max_emitter_count"]}
+  
+  {:type :integer,
+   :help "最大集合代理数量，默认为8",
+   :default 8,
+   :label "集合代理上限", 
+   :path ["collection_proxy" "max_count"]}
+   {:type :integer,
+   :help "最大集合工厂数量，默认为128",
+   :default 128,
+   :label "集合工厂上限", 
+   :path ["collectionfactory" "max_count"]}
+  
+  {:type :integer,
+   :help "最大工厂数量，默认为128",
+   :default 128,
+   :label "工厂上限", 
+   :path ["factory" "max_count"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "iPad主屏幕图标（.png格式）",
+   :label "iPad图标76x76", 
+   :path ["ios" "app_icon_76x76"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "iPad Retina显示屏主屏幕图标（.png格式）",
+   :label "iPad Retina图标152x152", 
+   :path ["ios" "app_icon_152x152"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "iPad Pro主屏幕图标（.png格式）",
+   :label "iPad Pro图标167x167", 
+   :path ["ios" "app_icon_167x167"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "iPhone/iPod Touch Retina显示屏主屏幕图标（.png格式）",
+   :label "iPhone图标120x120", 
+   :path ["ios" "app_icon_120x120"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "iPhone Retina HD显示屏主屏幕图标（.png格式）",
+   :label "iPhone HD图标180x180", 
+   :path ["ios" "app_icon_180x180"]}
+  
+  {:type :resource,
+   :filter "car",
+   :preserve-extension true,
+   :help "图标资源文件（.car格式）",
+   :label "图标资源包", 
+   :path ["ios" "icons_asset"]}
+  
+  {:type :string,
+   :default "/builtins/manifests/ios/LaunchScreen.storyboardc",
+   :preserve-extension true,
+   :help "启动屏幕故事板文件",
+   :label "启动故事板", 
+   :path ["ios" "launch_screen"]}
+  
+  {:type :boolean,
+   :help "设为true表示图标已预渲染（无光效叠加）",
+   :default false,
+   :label "图标预渲染", 
+   :path ["ios" "pre_renderered_icons"]}
+  
+  {:type :string,
+   :help "应用包标识符（CFBundleIdentifier）",
+   :default "example.unnamed",
+   :label "包标识符", 
+   :path ["ios" "bundle_identifier"]}
+  
+  {:type :string,
+   :help "应用包简称（CFBundleName），最多15字符",
+   :label "应用简称", 
+   :path ["ios" "bundle_name"]}
+  
+  {:type :string,
+   :help "构建版本号（CFBundleVersion），格式为数字或x.y.z",
+   :label "构建版本", 
+   :path ["ios" "bundle_version"]}
+  
+  {:type :resource,
+   :filter "plist",
+   :preserve-extension true,
+   :help "自定义Info.plist模板文件",
+   :label "Info.plist", 
+   :default "/builtins/manifests/ios/Info.plist",
+   :path ["ios" "infoplist"]}
+  
+  {:type :resource,
+   :filter "xcprivacy",
+   :preserve-extension true,
+   :help "隐私清单文件",
+   :label "PrivacyInfo.xcprivacy", 
+   :default "/builtins/manifests/ios/PrivacyInfo.xcprivacy",
+   :path ["ios" "privacymanifest"]}
+  
+  {:type :resource,
+   :filter ["entitlements", "xcent", "plist"],
+   :preserve-extension true,
+   :help "iOS签名使用的自定义授权文件（可替换预置描述文件中的通配授权）",
+   :label "自定义授权文件", 
+   :default "",
+   :path ["ios" "entitlements"]}
+  
+  {:type :string,
+   :help "应用手动处理的本地化语言列表（CFBundleLocalizations），逗号分隔",
+   :default "en",
+   :label "默认语言", 
+   :path ["ios" "default_language"]}
+  
+  {:type :string,
+   :help "应用手动处理的本地化语言（CFBundleLocalizations）",
+   :default "en",
+   :label "本地化支持", 
+   :path ["ios" "localizations"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android ldpi分辨率应用图标（.png格式）",
+   :label "ldpi图标36x36", 
+   :path ["android" "app_icon_36x36"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android mdpi分辨率应用图标（.png格式）",
+   :label "mdpi图标48x48", 
+   :path ["android" "app_icon_48x48"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android hdpi分辨率应用图标（.png格式）",
+   :label "hdpi图标72x72", 
+   :path ["android" "app_icon_72x72"]}
+
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android xhdpi分辨率应用图标（.png格式）",
+   :label "xhdpi图标96x96", 
+   :path ["android" "app_icon_96x96"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android xxhdpi分辨率应用图标（.png格式）",
+   :label "xxhdpi图标144x144", 
+   :path ["android" "app_icon_144x144"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "Android xxxhdpi分辨率应用图标（.png格式）",
+   :label "xxxhdpi图标192x192", 
+   :path ["android" "app_icon_192x192"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "小型推送通知图标（.png格式）",
+   :label "推送小图标", 
+   :path ["android" "push_icon_small"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "大型推送通知图标（.png格式）",
+   :label "推送大图标", 
+   :path ["android" "push_icon_large"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "ldpi分辨率小型推送通知图标（.png格式）",
+   :label "ldpi推送小图标", 
+   :path ["android" "push_icon_small_ldpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "mdpi分辨率小型推送通知图标（.png格式）",
+   :label "mdpi推送小图标", 
+   :path ["android" "push_icon_small_mdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "hdpi分辨率小型推送通知图标（.png格式）",
+   :label "hdpi推送小图标", 
+   :path ["android" "push_icon_small_hdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xhdpi推送小图标", 
+   :path ["android" "push_icon_small_xhdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xxhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xxhdpi推送小图标", 
+   :path ["android" "push_icon_small_xxhdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xxxhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xxxhdpi推送小图标", 
+   :path ["android" "push_icon_small_xxxhdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "ldpi分辨率大型推送通知图标（.png格式）",
+   :label "ldpi推送大图标", 
+   :path ["android" "push_icon_large_ldpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "mdpi分辨率大型推送通知图标（.png格式）",
+   :label "mdpi推送大图标", 
+   :path ["android" "push_icon_large_mdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "hdpi分辨率大型推送通知图标（.png格式）",
+   :label "hdpi推送大图标", 
+   :path ["android" "push_icon_large_hdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xhdpi推送大图标", 
+   :path ["android" "push_icon_large_xhdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xxhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xxhdpi推送大图标", 
+   :path ["android" "push_icon_large_xxhdpi"]}
+  
+  {:type :resource,
+   :filter "png",
+   :preserve-extension true,
+   :help "xxxhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xxxhdpi推送大图标", 
+   :path ["android" "push_icon_large_xxxhdpi"]}
+  
+  ;; 推送和系统配置
+  {:type :string,
+   :help "推送消息中用作通知标题的JSON字段名",
+   :default "",
+   :label "推送标题字段", 
+   :path ["android" "push_field_title"]}
+  
+  {:type :string,
+   :help "推送消息中用作通知正文的JSON字段名",
+   :default "",
+   :label "推送正文字段", 
+   :path ["android" "push_field_text"]}
+  
+  {:type :integer,
+   :help "Android版本号（android:versionCode）",
+   :default 1,
+   :label "版本代码", 
+   :path ["android" "version_code"]}
+  
+  {:type :integer,
+   :help "应用运行所需的最低API级别（android:minSdkVersion）",
+   :default 19,
+   :minimum 19,
+   :label "最低SDK版本", 
+   :path ["android" "minimum_sdk_version"]}
+
+  {:type :integer,
+   :help "应用目标API级别（android:targetSdkVersion）",
+   :default 35,
+   :minimum 19,
+   :label "目标SDK版本", 
+   :path ["android" "target_sdk_version"]}
+  
+  {:type :string,
+   :help "应用包名",
+   :default "com.example.todo",
+   :label "应用包名", 
+   :path ["android" "package"]}
+  
+  {:type :string,
+   :help "Firebase云消息发送者ID（FCM Sender ID）",
+   :default "",
+   :label "FCM发送者ID", 
+   :path ["android" "gcm_sender_id"]}
+  
+  {:type :string,
+   :help "Firebase云消息应用ID（FCM Application ID）",
+   :default "",
+   :label "FCM应用ID", 
+   :path ["android" "fcm_application_id"]}
+  
+  {:type :resource,
+   :filter "xml",
+   :preserve-extension true,
+   :help "自定义AndroidManifest.xml模板文件",
+   :default "/builtins/manifests/android/AndroidManifest.xml",
+   :label "清单文件模板", 
+   :path ["android" "manifest"]}
+  
+  {:type :string,
+   :help "应用内购服务提供商，支持'GooglePlay'和'Amazon'",
+   :default "GooglePlay",
+   :label "应用内购提供商", 
+   :path ["android" "iap_provider"]
+   :options [["GooglePlay" "GooglePlay"] ["Amazon" "Amazon"]]}
+  
+  {:type :string,
+   :help "输入法实现方式，支持'KeyEvent'(按键事件)和'HiddenInputField'(隐藏输入框)",
+   :default "KeyEvent",
+   :label "输入法实现", 
+   :path ["android" "input_method"]
+   :options [["KeyEvent" "KeyEvent"] ["HiddenInputField" "HiddenInputField"]]} 
+  
+  {:type :boolean,
+   :help "启用沉浸式模式（隐藏导航栏和状态栏，应用捕获所有触摸事件）",
+   :default false,
+   :label "沉浸式模式", 
+   :path ["android" "immersive_mode"]}
+  
+  {:type :boolean,
+   :help "将显示区域延伸至刘海屏区域",
+   :default true,
+   :label "刘海屏适配", 
+   :path ["android" "display_cutout"]}
+  
+  {:type :boolean,
+   :help "启用应用调试（支持调试和文件访问）",
+   :default false,
+   :label "可调试模式", 
+   :path ["android" "debuggable"]}
+  
+  {:type :resource,
+   :filter "pro",
+   :preserve-extension true,
+   :help "自定义ProGuard配置文件（用于精简APK中的冗余Java类）",
+   :label "ProGuard配置",
+   :default "",
+   :path ["android" "proguard"]}
+  
+  {:type :boolean,
+   :help "指示安装程序是否从APK中提取原生库到文件系统",
+   :default false,
+   :label "提取原生库", 
+   :path ["android" "extract_native_libs"]}
+  
+  {:type :resource,
+   :filter "icns",
+   :preserve-extension true,
+   :help "应用图标文件（.icns格式）",
+   :label "应用图标", 
+   :path ["osx" "app_icon"]}
+  
+  {:type :string,
+   :help "应用包标识符（CFBundleIdentifier）",
+   :default "example.unnamed",
+   :label "包标识符", 
+   :path ["osx" "bundle_identifier"]}
+  
+  {:type :string,
+   :help "应用包简称（CFBundleName），最多15字符",
+   :label "应用简称", 
+   :path ["osx" "bundle_name"]}
+  
+  {:type :string,
+   :help "构建版本号（CFBundleVersion），格式为数字或x.y.z",
+   :default "1",
+   :label "构建版本", 
+   :path ["osx" "bundle_version"]}
+  
+  {:type :resource,
+   :filter "plist",
+   :preserve-extension true,
+   :help "自定义Info.plist模板文件",
+   :label "Info.plist", 
+   :default "/builtins/manifests/osx/Info.plist",
+   :path ["osx" "infoplist"]}
+  
+  {:type :resource,
+   :filter "xcprivacy",
+   :preserve-extension true,
+   :help "隐私清单文件",
+   :label "PrivacyInfo.xcprivacy", 
+   :default "/builtins/manifests/osx/PrivacyInfo.xcprivacy",
+   :path ["osx" "privacymanifest"]}
+  
+  {:type :string,
+   :help "默认语言和地区（CFBundleDevelopmentRegion）",
+   :default "en",
+   :label "默认语言区域", 
+   :path ["osx" "default_language"]}
+  
+  {:type :string,
+   :help "应用手动处理的本地化语言列表（CFBundleLocalizations），逗号分隔",
+   :default "en",
+   :label "本地化支持", 
+   :path ["osx" "localizations"]}
+  
+
+  {:type :resource,
+   :filter "ico",
+   :preserve-extension true,
+   :help "可执行文件图标（.ico格式）",
+   :label "应用图标", 
+   :path ["windows" "app_icon"]}
+
+  {:type :boolean,
+   :help "此设置已弃用。设为true可调整应用堆内存大小",
+   :default false,
+   :deprecated true,
+   :severity-override :fatal,
+   :severity-default :warning,
+   :label "自定义堆内存(弃用)",  
+   :path ["html5" "set_custom_heap_size"]}
+  
+  {:type :integer,
+   :help "此设置已弃用。应用堆内存大小（字节）",
+   :default 0,
+   :deprecated true,
+   :severity-override :fatal,
+   :severity-default :warning,
+   :label "堆内存大小(弃用)",  
+   :path ["html5" "custom_heap_size"]}
+  
+  {:type :integer,
+   :help "应用堆内存大小（MB），范围32-4096",
+   :default 256,
+   :minimum 32,
+   :maximum 4096,
+   :label "堆内存大小", 
+   :path ["html5" "heap_size"]}
+  
+  {:type :resource,
+   :filter "html",
+   :preserve-extension true,
+   :help "Canvas的HTML外壳模板",
+   :default "/builtins/manifests/web/engine_template.html",
+   :label ".html外壳模板", 
+   :path ["html5" "htmlfile"]}
+  
+  {:type :resource,
+   :filter "css",
+   :preserve-extension true,
+   :help "将内联到index.html模板的CSS样式",
+   :default "/builtins/manifests/web/light_theme.css",
+   :label "自定义CSS", 
+   :path ["html5" "cssfile"]}
+  
+  {:type :resource,
+   :filter ["gif", "jpg", "png", "svg"],
+   :preserve-extension true,
+   :help "自定义HTML启动画面图片",
+   :label "启动画面图片", 
+   :path ["html5" "splash_image"]}
+  
+  {:type :string,
+   :help "资源包路径前缀（可为完整URL）",
+   :default "archive",
+   :label "资源包前缀",
+   :path ["html5" "archive_location_prefix"]}
+  
+  {:type :string,
+   :help "资源包路径后缀",
+   :default "",
+   :label "资源包后缀", 
+   :path ["html5" "archive_location_suffix"]}
+  
+  {:type :string,
+   :help "引擎启动参数（逗号分隔）",
+   :default "--verify-graphics-calls=false",
+   :label "引擎参数", 
+   :path ["html5" "engine_arguments"]}
+  
+  {:type :boolean,
+   :help "启用WASM流式加载（更快且内存占用更低，但需MIME类型'application/wasm'）",
+   :default false,
+   :label "WASM流式加载",
+   :path ["html5" "wasm_streaming"]}
+  
+  {:type :boolean,
+   :help "是否显示全屏按钮",
+   :default true,
+   :label "全屏按钮",
+   :path ["html5" "show_fullscreen_button"]}
+  
+  {:type :boolean,
+   :help "是否显示'Made with Defold'链接",
+   :default true,
+   :label "显示制作信息", 
+   :path ["html5" "show_made_with_defold"]}
+  
+  {:type :boolean,
+   :help "是否在浏览器控制台显示'Made with Defold'横幅",
+   :default true,
+   :label "控制台横幅",
+   :path ["html5" "show_console_banner"]}
+  
+  {:type :string,
+   :help "Canvas缩放模式，默认为'Downscale Fit'",
+   :default "downscale_fit",
+   :label "缩放模式",
+   :path ["html5" "scale_mode"]
+   :options [["downscale_fit" "等比缩小适配"]
+             ["fit" "等比适配"]
+             ["stretch" "拉伸"]
+             ["no_scale" "无缩放"]]} 
+  
+  {:type :integer,
+   :help "文件下载失败时的重试次数",
+   :default 10,
+   :label "下载重试次数",
+   :path ["html5" "retry_count"]}
+  
+  {:type :number,
+   :help "文件加载失败后的重试间隔（秒）",
+   :default 1.0,
+   :label "重试间隔",
+   :path ["html5" "retry_time"]}
+  
+  {:type :boolean,
+   :help "设置图形上下文背景透明",
+   :default false,
+   :label "透明背景",
+   :path ["html5" "transparent_graphics_context"]}
+  
+  {:type :resource,
+   :filter "appmanifest",
+   :preserve-extension true,
+   :help "原生扩展配置文件（提供详细的构建设置控制）",
+   :label "原生扩展清单", 
+   :path ["native_extension" "app_manifest"]}
+  
+  {:type :boolean,
+   :help "在发布版本中启用CPU使用率采样",
+   :default false,
+   :label "CPU采样",
+   :path ["profiler" "track_cpu"]}
+  
+  {:type :boolean,
+   :help "启用游戏内性能分析器",
+   :default true,
+   :label "性能分析器", 
+   :path ["profiler" "enabled"]}
+  
+  {:type :integer,
+   :help "服务器更新间隔（毫秒）",
+   :default 0,
+   :label "分析器更新间隔", 
+   :path ["profiler" "sleep_between_server_updates"]}
+  {:type :boolean
+   :help "启用浏览器性能时间线"
+   :default false
+   :path ["profiler" "performance_timeline_enabled"]}
+  {:type :resource
+   :filter "settings"
+   :default "/liveupdate.settings"
+   :help "热更新配置文件"
+   :preserve-extension true,
+   :label "热更新配置",  
+   :path ["liveupdate" "settings"]}
+  {:type :boolean
+   :filter "settings"
+   :default true
+   :help "应用启动时自动挂载先前挂载的资源"
+   :label "启动自动挂载" , 
+   :path ["liveupdate" "mount_on_start"]}
+  
+  {:type :integer,
+   :help "单个集合中最大并发瓦片地图数量",
+   :default 16,
+   :label "瓦片地图上限", 
+   :path ["tilemap" "max_count"]}
+  
+  {:type :integer,
+   :help "单个集合中最大并发可见瓦片数量",
+   :default 2048,
+   :label "可见瓦片上限", 
+   :path ["tilemap" "max_tile_count"]}]
+
+ :group-order ["Main" "Platforms" "Components" "Runtime" "Distribution"]
+ :default-category "project"
+ :categories
+{"sound" {:help "音效相关设置"
+           :title "音效"
+           :group "Components"},
+ "html5" {:help "HTML5 平台相关设置"
+           :title "HTML5"
+           :group "Platforms"},
+ "resource" {:help "资源加载与管理相关设置"
+              :title "资源管理"
+              :group "Runtime"},
+ "factory" {:help "游戏对象工厂相关设置"
+            :title "对象工厂"
+            :group "Components"},
+ "graphics" {:help "图形渲染相关设置"
+              :title "图形渲染"
+              :group "Runtime"},
+ "engine" {:help "引擎核心运行时设置"
+            :title "引擎核心"
+            :group "Runtime"},
+ "bootstrap" {:help "引擎初始化设置"
+               :title "初始化配置"
+               :group "Main"},
+ "label" {:help "文本标签相关设置"
+           :title "文本标签"
+           :group "Components"},
+ "collection" {:help "集合组件相关设置"
+                :title "集合组件"
+                :group "Components"},
+ "project" {:help "项目通用设置"
+             :title "项目配置"
+             :group "Main"},
+ "collectionfactory" {:title "集合工厂"
+                       :group "Components"},
+ "collection_proxy" {:help "集合代理相关设置"
+                      :title "集合代理"
+                      :group "Components"},
+ "physics" {:help "物理系统设置"
+             :title "物理系统"
+             :group "Runtime"},
+ "osx" {:help "Mac OSX 平台相关设置"
+         :title "OSX"
+         :group "Platforms"},
+ "network" {:help "网络通信相关设置"
+             :title "网络通信"
+             :group "Runtime"},
+ "script" {:help "脚本系统设置"
+            :title "脚本系统"
+            :group "Components"},
+ "shader" {:help "着色器相关设置"
+            :title "着色器"
+            :group "Runtime"},
+ "gui" {:help "图形用户界面相关设置"
+         :title "图形界面"
+         :group "Components"},
+ "sprite" {:help "精灵图相关设置"
+            :title "精灵图"
+            :group "Components"},
+ "tilemap" {:help "瓦片地图相关设置"
+             :title "瓦片地图"
+             :group "Components"},
+ "windows" {:help "Windows 平台相关设置"
+             :title "Windows"
+             :group "Platforms"},
+ "input" {:help "输入控制系统设置"
+           :title "输入控制"
+           :group "Runtime"},
+ "library" {:help "本项目作为其他项目的依赖库时的设置"
+             :title "依赖库"
+             :group "Distribution"},
+  "display" {:help "分辨率及其他显示相关设置"
+             :title "显示设置"
+             :group "Runtime"},
+  "ios" {:help "iOS 平台相关设置"
+         :title "iOS"
+         :group "Platforms"},
+  "mesh" {:group "Components"}
+  "model" {:group "Components"}
+  "render" {:group "Runtime"}
+  "font" {:group "Runtime"}
+  "particle_fx" {:help "粒子特效相关设置"
+                 :title "粒子特效"
+                 :group "Components"},
+  "android" {:help "Android 平台相关设置"
+             :title "Android"
+             :group "Platforms"},
+  "liveupdate" {:help "热更新功能设置"
+                :title "热更新"
+                :group "Distribution"},
+  "native_extension" {:help "原生扩展功能设置"
+                      :title "原生扩展"
+                      :group "Distribution"},
+  "profiler" {:help "运行时性能分析器设置"
+              :title "性能分析器"
+              :group "Runtime"}}}

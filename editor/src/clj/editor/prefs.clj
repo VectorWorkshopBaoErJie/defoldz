@@ -86,28 +86,28 @@
    {:asset-browser {:type :object
                     :properties
                     {:track-active-tab {:type :boolean
-                                        :ui {:label "Track Active Tab in Asset Browser"}}}}
+                                        :ui {:label "在资源浏览器中跟踪活动标签页"}}}}
     :input {:type :object
             :properties
             {:keymap-path {:type :string
-                           :ui {:label "Path to Custom Keymap"}}}}
+                           :ui {:label "自定义快捷键映射路径"}}}}
     :code {:type :object
            :properties
-           {:custom-editor {:type :string}
-            :open-file {:type :string :default "{file}"}
+           {:custom-editor {:type :string :ui {:label "自定义编辑器"}}
+            :open-file {:type :string :default "{file}" :ui {:label "打开文件"}}
             :open-file-at-line {:type :string
-                                :default "{file}:{line}"
-                                :ui {:label "Open File at Line"}}
-            :zoom-on-scroll {:type :boolean :ui {:label "Zoom on Scroll"}}
+                                :default "{file}:{line}"                                
+                                :ui {:label "打开文件并跳转到指定行"}}
+            :zoom-on-scroll {:type :boolean :ui {:label "滚动缩放"}}
             :hover {:type :boolean
                     :default true
-                    :ui {:label "Hover popup"
-                         :description "Show code documentation popup on hover"}}
+                    :ui {:label "悬停提示"
+                         :description "悬停时显示代码文档提示框"}}
             :font {:type :object
                    :properties
                    {:name {:type :string
                            :default "Dejavu Sans Mono"
-                           :ui {:label "Code Editor Font (Requires Restart)"}}
+                           :ui {:label "代码编辑器字体 (需要重启)"}}
                     :size {:type :number :default 12.0}}}
             :find {:type :object
                    :scope :project
@@ -128,19 +128,19 @@
     :tools {:type :object
             :properties
             {:adb-path {:type :string
-                        :ui {:label "ADB path"
-                             :description "Path to ADB command that might be used to install and launch the Android app when it's bundled"}}
+                        :ui {:label "ADB 路径"
+                             :description "ADB 命令路径，用于打包后安装启动安卓应用"}}
              :ios-deploy-path {:type :string
-                               :ui {:label "ios-deploy path"
-                                    :description "Path to ios-deploy command that might be used to install and launch iOS app when it's bundled"}}}}
+                               :ui {:label "iOS部署工具路径"
+                                    :description "ios-deploy 命令路径，用于打包后安装启动 iOS 应用"}}}}
     :extensions {:type :object
                  :properties
                  {:build-server {:type :string
-                                 :ui {:prompt (connection-properties/defold-build-server-url)}}
-                  :build-server-username {:type :string}
-                  :build-server-password {:type :password}
+                                 :ui {:prompt connection-properties/defold-build-server-url :label "构建服务"}}
+                  :build-server-username {:type :string :ui {:label "构建服务用户名"}}
+                  :build-server-password {:type :password :ui {:label "构建服务密码"}}
                   :build-server-headers {:type :string
-                                         :ui {:multiline true}}}}
+                                         :ui {:multiline true :label "构建服务头部信息"}}}}
     :search-in-files {:type :object
                       :scope :project
                       :properties
@@ -156,12 +156,12 @@
             :properties
             {:lint-code {:type :boolean
                          :default true
-                         :ui {:label "Lint Code on Build"}}
+                         :ui {:label "构建时执行代码规范检查"}}
              :texture-compression {:type :boolean
-                                   :ui {:label "Enable Texture Compression"}}
+                                   :ui {:label "启用纹理压缩"}}
              :open-html5-build {:type :boolean
                                 :default true
-                                :ui {:label "Open Browser After `Build HTML5`"}}}}
+                                :ui {:label "构建HTML5后打开浏览器"}}}}
     :bundle {:type :object
              :scope :project
              :properties
@@ -169,7 +169,7 @@
               :output-directory {:type :string}
               :open-output-directory {:type :boolean
                                       :default true
-                                      :ui {:label "Open Bundle Target Folder"}}}}
+                                      :ui {:label "打开打包目标文件夹"}}}}
     :window {:type :object
              :properties
              {:dimensions {:type :any}
@@ -186,7 +186,7 @@
                :properties
                {:load-external-changes-on-app-focus {:type :boolean
                                                      :default true
-                                                     :ui {:label "Load External Changes on App Focus"}}
+                                                     :ui {:label "聚焦应用时加载外部更改"}}
                 :recent-files {:type :array
                                :item {:type :tuple :items [{:type :string} {:type :keyword}]}
                                :scope :project}
@@ -204,14 +204,15 @@
            :selected-target-id {:type :any}
            :manual-target-ip+port {:type :string}
            :quit-on-escape {:type :boolean
-                            :ui {:label "Escape Quits Game"}}
+                            :ui {:label "ESC 退出游戏"}}
            :simulate-rotated-device {:type :boolean :scope :project}
            :simulated-resolution {:type :any :scope :project}
            :engine-arguments {:type :string
                               :scope :project
                               :ui {:multiline true
-                                   :prompt "One argument per line"
-                                   :description "Arguments that will be passed to the dmengine executables when the editor builds and runs.\n Use one argument per line. For example:\n--config=bootstrap.main_collection=/my dir/1.collectionc\n--verbose\n--graphics-adapter=vulkan"}}}}
+                                   :label "引擎参数"
+                                   :prompt "每行一个参数"
+                                   :description "在编辑器构建并运行时，将传递给 dmengine 可执行文件的参数。\n每行输入一个参数。例如：\n--config=bootstrap.main_collection=/my dir/1.collectionc\n--verbose\n--graphics-adapter=vulkan"}}}}
     :scene {:type :object
             :properties
             {:move-whole-pixels {:type :boolean :default true}
@@ -231,7 +232,7 @@
     :dev {:type :object
           :properties
           {:custom-engine {:type :any
-                           :ui {:type :string}}}}
+                           :ui {:type :string :label "自定义引擎"}}}}
     :git {:type :object
           :properties
           {:credentials {:type :any :scope :project}}}

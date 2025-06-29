@@ -1203,9 +1203,9 @@
   (label [user-data]
     (if user-data
       (case (:camera-type user-data)
-        :orthographic "Orthographic Camera"
-        :perspective "Perspective Camera")
-      "Set Camera Type"))
+        :orthographic "正交摄像机"
+        :perspective "透视摄像机")
+      "设置摄像机类型"))
   (active? [app-view evaluation-context]
            (active-scene-view app-view evaluation-context))
   (run [app-view user-data]
@@ -1213,10 +1213,10 @@
          (set-camera-type! view (:camera-type user-data))))
   (options [user-data]
     (when-not user-data
-      [{:label "Orthographic"
+      [{:label "正交"
         :command :scene.set-camera-type
         :user-data {:camera-type :orthographic}}
-       {:label "Perspective"
+       {:label "透视"
         :command :scene.set-camera-type
         :user-data {:camera-type :perspective}}]))
   (state [app-view user-data]
@@ -1257,9 +1257,9 @@
   (label [user-data]
     (if user-data
       (case (:manip-space user-data)
-        :world "World Space"
-        :local "Local Space")
-      "Set Manipulator Space"))
+        :world "世界空间"
+        :local "局部空间")
+      "设置操纵器空间"))
   (active? [app-view evaluation-context]
            (active-scene-view app-view evaluation-context))
   (enabled? [app-view user-data evaluation-context]
@@ -1268,10 +1268,10 @@
                          (:manip-space user-data))))
   (options [user-data]
     (when-not user-data
-      [{:label "World"
+      [{:label "世界"
         :command :scene.set-manipulator-space
         :user-data {:manip-space :world}}
-       {:label "Local"
+       {:label "局部"
         :command :scene.set-manipulator-space
         :user-data {:manip-space :local}}]))
   (run [app-view user-data] (set-manip-space! app-view (:manip-space user-data)))
@@ -1291,30 +1291,30 @@
     :user-data {:manip-space :local}
     :check true}
    {:label :separator}
-   {:label "Move Whole Pixels"
+   {:label "整像素移动"
     :command :scene.toggle-move-whole-pixels
     :check true}])
 
 (handler/register-menu! ::menubar-view :editor.app-view/view-end
-  [{:label "Toggle Visibility Filters"
+ [{:label "切换可见性过滤器"
     :command :scene.visibility.toggle-filters}
-   {:label "Toggle Component Guides"
+   {:label "切换组件参考线"
     :command :scene.visibility.toggle-component-guides}
-   {:label "Toggle Grid"
+   {:label "切换网格显示"
     :command :scene.visibility.toggle-grid}
    {:label :separator}
-   {:label "Show/Hide Selected Objects"
+   {:label "显示/隐藏选中对象"
     :command :scene.visibility.toggle-selection}
-   {:label "Hide Unselected Objects"
+   {:label "隐藏未选对象"
     :command :scene.visibility.hide-unselected}
-   {:label "Show Last Hidden Objects"
+   {:label "显示上次隐藏对象"
     :command :scene.visibility.show-last-hidden}
-   {:label "Show All Hidden Objects"
+   {:label "显示所有隐藏对象"
     :command :scene.visibility.show-all}
    {:label :separator}
-   {:label "Play"
+   {:label "播放"
     :command :scene.play}
-   {:label "Stop"
+   {:label "停止"
     :command :scene.stop}
    {:label :separator}
    {:command :scene.set-camera-type
@@ -1324,9 +1324,9 @@
     :user-data {:camera-type :perspective}
     :check true}
    {:label :separator}
-   {:label "Frame Selection"
+   {:label "聚焦选中项"
     :command :scene.frame-selection}
-   {:label "Realign Camera"
+   {:label "重对齐摄像机"
     :command :scene.realign-camera}])
 
 (defn dispatch-input [input-handlers action user-data]

@@ -21,7 +21,7 @@
             <StackPane>
                 <ProgressBar id="update-progress-bar" styleClass="really-small-progress-bar" visible="false" />
                 <VBox id="update-progress-vbox" alignment="CENTER">
-                    <Hyperlink id="update-link" text="Update Available" alignment="CENTER" visible="false" focusTraversable="false" />
+                    <Hyperlink id="update-link" text="更新可用" alignment="CENTER" visible="false" focusTraversable="false" />
                 </VBox>
                 <VBox.margin>
                     <Insets bottom="28" left="19" right="19" />
@@ -34,9 +34,9 @@
         <Region styleClass="background-cover" />
         <VBox alignment="CENTER" maxWidth="-Infinity">
             <VBox alignment="CENTER">
-                <Label id="progress-header" text="Downloading Project" />
+                <Label id="progress-header" text="正在下载项目" />
                 <ProgressBar id="progress-bar" maxWidth="1.7976931348623157E308" styleClass="really-small-progress-bar" />
-                <Button id="progress-cancel-button" styleClass="df-button" text="Cancel Download" focusTraversable="false" />
+                <Button id="progress-cancel-button" styleClass="df-button" text="取消下载" focusTraversable="false" />
             </VBox>
         </VBox>
     </StackPane>

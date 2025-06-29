@@ -267,7 +267,7 @@
       (.setContent clipboard content))))
 
 (handler/register-menu! ::build-errors-menu
-  [{:label "Copy"
+  [{:label "拷贝"
     :command :edit.copy}])
 
 (defn make-build-errors-view [^TreeView errors-tree open-resource-fn]

@@ -52,7 +52,7 @@
 (def pages
   (delay
     (cond->
-      [{:name "General"
+      [{:name "常规"
         :paths [[:workflow :load-external-changes-on-app-focus]
                 [:bundle :open-output-directory]
                 [:build :open-html5-build]
@@ -61,7 +61,7 @@
                 [:asset-browser :track-active-tab]
                 [:build :lint-code]
                 [:run :engine-arguments]]}
-       {:name "Code"
+       {:name "代码"
         :paths [[:code :custom-editor]
                 [:code :open-file]
                 [:code :open-file-at-line]
@@ -69,17 +69,17 @@
                 [:code :zoom-on-scroll]
                 [:code :hover]
                 [:code :auto-closing-parens]]}
-       {:name "Extensions"
+       {:name "扩展"
         :paths [[:extensions :build-server]
                 [:extensions :build-server-username]
                 [:extensions :build-server-password]
                 [:extensions :build-server-headers]]}
-       {:name "Tools"
+       {:name "工具"
         :paths [[:tools :adb-path]
                 [:tools :ios-deploy-path]]}]
 
       (system/defold-dev?)
-      (conj {:name "Dev"
+      (conj {:name "开发"
              :paths [[:dev :custom-engine]]}))))
 
 (defmulti form-input (fn [schema _value _on-value-changed]
@@ -264,7 +264,7 @@
      (cond->
        [{:fx/type fxui/label
          :alignment :center
-         :text (str "New '" (command-label command) "' Shortcut")}
+         :text (str "新建 '" (command-label command) "' 快捷键")}
         {:fx/type fxui/text-field
          :event-filter #(filter-new-shortcut-text-field-events command shortcut swap-shortcut swap-state update-keymap %)
          :alignment :center
@@ -274,14 +274,14 @@
          :text-alignment :center
          :color :hint
          :text (if (not shortcut)
-                 "Press the desired key combination"
+                 "按下所需的组合键"
                  (str
-                   (str "Press " (keymap/shortcut-display-text enter-shortcut) " to commit")
+                   (str "按下 " (keymap/shortcut-display-text enter-shortcut) " 提交")
                    (when (= shortcut escape-shortcut)
-                     (str ", " (keymap/shortcut-display-text escape-shortcut) " again to cancel"))))}]
+                     (str ", " (keymap/shortcut-display-text escape-shortcut) " 再次操作取消"))))}]
        warnings
        (conj {:fx/type fxui/paragraph
-              :text (str "Warnings:\n• " (coll/join-to-string "\n• " (warnings-messages warnings)))}))}))
+              :text (str "警告:\n• " (coll/join-to-string "\n• " (warnings-messages warnings)))}))}))
 
 (defn- show-new-shortcut-dialog! [swap-state command ^Window window]
   (let [root (.getRoot (.getScene window))
@@ -324,7 +324,7 @@
      :spacing :medium
      :children
      [{:fx/type fxui/text-field
-       :prompt-text "Filter keymap..."
+       :prompt-text "过滤快捷键映射..."
        :text filter-text
        :on-text-changed #(swap-state assoc :filter-text %)}
       {:fx/type fxui/with-popup-window
@@ -364,19 +364,19 @@
             :items (vec
                      (e/cons
                        {:fx/type fx.menu-item/lifecycle
-                        :text "New Shortcut..."
+                        :text "新快捷键..."
                         :on-action #(handle-new-shortcut-action swap-state command %)}
                        (e/concat
                          (when (not= shortcuts default-shortcuts)
                            [{:fx/type fx.menu-item/lifecycle
-                             :text "Reset to Default"
+                             :text "重置默认"
                              :on-action #(handle-reset-shortcuts-action update-keymap command %)}])
                          (->> shortcuts
                               (mapv (coll/pair-fn keymap/shortcut-distinct-display-text))
                               (sort-by key)
                               (e/map (fn [[text shortcut]]
                                        {:fx/type fx.menu-item/lifecycle
-                                        :text (str "Remove " text)
+                                        :text (str "移除 " text)
                                         :on-action #(handle-remove-shortcut-action update-keymap command shortcut %)})))
                          (when default-shortcuts
                            (let [removed-built-in-shortcuts (set/difference default-shortcuts (or shortcuts #{}))]
@@ -385,7 +385,7 @@
                                   (sort-by key)
                                   (e/map (fn [[text shortcut]]
                                            {:fx/type fx.menu-item/lifecycle
-                                            :text (str "Add " text)
+                                            :text (str "添加 " text)
                                             :on-action #(handle-add-shortcut-action update-keymap command shortcut %)}))))))))}))
        :desc
        {:fx/type fx.table-view/lifecycle
@@ -395,14 +395,14 @@
         :columns [{:fx/type fx.table-column/lifecycle
                    :reorderable false
                    :sortable false
-                   :text "Command"
+                   :text "命令"
                    :cell-value-factory identity
                    :cell-factory {:fx/cell-type fx.table-cell/lifecycle
                                   :describe (fn/partial #'describe-command-cell keymap)}}
                   {:fx/type fx.table-column/lifecycle
                    :reorderable false
                    :sortable false
-                   :text "Shortcuts"
+                   :text "快捷键"
                    :cell-value-factory identity
                    :cell-factory {:fx/cell-type fx.table-cell/lifecycle
                                   :describe (fn/partial #'describe-shortcut-cell keymap)}}]
@@ -449,7 +449,7 @@
                                            vec)}})
                @pages)
              {:fx/type fx.tab/lifecycle
-              :text "Keymap"
+              :text "快捷键"
               :content {:fx/type keymap-view
                         :keymap (keymap/from-prefs prefs-state prefs)
                         :update-keymap (fn/partial prefs/update! prefs [:window :keymap])}}))})
@@ -460,14 +460,14 @@
     (.hide (.getWindow ^Scene (.getSource e)))))
 
 (defn open!
-  "Show the prefs dialog and block the thread until the dialog is closed"
+  "显示首选项对话框并阻塞线程，直至对话框关闭"
   [prefs]
   (fxui/show-stateless-dialog-and-await-result!
     (fn [result-fn]
       {:fx/type fxui/dialog-stage
        :showing true
        :on-hidden result-fn
-       :title "Preferences"
+       :title "首选项"
        :resizable true
        :min-width 650
        :min-height 500

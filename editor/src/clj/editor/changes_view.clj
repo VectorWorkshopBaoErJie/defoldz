@@ -70,32 +70,32 @@
   [menu-items/open-selected
    menu-items/open-as
    menu-items/separator
-   {:label "Copy Resource Path"
+   {:label "复制资源路径"
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径"
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径"
     :command :edit.copy-require-path}
    menu-items/separator
-   {:label "Show in Asset Browser"
+   {:label "在资源浏览器中显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-assets}
-   {:label "Show in Desktop"
+   {:label "在桌面显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..."
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..."
     :command :file.show-dependencies}
    menu-items/separator
    menu-items/show-overrides
    menu-items/pull-up-overrides
    menu-items/push-down-overrides
    menu-items/separator
-   {:label "View Diff"
+   {:label "查看差异"
     :icon "icons/32/Icons_S_06_arrowup.png"
     :command :vcs.diff}
-   {:label "Revert"
+   {:label "恢复"
     :icon "icons/32/Icons_S_02_Reset.png"
     :command :vcs.revert}])
 
@@ -109,15 +109,15 @@
                  (pos? (count selection))))
   (run [async-reload! selection git changes-view workspace]
     (when (dialogs/make-confirmation-dialog
-            {:title "Revert Changes?"
+            {:title "确认恢复更改?"
              :size :large
              :icon :icon/circle-question
-             :header "Are you sure you want to revert changes on selected files?"
-             :buttons [{:text "Cancel"
+             :header "确定要恢复选中文件的更改吗?"
+             :buttons [{:text "取消"
                         :cancel-button true
                         :default-button true
                         :result false}
-                       {:text "Revert Changes"
+                       {:text "恢复更改"
                         :variant :danger
                         :result true}]})
       (let [moved-files (mapv #(vector (path->file workspace (:new-path %)) (path->file workspace (:old-path %))) (filter #(= (:change-type %) :rename) selection))]

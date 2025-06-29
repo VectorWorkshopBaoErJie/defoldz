@@ -1536,15 +1536,15 @@
   (run [app-view] (transform-brush! app-view rotate-brush-90-degrees)))
 
 (handler/register-menu! ::menubar :editor.app-view/edit-end
-  [{:label "Select Tile..."
+  [{:label "选择瓷砖..."
     :command :scene.toggle-tile-palette}
-   {:label "Select Eraser"
+   {:label "选择橡皮擦"
     :command :scene.select-erase-tool}
-   {:label "Flip Brush Horizontally"
+   {:label "水平翻转笔刷"
     :command :scene.flip-brush-horizontally}
-   {:label "Flip Brush Vertically"
+   {:label "垂直翻转笔刷"
     :command :scene.flip-brush-vertically}
-   {:label "Rotate Brush 90 Degrees"
+   {:label "旋转笔刷90度"
     :command :scene.rotate-brush-90-degrees}])
 
 (g/defnode TileMapGrid
@@ -1585,4 +1585,4 @@
                           :tool-controller TileMapController}}
       :tags #{:component :non-embeddable}
       :tag-opts {:component {:transform-properties #{:position :rotation}}}
-      :label "Tile Map")))
+      :label "瓦片地图")))
