@@ -180,125 +180,146 @@
    :maximum 1.0,
    :path ["render" "clear_color_red"]}
   {:type :number,
-   :help "Render clear color - green channel",
-   :label "Clear Color Green"
+   :help "渲染清除色 - 绿色通道",
+   :label "清除色绿"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_green"]}
   {:type :number,
-   :help "Render clear color - blue channel",
-   :label "Clear Color Blue"
+   :help "渲染清除色 - 蓝色通道",
+   :label "清除色蓝"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_blue"]}
   {:type :number,
-   :help "Render clear color - alpha channel",
-   :label "Clear Color Alpha"
+   :help "渲染清除色 - 透明通道",
+   :label "清除色透明"
    :default 1.0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_alpha"]}
   {:type :integer,
-   :help "max number of collision objects, 128 by default",
+   :help "默认最多 128 个碰撞物体",
    :default 128,
+   :label "最大碰撞对象数",
    :path ["physics" "max_collision_object_count"]}
   {:type :string,
-   :help "which type of physics to use, 2D (default) or 3D",
+   :help "‌使用何种物理系统：2D（默认）或3D",
    :default "2D",
+   :label "类型",
    :path ["physics" "type"]
    :options [["2D" "2D"] ["3D" "3D"]]}
   {:type :boolean,
-   :help "If the physics should use fixed time steps. See engine.fixed_update_frequency",
+   :help "物理引擎是否采用固定时间步长，详见 engine.fixed_update_frequency",
    :default false,
+   :label "使用固定时间步长",
    :path ["physics" "use_fixed_timestep"]}
   {:type :boolean,
    :help
-   "visualize physics for debugging",
+   "‌可视化物理数据用于调试",
    :default false,
+   :label "调试",
    :path ["physics" "debug"]}
   {:type :number,
    :help
-   "alpha component for visualized physics, 0 - 1 (0.9 by default)",
+   "‌可视化物理数据的透明度，范围 0 至 1，默认为 0.9",
    :default 0.9,
+   :label "调试透明度",
    :path ["physics" "debug_alpha"]}
   {:type :number,
    :help
-   "how big to draw unit objects in physics, like triads and normals, 30 by default",
+   "物理调试基准图元的绘制尺寸，默认为 30 单位",
    :default 30.0,
+   :label "调试尺寸",
    :path ["physics" "debug_scale"]}
   {:type :integer,
    :help
-   "max number of concurrent physics worlds, 4 by default (careful, they waste memory)",
+   "最大并行物理世界数量，默认为 4 ，注意：该设置会显著增加内存占用",
    :default 4,
+   :label "世界数量",
    :path ["physics" "world_count"]}
   {:type :number,
-   :help "world gravity along x-axis, 0 by default",
+   :help "‌物理世界 X 轴方向的重力值，默认为 0",
    :default 0.0,
+   :label "X 轴重力",
    :path ["physics" "gravity_x"]}
   {:type :number,
    :help
-   "world gravity along y-axis, -10 by default (natural gravity)",
+   "物理世界 Y 轴方向的重力值，默认为 -10，即自然重力值",
    :default -10.0,
+   :label "Y 轴重力",
    :path ["physics" "gravity_y"]}
   {:type :number,
-   :help "world gravity along z-axis, 0 by default",
+   :help "‌物理世界 Z 轴方向的重力值，默认为 0",
    :default 0.0,
+   :label "Z 轴重力",
    :path ["physics" "gravity_z"]}
   {:type :number,
    :help
-   "how to scale the physics worlds in relation to the game world for numerical precision, 0.01 - 1 (default)",
+   "‌物理世界相对于游戏世界的缩放比例，用于提升数值精度，取值范围 0.01~1 ，默认为 1",
    :default 1.0,
+   :label "缩放",
    :path ["physics" "scale"]}
   {:type :boolean,
    :help
-   "If set, allows for setting scale, position and rotation of dynamic bodies (default is true)",
+   "若启用，允许设置动态刚体的缩放、位置及旋转，默认值为 true",
    :default true,
+   :label "允许动态变换",
    :path ["physics" "allow_dynamic_transforms"]}
   {:type :integer,
    :help
-   "how many collisions that will be reported back to the scripts, 64 by default",
+   "脚本可接收的碰撞事件数量上限，默认为 64",
    :default 64,
+   :label "最大碰撞值",
    :path ["physics" "max_collisions"]}
   {:type :integer,
    :help
-   "how many contact points that will be reported back to the scripts, 128 by default",
+   "‌脚本可接收的接触点数量上限，默认为 128，即碰撞发生时两个碰撞体之间的精确接触位置集合",
    :default 128,
+   :label "最大触点值",
    :path ["physics" "max_contacts"]}
   {:type :number,
-   :help
-   "contacts with an impulse below this limit will not be reported to scripts, 0 (disabled) by default",
+   :help "冲量低于此阈值的接触点不会上报至脚本，默认值 0 表示禁用过滤",
    :default 0.0,
+   :label "接触冲量阈值",  ; 原配置已存在标签
    :path ["physics" "contact_impulse_limit"]}
+
   {:type :integer,
-   :help
-   "maximum number of ray casts per frame when using 2D physics",
+   :help "2D 物理系统每帧最大射线投射数量",
    :default 64,
-   :path ["physics" "ray_cast_limit_2d"]},
+   :label "2D 射线投射上限",  ; 原配置已存在标签
+   :path ["physics" "ray_cast_limit_2d"]}
+
   {:type :integer,
-   :help
-   "maximum number of ray casts per frame when using 3D physics",
+   :help "3D 物理系统单帧最大射线投射数量",
    :default 128,
-   :path ["physics" "ray_cast_limit_3d"]},
+   :label "3D 射线投射上限",  ; 原配置已存在标签
+   :path ["physics" "ray_cast_limit_3d"]}
+
   {:type :integer,
-   :help
-   "maximum number of overlapping triggers that can be detected, 16 by default",
+   :help "可检测的重叠触发器最大数量，默认为 16",
    :default 16,
-   :path ["physics" "trigger_overlap_capacity"]},
+   :label "触发器重叠容量上限",  ; 原配置已存在标签
+   :path ["physics" "trigger_overlap_capacity"]}
+
   {:type :number,
-   :help
-   "minimum velocity that will result in ellastic collisions",
+   :help "导致弹性碰撞所需的最小速度阈值",  ; 优化翻译
    :default 1.0,
-   :path ["physics" "velocity_threshold"]},
+   :label "速度阈值",  ; 新增标签（基于 path 末级字段名）
+   :path ["physics" "velocity_threshold"]}
+ 
   {:type :integer,
-   :help "max number of steps in the simulation when using fixed timestep (3D only)",
+   :help "使用固定时间步长时模拟的最大步数（仅限 3D）",  ; 补充说明
    :default 2,
-   :path ["physics" "max_fixed_timesteps"]},
+   :label "最大固定时间步",  ; 新增标签
+   :path ["physics" "max_fixed_timesteps"]}
+  
   {:type :string,
-   :help
-   "which filtering to use for min filtering, linear by default",
+   :help "纹理缩小过滤的默认过滤方式，默认为线性过滤",
    :default "linear",
+   :label "纹理缩小过滤方式",  ; 新增标签
    :path ["graphics" "default_texture_min_filter"]
    :options [["linear" "linear"]
              ["nearest" "nearest"]
@@ -306,46 +327,54 @@
              ["nearest_mipmap_linear" "nearest mipmap linear"]
              ["linear_mipmap_nearest" "linear mipmap nearest"]
              ["linear_mipmap_linear" "linear mipmap linear"]]}
+  
   {:type :string,
-   :help
-   "which filtering to use for mag filtering, linear (default) or nearest",
+   :help "纹理放大过滤的默认过滤方式，线性（默认）或邻近",
    :default "linear",
+   :label "纹理放大过滤方式",  ; 新增标签
    :path ["graphics" "default_texture_mag_filter"]
    :options [["linear" "linear"] ["nearest" "nearest"]]}
+  
   {:type :integer,
-   :help "maximum number of draw calls",
+   :help "每帧最大绘制调用次数",
    :default 1024,
+   :label "最大绘制调用数",  ; 新增标签
    :path ["graphics" "max_draw_calls"]}
+  
   {:type :integer,
-   :help
-   "maximum number of characters (text) that can be displayed each frame",
+   :help "每帧可显示的最大字符数（文本）",
    :default 8192,
+   :label "最大字符数",  ; 新增标签
    :path ["graphics" "max_characters"]}
+  
   {:type :integer,
-   :help
-   "maximum number of text that can be displayed each frame",
+   :help "每帧可显示的最大文本批次数量",
    :default 128,
+   :label "最大字体批次",  ; 新增标签
    :path ["graphics" "max_font_batches"]}
+  
   {:type :integer,
-   :help
-   "maximum number of debug vertices, used for physics shape rendering among other things, 10000 by default",
+   :help "调试顶点的最大数量（用于物理形状渲染等），默认为 10000",
    :default 10000,
+   :label "最大调试顶点数",  ; 新增标签
    :path ["graphics" "max_debug_vertices"]}
+  
   {:type :resource,
    :filter "texture_profiles",
    :preserve-extension true,
-   :help
-   "specify which texture profiles (format, mipmaps and max textures size) to use for which resource path",
+   :help "指定资源路径使用的纹理配置文件（格式、Mipmap和最大纹理尺寸）",
    :default "/builtins/graphics/default.texture_profiles",
+   :label "纹理配置文件",  ; 新增标签（基于 path 末级字段名）
    :path ["graphics" "texture_profiles"]}
+  
   {:type :boolean,
-   :help
-   "verify the return value after each graphics call",
+   :help "在每次图形调用后验证返回值",
    :default true,
+   :label "验证图形调用",  ; 新增标签
    :path ["graphics" "verify_graphics_calls"]}
+  
   {:type :string,
-   :help
-   "OpenGL context version hint. If a specific version is selected, this will used as the minimum version required (does not apply to OpenGL ES). Defaults to OpenGL 3.3",
+   :help "OpenGL 上下文版本提示。若指定版本，将作为最低要求版本（不适用于 OpenGL ES），默认为 OpenGL 3.3",
    :default "33",
    :path ["graphics" "opengl_version_hint"]
    :options [["33" "OpenGL 3.3"]
@@ -356,704 +385,965 @@
              ["44" "OpenGL 4.4"]
              ["45" "OpenGL 4.5"]
              ["46" "OpenGL 4.6"]
-             ["0" "Highest version available"]]}
+             ["0" "当前最高版本"]]}  ; 优化选项描述
+  
   {:type :boolean,
-   :help "Set the 'core' OpenGL profile hint when creating the context. The core profile removes all deprecated features from OpenGL, such as immediate mode rendering. Does not apply to OpenGL ES.",
+   :help "创建上下文时设置 'core' OpenGL 配置提示。核心配置移除了OpenGL中所有过时功能（如即时渲染模式），不适用于OpenGL ES",
    :default true,
+   :label "OpenGL核心配置提示",  ; 新增标签
    :path ["graphics" "opengl_core_profile_hint"]}
+  
   {:type :boolean,
-   :help "This setting is deprecated. Compile and output SPIR-V shaders for use with Metal or Vulkan",
+   :help "此设置已弃用。编译并输出SPIR-V着色器以供Metal或Vulkan使用",
    :default false,
    :deprecated true,
-   :label "Output SPIR-V"
+   :label "输出SPIR-V",  ; 原配置已存在标签
    :path ["shader" "output_spirv"]}
+  
   {:type :number,
-   :help
-   "seconds to wait before treating a held down keyboard-key to start repeating itself",
+   :help "键盘按键持续按住后、开始重复触发前的等待时间（秒）",
    :default 0.5,
+   :label "按键重复延迟",  ; 新增标签
    :path ["input" "repeat_delay"]}
-  {:type :number,
-   :help
-   "seconds to wait between each repetition of a held down keyboard-key",
+  
+  
+   {:type :number,
+   :help "键盘按键持续按住后，每次重复触发之间的等待时间（秒）",
    :default 0.2,
+   :label "按键重复间隔",  ; 新增标签（与之前的"按键重复延迟"形成关联）
    :path ["input" "repeat_interval"]}
+  
   {:type :resource,
    :filter "gamepads",
-   :help
-   "file reference of the gamepads config file, which maps gamepad signals to OS, /builtins/input/default.gamepads by default",
+   :help "游戏手柄配置文件引用（将手柄信号映射到操作系统），默认为 /builtins/input/default.gamepads",
    :default "/builtins/input/default.gamepads",
+   :label "手柄配置文件",  ; 新增标签
    :path ["input" "gamepads"]}
+  
   {:type :resource,
    :filter "input_binding",
-   :help
-   "file reference of the input config file, which maps HW inputs to actions, /input/game.input_binding by default",
+   :help "输入配置文件引用（将硬件输入映射到操作指令），默认为 /input/game.input_binding",
    :default "/input/game.input_binding",
+   :label "输入绑定配置",  ; 新增标签
    :path ["input" "game_binding"]}
+  
   {:type :boolean,
-   :help
-   "determines if the app receives accelerometer events",
+   :help "是否启用加速度计事件接收",
    :default true,
+   :label "启用加速度计",  ; 新增标签
    :path ["input" "use_accelerometer"]}
+  
   {:type :boolean,
-   :help
-   "use http cache for faster loads over network",
+   :help "使用HTTP缓存加速网络资源加载",
    :default false,
+   :label "HTTP缓存",  ; 新增标签
    :path ["resource" "http_cache"]}
+  
   {:type :string,
-   :help "where to find game.project, in URI format",
+   :help "game.project文件位置（URI格式）",
    :default "",
+   :label "项目文件URI",  ; 新增标签
    :path ["resource" "uri"]}
+  
   {:type :integer,
-   :help
-   "the max number of resources that can be loaded at the same time, 1024 by default",
+   :help "可同时加载的最大资源数量，默认为1024",
    :default 1024,
+   :label "最大资源加载数",  ; 新增标签
    :path ["resource" "max_resources"]}
+  
   {:type :number,
-   :help "http timeout in seconds. zero to disable timeout",
+   :help "HTTP超时时长（秒），0表示禁用超时",
    :default 0.0,
+   :label "HTTP超时",  ; 新增标签
    :path ["network" "http_timeout"]}
+  
   {:type :resource,
-   :filter "pem"
+   :filter "pem",
    :default "",
-   :help "file reference of the ssl certificates pem file",
+   :help "SSL证书PEM文件引用",
    :preserve-extension true,
+   :label "SSL证书文件",  ; 新增标签
    :path ["network" "ssl_certificates"]}
+  
   {:type :integer,
    :default 4,
-   :help "number of worker threads for the http service",
+   :help "HTTP服务的工作线程数量",
+   :label "HTTP工作线程数",  ; 新增标签
    :path ["network" "http_thread_count"]}
+  
   {:type :boolean,
    :default true,
-   :help "Should the downloaded data persist for faster retrieval next time",
+   :help "是否持久化下载数据以加速后续检索",
+   :label "HTTP缓存持久化",  ; 新增标签
    :path ["network" "http_cache_enabled"]}
+  
   {:type :integer,
-   :help "max number of instances per collection, 1024 by default",
+   :help "每个集合的最大实例数量，默认为1024",
    :default 1024,
    :minimum 1,
    :maximum 32765,
+   :label "最大实例数",  ; 新增标签
    :path ["collection" "max_instances"]}
+  
   {:type :integer,
-   :help "max number of game objects in the input stack, 16 by default",
+   :help "输入栈中游戏对象的最大数量，默认为16",
    :default 16,
+   :label "输入栈容量",  ; 新增标签
    :path ["collection" "max_input_stack_entries"]}
+  
   {:type :number,
-   :help "global gain (volume), 1 by default",
+   :help "全局音量增益值，默认为1.0",
    :default 1.0,
+   :label "全局音量增益",  ; 新增标签
    :path ["sound" "gain"]}
+  
   {:type :boolean,
-   :help "if enabled, gain is linear. if disabled, uses exponential curve (e.g. 0.5 is 'half volume'). true by default.",
+   :help "启用时使用线性增益（0.5表示半音量），禁用时使用指数曲线，默认为启用",
    :default true,
+   :label "线性音量增益",  ; 新增标签
    :path ["sound" "use_linear_gain"]}
+  
   {:type :integer,
-   :help "max number of different sounds, 128 by default",
+   :help "最大音效资源数量，默认为128",
    :default 128,
+   :label "最大音效数",  ; 新增标签
    :path ["sound" "max_sound_data"]}
+  
   {:type :integer,
-   :help "max number of concurrent sound buffers, 32 by default",
+   :help "最大并发音效缓冲区数量，默认为32",
    :default 32,
+   :label "音效缓冲区上限",  ; 新增标签
    :path ["sound" "max_sound_buffers"]}
+  
   {:type :integer,
-   :help "max number of concurrently playing sounds, 16 by default",
+   :help "最大并发播放音源数，默认为16",
    :default 16,
+   :label "并发音源上限",  ; 新增标签
    :path ["sound" "max_sound_sources"]}
+  
   {:type :integer,
-   :help "max number of concurrent sound instances (voices), 256 by default",
+   :help "最大并发音效实例数（声道），默认为256",
    :default 256,
+   :label "最大音效实例",  ; 新增标签
    :path ["sound" "max_sound_instances"]}
+  
   {:type :integer,
-   :help "max number of sound components in a collection, 32 by default",
+   :help "单个集合中音效组件的最大数量，默认为32",
    :default 32,
+   :label "集合音效组件上限",  ; 新增标签
    :path ["sound" "max_component_count"]}
-  {:type :integer,
-   :help "number of samples used for each audio update. 0 by default which means (1024 for 48khz sound device, 768 for 44.1khz sound device)",
+  
+   {:type :integer,
+   :help "每次音频更新使用的采样帧数（0表示自动配置：48kHz设备用1024，44.1kHz设备用768）",
    :default 0,
+   :label "采样帧数",  ; 新增标签
    :path ["sound" "sample_frame_count"]}
+  
   {:type :boolean,
-   :help "Enables sound threading",
+   :help "启用声音处理线程",
    :default true,
+   :label "声音多线程",  ; 新增标签
    :path ["sound" "use_thread"]}
+  
   {:type :boolean,
-   :help "Enables sound streaming",
+   :help "启用声音流式加载",
    :default false,
+   :label "声音流式加载",  ; 新增标签
    :path ["sound" "stream_enabled"]}
+  
   {:type :integer,
-   :help "Size in bytes of each chunk that is loaded from a sound file, 16384 by default",
+   :help "从声音文件加载的每个数据块大小（字节），默认为16384",
    :default 16384,
+   :label "流数据块大小",  ; 新增标签
    :path ["sound" "stream_chunk_size"]}
+  
   {:type :integer,
-   :help "Size in bytes of the initial chunk that is loaded from each sound file, 16384 by default",
+   :help "每个声音文件初始预加载数据块大小（字节），默认为16384",
    :default 16384,
+   :label "流预加载大小",  ; 新增标签
    :path ["sound" "stream_preload_size"]}
+  
   {:type :integer,
-   :help "Size in bytes of the sound streaming cache containing all chunks, 2097152 by default",
+   :help "声音流缓存总容量（字节），默认为 2MB",
    :default 2097152,
+   :label "流缓存容量",  ; 新增标签
    :path ["sound" "stream_cache_size"]}
+  
   {:type :integer,
-   :help "max number of sprites, 128 by default",
+   :help "最大精灵数量，默认为128",
    :default 128,
+   :label "最大精灵数",  ; 新增标签
    :path ["sprite" "max_count"]}
+  
   {:type :boolean,
-   :help
-   "allow sprites to appear unaligned with respect to pixels",
+   :help "允许精灵显示亚像素级位置（非像素对齐）",
    :default true,
+   :label "亚像素渲染",  ; 新增标签
    :path ["sprite" "subpixels"]}
+  
   {:type :integer,
-   :help "max number of models, 128 by default",
+   :help "最大模型数量，默认为128",
    :default 128,
+   :label "最大模型数",  ; 新增标签
    :path ["model" "max_count"]}
+  
   {:type :boolean,
-   :help "Split meshes with more than 65536 vertices into new meshes. 0 by default",
+   :help "将超过65536顶点的网格分割为新网格（默认禁用）",
    :default false,
+   :label "网格自动分割",  ; 新增标签
    :path ["model" "split_meshes"]}
+  
   {:type :integer,
-   :help "Max width of the bone matrix texture, 1024 by default. only the size needed for the animations will be used, and the value will rounded up to nearest PO2.",
+   :help "骨骼矩阵纹理最大宽度（默认1024），实际使用尺寸按动画需求计算并向上取整至最近PO2值",
    :default 1024,
+   :label "骨骼纹理宽度",  ; 新增标签
    :path ["model" "max_bone_matrix_texture_width"]}
+  
   {:type :integer,
-   :help "Max height of the bone matrix texture, 1024 by default. only the size needed for the animations will be used, and the value will rounded up to nearest PO2.",
+   :help "骨骼矩阵纹理最大高度（默认1024），实际使用尺寸按动画需求计算并向上取整至最近PO2值",
    :default 1024,
+   :label "骨骼纹理高度",  ; 新增标签
    :path ["model" "max_bone_matrix_texture_height"]}
+  
   {:type :integer,
-   :help "max number of mesh components, 128 by default",
+   :help "最大网格组件数量，默认为128",
    :default 128,
+   :label "最大网格组件",  ; 新增标签
    :path ["mesh" "max_count"]}
+  
   {:type :integer,
-   :help "max number of gui components per collection, 64 by default",
+   :help "每个集合的最大GUI组件数量，默认为64",
    :default 64,
-   :path ["gui" "max_count"]},
+   :label "GUI组件上限",  ; 新增标签
+   :path ["gui" "max_count"]}
+  
   {:type :integer,
-   :help "max total number of living particles. limits the GPU vertex buffer size. 1024 by default",
+   :help "存活粒子总数上限（决定GPU顶点缓冲区大小），默认为1024",
    :default 1024,
+   :label "最大粒子总数",  ; 新增标签
    :path ["particle_fx" "max_particle_count"]}
+  
   {:type :integer,
-   :help "max number of particles per upload to the GPU. limits the CPU memory usage. 1024 by default.",
+   :help "每次上传GPU的粒子数量上限（限制CPU内存占用），默认为1024",
    :default 1024,
+   :label "粒子缓冲区上限",  ; 新增标签
    :path ["particle_fx" "max_particle_buffer_count"]}
+  
   {:type :integer,
-   :help
-   "max total number of active animations in gui, 1024 by default",
+   :help "GUI中最大活动动画总数，默认为1024",
    :default 1024,
+   :label "GUI动画上限",  ; 新增标签
    :path ["gui" "max_animation_count"]}
+  
   {:type :integer,
-   :help
-   "max total number of living particles in gui per collection, 1024 by default",
+   :help "每个集合GUI粒子最大存活数量，默认为1024",
    :default 1024,
+   :label "GUI粒子上限",  ; 新增标签
    :path ["gui" "max_particle_count"]}
+  
   {:type :integer,
-   :help "max number of labels, 64 by default",
+   :help "最大文本标签数量，默认为64",
    :default 64,
+   :label "最大标签数",  ; 新增标签
    :path ["label" "max_count"]}
+  
   {:type :boolean,
-   :help
-   "allow labels to appear unaligned with respect to pixels, this is also dependent on the camera position being aligned",
+   :help "允许文本标签显示亚像素级位置（此效果同时受相机位置对齐影响）",
    :default true,
+   :label "标签亚像素渲染",  ; 新增标签
    :path ["label" "subpixels"]}
+  
   {:type :integer,
-   :help "max number of particle fx components, 64 by default",
+   :help "最大粒子特效组件数量，默认为64",
    :default 64,
+   :label "粒子组件上限",  ; 新增标签
    :path ["particle_fx" "max_count"]}
+  
   {:type :integer,
-   :help "max number of particle fx emitters, 64 by default",
+   :help "最大粒子发射器数量，默认为64",
    :default 64,
+   :label "粒子发射器上限",  ; 新增标签
    :path ["particle_fx" "max_emitter_count"]}
+  
   {:type :integer,
-   :help "max number of collection proxies, 8 by default",
+   :help "最大集合代理数量，默认为8",
    :default 8,
+   :label "集合代理上限",  ; 新增标签
    :path ["collection_proxy" "max_count"]}
-  {:type :integer,
-   :help "max number of collection factories, 128 by default",
+   {:type :integer,
+   :help "最大集合工厂数量，默认为128",
    :default 128,
+   :label "集合工厂上限",  ; 新增标签
    :path ["collectionfactory" "max_count"]}
+  
   {:type :integer,
-   :help "max number of factories, 128 by default",
+   :help "最大工厂数量，默认为128",
    :default 128,
+   :label "工厂上限",  ; 新增标签
    :path ["factory" "max_count"]}
+  
+  ;; iOS 配置部分
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "icon for home screen on iPad (.png)",
+   :help "iPad主屏幕图标（.png格式）",
+   :label "iPad图标76x76",  ; 新增标签
    :path ["ios" "app_icon_76x76"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "icon for home screen on iPad with retina display (.png)",
+   :help "iPad Retina显示屏主屏幕图标（.png格式）",
+   :label "iPad Retina图标152x152",  ; 新增标签
    :path ["ios" "app_icon_152x152"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "icon for home screen on iPad Pro (.png)",
+   :help "iPad Pro主屏幕图标（.png格式）",
+   :label "iPad Pro图标167x167",  ; 新增标签
    :path ["ios" "app_icon_167x167"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "icon for home screen on iPhone/iPod Touch with retina display (.png)",
+   :help "iPhone/iPod Touch Retina显示屏主屏幕图标（.png格式）",
+   :label "iPhone图标120x120",  ; 新增标签
    :path ["ios" "app_icon_120x120"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "icon for home screen on iPhone with retina HD display (.png)",
+   :help "iPhone Retina HD显示屏主屏幕图标（.png格式）",
+   :label "iPhone HD图标180x180",  ; 新增标签
    :path ["ios" "app_icon_180x180"]}
+  
   {:type :resource,
    :filter "car",
    :preserve-extension true,
-   :help "the icons asset file (.car)",
+   :help "图标资源文件（.car格式）",
+   :label "图标资源包",  ; 新增标签
    :path ["ios" "icons_asset"]}
+  
   {:type :string,
    :default "/builtins/manifests/ios/LaunchScreen.storyboardc",
    :preserve-extension true,
-   :help "the launch screen storyboard",
+   :help "启动屏幕故事板文件",
+   :label "启动故事板",  ; 新增标签
    :path ["ios" "launch_screen"]}
+  
   {:type :boolean,
-   :help "set to true if the icons are prerendered",
+   :help "设为true表示图标已预渲染（无光效叠加）",
    :default false,
+   :label "图标预渲染",  ; 新增标签
    :path ["ios" "pre_renderered_icons"]}
+  
   {:type :string,
-   :help "bundle identifier (CFBundleIdentifier)",
+   :help "应用包标识符（CFBundleIdentifier）",
    :default "example.unnamed",
+   :label "包标识符",  ; 新增标签
    :path ["ios" "bundle_identifier"]}
+  
   {:type :string,
-   :help "bundle short name (CFBundleName). max 15 characters",
+   :help "应用包简称（CFBundleName），最多15字符",
+   :label "应用简称",  ; 新增标签
    :path ["ios" "bundle_name"]}
+  
   {:type :string,
-   :help "build number (CFBundleVersion). numeric or x.y.z",
+   :help "构建版本号（CFBundleVersion），格式为数字或x.y.z",
+   :label "构建版本",  ; 新增标签
    :path ["ios" "bundle_version"]}
+  
   {:type :resource,
    :filter "plist",
    :preserve-extension true,
-   :help "custom Info.plist template file",
-   :label "Info.plist"
+   :help "自定义Info.plist模板文件",
+   :label "Info.plist",  ; 原配置已存在标签
    :default "/builtins/manifests/ios/Info.plist",
    :path ["ios" "infoplist"]}
+  
   {:type :resource,
    :filter "xcprivacy",
    :preserve-extension true,
-   :help "Privacy Manifest file",
-   :label "PrivacyInfo.xcprivacy"
+   :help "隐私清单文件",
+   :label "PrivacyInfo.xcprivacy",  ; 原配置已存在标签
    :default "/builtins/manifests/ios/PrivacyInfo.xcprivacy",
    :path ["ios" "privacymanifest"]}
+  
   {:type :resource,
    :filter ["entitlements", "xcent", "plist"],
    :preserve-extension true,
-   :help "custom entitlements to use when signing an iOS bundle. Can replace any wildcard entitlements in the supplied provisioning profile",
-   :label "Custom entitlements"
+   :help "iOS签名使用的自定义授权文件（可替换预置描述文件中的通配授权）",
+   :label "自定义授权文件",  ; 新增标签
    :default "",
    :path ["ios" "entitlements"]}
+  
   {:type :string,
-   :help "comma-separated strings identifying languages handled manually by your app (CFBundleLocalizations)",
+   :help "应用手动处理的本地化语言列表（CFBundleLocalizations），逗号分隔",
    :default "en",
+   :label "默认语言",  ; 新增标签
    :path ["ios" "default_language"]}
+  
   {:type :string,
-   :help "localizations handled manually by your app (CFBundleLocalizations)",
+   :help "应用手动处理的本地化语言（CFBundleLocalizations）",
    :default "en",
+   :label "本地化支持",  ; 新增标签
    :path ["ios" "localizations"]}
+  
+  ;; Android 配置部分
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android ldpi icon file (.png)",
+   :help "Android ldpi分辨率应用图标（.png格式）",
+   :label "ldpi图标36x36",  ; 新增标签
    :path ["android" "app_icon_36x36"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android mdpi icon file (.png)",
+   :help "Android mdpi分辨率应用图标（.png格式）",
+   :label "mdpi图标48x48",  ; 新增标签
    :path ["android" "app_icon_48x48"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android hdpi icon file (.png)",
+   :help "Android hdpi分辨率应用图标（.png格式）",
+   :label "hdpi图标72x72",  ; 新增标签
    :path ["android" "app_icon_72x72"]}
+  
+   ;; Android 图标配置
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xhdpi icon file (.png)",
+   :help "Android xhdpi分辨率应用图标（.png格式）",
+   :label "xhdpi图标96x96",  ; 新增标签
    :path ["android" "app_icon_96x96"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xxhdpi icon file (.png)",
+   :help "Android xxhdpi分辨率应用图标（.png格式）",
+   :label "xxhdpi图标144x144",  ; 新增标签
    :path ["android" "app_icon_144x144"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xxxhdpi icon file (.png)",
+   :help "Android xxxhdpi分辨率应用图标（.png格式）",
+   :label "xxxhdpi图标192x192",  ; 新增标签
    :path ["android" "app_icon_192x192"]}
+  
+  ;; 推送通知图标配置
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small push notification icon (.png)",
+   :help "小型推送通知图标（.png格式）",
+   :label "推送小图标",  ; 新增标签
    :path ["android" "push_icon_small"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large push notification icon (.png)",
+   :help "大型推送通知图标（.png格式）",
+   :label "推送大图标",  ; 新增标签
    :path ["android" "push_icon_large"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small ldpi push notification icon file (.png)",
+   :help "ldpi分辨率小型推送通知图标（.png格式）",
+   :label "ldpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_ldpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small mdpi push notification icon file (.png)",
+   :help "mdpi分辨率小型推送通知图标（.png格式）",
+   :label "mdpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_mdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small hdpi push notification icon file (.png)",
+   :help "hdpi分辨率小型推送通知图标（.png格式）",
+   :label "hdpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_hdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small xhdpi push notification icon file (.png)",
+   :help "xhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xhdpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_xhdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small xxhdpi push notification icon file (.png)",
+   :help "xxhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xxhdpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_xxhdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Small xxxhdpi push notification icon file (.png)",
+   :help "xxxhdpi分辨率小型推送通知图标（.png格式）",
+   :label "xxxhdpi推送小图标",  ; 新增标签
    :path ["android" "push_icon_small_xxxhdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large ldpi push notification icon file (.png)",
+   :help "ldpi分辨率大型推送通知图标（.png格式）",
+   :label "ldpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_ldpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large mdpi push notification icon file (.png)",
+   :help "mdpi分辨率大型推送通知图标（.png格式）",
+   :label "mdpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_mdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large hdpi push notification icon file (.png)",
+   :help "hdpi分辨率大型推送通知图标（.png格式）",
+   :label "hdpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_hdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large xhdpi push notification icon file (.png)",
+   :help "xhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xhdpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_xhdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large xxhdpi push notification icon file (.png)",
+   :help "xxhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xxhdpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_xxhdpi"]}
+  
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Large xxxhdpi push notification icon file (.png)",
+   :help "xxxhdpi分辨率大型推送通知图标（.png格式）",
+   :label "xxxhdpi推送大图标",  ; 新增标签
    :path ["android" "push_icon_large_xxxhdpi"]}
+  
+  ;; 推送和系统配置
   {:type :string,
-   :help
-   "JSON field name in push payload to use as notification title",
+   :help "推送消息中用作通知标题的JSON字段名",
    :default "",
+   :label "推送标题字段",  ; 新增标签
    :path ["android" "push_field_title"]}
+  
   {:type :string,
-   :help "JSON field name in push payload to use as notification text",
+   :help "推送消息中用作通知正文的JSON字段名",
    :default "",
+   :label "推送正文字段",  ; 新增标签
    :path ["android" "push_field_text"]}
+  
   {:type :integer,
-   :help "android version code (android:versionCode)",
+   :help "Android版本号（android:versionCode）",
    :default 1,
+   :label "版本代码",  ; 新增标签
    :path ["android" "version_code"]}
+  
   {:type :integer,
-   :help "minimum API Level required for the application to run (android:minSdkVersion)",
+   :help "应用运行所需的最低API级别（android:minSdkVersion）",
    :default 19,
    :minimum 19,
+   :label "最低SDK版本",  ; 新增标签
    :path ["android" "minimum_sdk_version"]}
+
   {:type :integer,
-   :help "the API Level that the application targets (android:targetSdkVersion)",
+   :help "应用目标API级别（android:targetSdkVersion）",
    :default 35,
    :minimum 19,
+   :label "目标SDK版本",  ; 新增标签
    :path ["android" "target_sdk_version"]}
+  
   {:type :string,
-   :help "package identifier",
+   :help "应用包名",
    :default "com.example.todo",
+   :label "应用包名",  ; 新增标签
    :path ["android" "package"]}
+  
   {:type :string,
-   :help "Firebase Cloud Messaging Sender ID",
+   :help "Firebase云消息发送者ID（FCM Sender ID）",
    :default "",
+   :label "FCM发送者ID",  ; 新增标签
    :path ["android" "gcm_sender_id"]}
+  
   {:type :string,
-   :help "Firebase Cloud Messaging Application ID",
+   :help "Firebase云消息应用ID（FCM Application ID）",
    :default "",
+   :label "FCM应用ID",  ; 新增标签
    :path ["android" "fcm_application_id"]}
+  
   {:type :resource,
    :filter "xml",
    :preserve-extension true,
-   :help "custom AndroidManifest.xml template file",
+   :help "自定义AndroidManifest.xml模板文件",
    :default "/builtins/manifests/android/AndroidManifest.xml",
+   :label "清单文件模板",  ; 新增标签
    :path ["android" "manifest"]}
+  
   {:type :string,
-   :help
-   "in-app purchase provider to use, supported options are 'GooglePlay' and 'Amazon'",
+   :help "应用内购服务提供商，支持'GooglePlay'和'Amazon'",
    :default "GooglePlay",
+   :label "应用内购提供商",  ; 新增标签
    :path ["android" "iap_provider"]
    :options [["GooglePlay" "GooglePlay"] ["Amazon" "Amazon"]]}
+  
   {:type :string,
-   :help
-   "which input method to use, supported options are 'KeyEvent' and 'HiddenInputField'",
+   :help "输入法实现方式，支持'KeyEvent'(按键事件)和'HiddenInputField'(隐藏输入框)",
    :default "KeyEvent",
+   :label "输入法实现",  ; 新增标签
    :path ["android" "input_method"]
-   :options [["KeyEvent" "KeyEvent"] ["HiddenInputField" "HiddenInputField"]]}
+   :options [["KeyEvent" "按键事件"] ["HiddenInputField" "隐藏输入框"]]}  ; 选项本地化
+  
   {:type :boolean,
-   :help "hide the navigation and status bars and lets your app capture all touch events on the screen",
+   :help "启用沉浸式模式（隐藏导航栏和状态栏，应用捕获所有触摸事件）",
    :default false,
+   :label "沉浸式模式",  ; 新增标签
    :path ["android" "immersive_mode"]}
+  
   {:type :boolean,
-   :help "extend to display cutout",
+   :help "将显示区域延伸至刘海屏区域",
    :default true,
+   :label "刘海屏适配",  ; 新增标签
    :path ["android" "display_cutout"]}
+  
   {:type :boolean,
-   :help "helps you debug the application and also get files from the application",
+   :help "启用应用调试（支持调试和文件访问）",
    :default false,
+   :label "可调试模式",  ; 新增标签
    :path ["android" "debuggable"]}
+  
   {:type :resource,
    :filter "pro",
    :preserve-extension true,
-   :help "custom ProGuard file to help strip redundant Java classes from the final .apk",
-   :label "ProGuard config",
+   :help "自定义ProGuard配置文件（用于精简APK中的冗余Java类）",
+   :label "ProGuard配置",  ; 原配置已存在标签
    :default "",
    :path ["android" "proguard"]}
+  
   {:type :boolean,
-   :help "This attribute indicates whether the package installer extracts native libraries from the APK to the file system",
+   :help "指示安装程序是否从APK中提取原生库到文件系统",
    :default true,
+   :label "提取原生库",  ; 新增标签
    :path ["android" "extract_native_libs"]}
+  
+  ;; macOS 配置
   {:type :resource,
    :filter "icns",
    :preserve-extension true,
-   :help "bundle icon file (.icns)",
+   :help "应用图标文件（.icns格式）",
+   :label "应用图标",  ; 新增标签
    :path ["osx" "app_icon"]}
+  
   {:type :string,
-   :help "bundle identifier (CFBundleIdentifier)",
+   :help "应用包标识符（CFBundleIdentifier）",
    :default "example.unnamed",
+   :label "包标识符",  ; 新增标签
    :path ["osx" "bundle_identifier"]}
+  
   {:type :string,
-   :help "bundle short name (CFBundleName). max 15 characters",
+   :help "应用包简称（CFBundleName），最多15字符",
+   :label "应用简称",  ; 新增标签
    :path ["osx" "bundle_name"]}
+  
   {:type :string,
-   :help "build number (CFBundleVersion). numeric or x.y.z",
+   :help "构建版本号（CFBundleVersion），格式为数字或x.y.z",
    :default "1",
+   :label "构建版本",  ; 新增标签
    :path ["osx" "bundle_version"]}
+  
   {:type :resource,
    :filter "plist",
    :preserve-extension true,
-   :help "custom Info.plist template file",
-   :label "Info.plist",
+   :help "自定义Info.plist模板文件",
+   :label "Info.plist",  ; 原配置已存在标签
    :default "/builtins/manifests/osx/Info.plist",
    :path ["osx" "infoplist"]}
+  
   {:type :resource,
    :filter "xcprivacy",
    :preserve-extension true,
-   :help "Privacy Manifest file",
-   :label "PrivacyInfo.xcprivacy"
+   :help "隐私清单文件",
+   :label "PrivacyInfo.xcprivacy",  ; 原配置已存在标签
    :default "/builtins/manifests/osx/PrivacyInfo.xcprivacy",
    :path ["osx" "privacymanifest"]}
+  
   {:type :string,
-   :help "default language and region (CFBundleDevelopmentRegion)",
+   :help "默认语言和地区（CFBundleDevelopmentRegion）",
    :default "en",
+   :label "默认语言区域",  ; 新增标签
    :path ["osx" "default_language"]}
+  
   {:type :string,
-   :help "comma-separated strings identifying languages handled manually by your app (CFBundleLocalizations)",
+   :help "应用手动处理的本地化语言列表（CFBundleLocalizations），逗号分隔",
    :default "en",
+   :label "本地化支持",  ; 新增标签
    :path ["osx" "localizations"]}
+  
+  ;; Windows 配置
   {:type :resource,
    :filter "ico",
    :preserve-extension true,
-   :help "executable icon file (.ico)",
+   :help "可执行文件图标（.ico格式）",
+   :label "应用图标",  ; 新增标签
    :path ["windows" "app_icon"]}
+  
+  ;; HTML5 配置
   {:type :boolean,
-   :help "This setting is deprecated. Set to true if you wish to adjust the application heap memory size",
+   :help "此设置已弃用。设为true可调整应用堆内存大小",
    :default false,
-   :deprecated true
-   :severity-override :fatal
-   :severity-default :warning
+   :deprecated true,
+   :severity-override :fatal,
+   :severity-default :warning,
+   :label "自定义堆内存(弃用)",  ; 新增标签
    :path ["html5" "set_custom_heap_size"]}
+  
   {:type :integer,
-   :help "This setting is deprecated. The size, in bytes, of the application's heap",
+   :help "此设置已弃用。应用堆内存大小（字节）",
    :default 0,
-   :deprecated true
-   :severity-override :fatal
-   :severity-default :warning
+   :deprecated true,
+   :severity-override :fatal,
+   :severity-default :warning,
+   :label "堆内存大小(弃用)",  ; 新增标签
    :path ["html5" "custom_heap_size"]}
+  
   {:type :integer,
-   :help "The size, in megabytes, of the application's heap",
+   :help "应用堆内存大小（MB），范围32-4096",
    :default 256,
    :minimum 32,
    :maximum 4096,
+   :label "堆内存大小",  ; 新增标签
    :path ["html5" "heap_size"]}
+  
   {:type :resource,
    :filter "html",
    :preserve-extension true,
-   :help "html shell for canvas",
+   :help "Canvas的HTML外壳模板",
    :default "/builtins/manifests/web/engine_template.html",
-   :label ".html Shell"
+   :label ".html外壳模板",  ; 原配置已存在标签
    :path ["html5" "htmlfile"]}
+  
   {:type :resource,
    :filter "css",
    :preserve-extension true,
-   :help "css will be inlined into index.html template",
+   :help "将内联到index.html模板的CSS样式",
    :default "/builtins/manifests/web/light_theme.css",
-   :label "Custom .css"
+   :label "自定义CSS",  ; 原配置已存在标签
    :path ["html5" "cssfile"]}
+  
   {:type :resource,
    :filter ["gif", "jpg", "png", "svg"],
    :preserve-extension true,
-   :help "custom html splash screen image",
+   :help "自定义HTML启动画面图片",
+   :label "启动画面图片",  ; 新增标签
    :path ["html5" "splash_image"]}
+  
   {:type :string,
-   :help
-   "string to prefix bundled archive file path with (can be a full URL)",
+   :help "资源包路径前缀（可为完整URL）",
    :default "archive",
+   :label "资源包前缀",  ; 新增标签
    :path ["html5" "archive_location_prefix"]}
+  
   {:type :string,
-   :help "string to suffix bundled archive file path with",
+   :help "资源包路径后缀",
    :default "",
+   :label "资源包后缀",  ; 新增标签
    :path ["html5" "archive_location_suffix"]}
+  
   {:type :string,
-   :help "comma separated list of engine arguments",
+   :help "引擎启动参数（逗号分隔）",
    :default "--verify-graphics-calls=false",
+   :label "引擎参数",  ; 新增标签
    :path ["html5" "engine_arguments"]}
+  
   {:type :boolean,
-   :help "set to true to enable streaming of the wasm file (faster and uses less memory, but requires MIME type 'application/wasm')",
-   :default false
-   :path ["html5" "wasm_streaming"]}
-  {:type :boolean,
-   :help "set to true if you want to have the fullscreen button",
-   :default true
-   :path ["html5" "show_fullscreen_button"]}
-  {:type :boolean,
-   :help "set to true if you want to have the 'Made with Defold' link",
-   :default true
-   :path ["html5" "show_made_with_defold"]}
-  {:type :boolean,
-   :help "set to true if you want to show a 'Made with Defold' link in the browser console",
-   :default true
-   :path ["html5" "show_console_banner"]}
-  {:type :string,
-   :help "scale mode for canvas, by default 'Downscale Fit'",
-   :default "downscale_fit",
-   :path ["html5" "scale_mode"]
-   :options [["downscale_fit" "Downscale Fit"] ["fit" "Fit"] ["stretch" "Stretch"] ["no_scale" "No Scale"]]}
-  {:type :integer,
-   :help "how many attempts we do when trying to download a file",
-   :default 10,
-   :path ["html5" "retry_count"]}
-  {:type :number,
-   :help "pause in seconds before retry file loading after error",
-   :default 1.0,
-   :path ["html5" "retry_time"]}
-  {:type :boolean,
-   :help "set to true if you want graphics context has transparent backdrop",
+   :help "启用WASM流式加载（更快且内存占用更低，但需MIME类型'application/wasm'）",
    :default false,
+   :label "WASM流式加载",  ; 新增标签
+   :path ["html5" "wasm_streaming"]}
+  
+  {:type :boolean,
+   :help "是否显示全屏按钮",
+   :default true,
+   :label "全屏按钮",  ; 新增标签
+   :path ["html5" "show_fullscreen_button"]}
+  
+  {:type :boolean,
+   :help "是否显示'Made with Defold'链接",
+   :default true,
+   :label "显示制作信息",  ; 新增标签
+   :path ["html5" "show_made_with_defold"]}
+  
+  {:type :boolean,
+   :help "是否在浏览器控制台显示'Made with Defold'横幅",
+   :default true,
+   :label "控制台横幅",  ; 新增标签
+   :path ["html5" "show_console_banner"]}
+  
+  {:type :string,
+   :help "Canvas缩放模式，默认为'Downscale Fit'",
+   :default "downscale_fit",
+   :label "缩放模式",  ; 新增标签
+   :path ["html5" "scale_mode"]
+   :options [["downscale_fit" "等比缩小适配"]
+             ["fit" "等比适配"]
+             ["stretch" "拉伸"]
+             ["no_scale" "无缩放"]]}  ; 选项本地化
+  
+  {:type :integer,
+   :help "文件下载失败时的重试次数",
+   :default 10,
+   :label "下载重试次数",  ; 新增标签
+   :path ["html5" "retry_count"]}
+  
+  {:type :number,
+   :help "文件加载失败后的重试间隔（秒）",
+   :default 1.0,
+   :label "重试间隔",  ; 新增标签
+   :path ["html5" "retry_time"]}
+  
+  {:type :boolean,
+   :help "设置图形上下文背景透明",
+   :default false,
+   :label "透明背景",  ; 新增标签
    :path ["html5" "transparent_graphics_context"]}
+  
+  ;; 原生扩展与性能分析
   {:type :resource,
    :filter "appmanifest",
    :preserve-extension true,
-   :help "optional configuration file with detailed control over build settings",
+   :help "原生扩展配置文件（提供详细的构建设置控制）",
+   :label "原生扩展清单",  ; 新增标签
    :path ["native_extension" "app_manifest"]}
-  {:type :boolean
-   :help "enable CPU usage sampling in release"
-   :default false
+  
+  {:type :boolean,
+   :help "在发布版本中启用CPU使用率采样",
+   :default false,
+   :label "CPU采样",  ; 新增标签
    :path ["profiler" "track_cpu"]}
-  {:type :boolean
-   :help "enable in game profiler"
-   :default true
+  
+  {:type :boolean,
+   :help "启用游戏内性能分析器",
+   :default true,
+   :label "性能分析器",  ; 新增标签
    :path ["profiler" "enabled"]}
-  {:type :integer
-   :help "Number of milliseconds to sleep between server updates"
-   :default 0
+  
+  {:type :integer,
+   :help "服务器更新间隔（毫秒）",
+   :default 0,
+   :label "分析器更新间隔",  ; 新增标签
    :path ["profiler" "sleep_between_server_updates"]}
-  {:type :resource
-   :filter "settings"
-   :default "/liveupdate.settings"
-   :help "liveupdate settings"
+  
+  ;; 热更新配置
+  {:type :resource,
+   :filter "settings",
+   :default "/liveupdate.settings",
+   :help "热更新配置文件",
    :preserve-extension true,
+   :label "热更新配置",  ; 新增标签
    :path ["liveupdate" "settings"]}
-   {:type :boolean
+  
+   
+  ;; 最后三个配置项
+  {:type :boolean
    :filter "settings"
    :default true
-   :help "enables auto-mount of previously mounted resources when the application starts"
+   :help "应用启动时自动挂载先前挂载的资源"
+   :label "启动自动挂载"  ; 新增标签
    :path ["liveupdate" "mount_on_start"]}
+  
   {:type :integer,
-   :help "max number of concurrent tilemaps in a collection",
+   :help "单个集合中最大并发瓦片地图数量",
    :default 16,
+   :label "瓦片地图上限",  ; 新增标签
    :path ["tilemap" "max_count"]}
+  
   {:type :integer,
-   :help "max number of concurrent (visible) tiles in a collection",
+   :help "单个集合中最大并发可见瓦片数量",
    :default 2048,
+   :label "可见瓦片上限",  ; 新增标签
    :path ["tilemap" "max_tile_count"]}]
- :group-order ["Main" "Platforms" "Components" "Runtime" "Distribution"]
+ 
+ ;; 配置分类系统
+ :group-order ["主设置" "平台配置" "组件配置" "运行时" "发布管理"]
  :default-category "project"
  :categories
- {"sound" {:help "Sound related settings"
-           :group "Components"},
-  "html5" {:help "HTML5 related settings"
+ {"sound" {:help "音频相关设置"
+           :group "组件配置"},
+  "html5" {:help "HTML5平台相关设置"
            :title "HTML5"
-           :group "Platforms"},
-  "resource" {:help "Resource loading and management related settings"
-              :group "Runtime"},
-  "factory" {:help "GameObject factory related settings"
-             :group "Components"},
-  "graphics" {:help "Graphics related settings"
-              :group "Runtime"},
-  "engine" {:help "Runtime settings for the engine"
-            :group "Runtime"},
-  "bootstrap" {:help "Initial settings for the engine"
-               :group "Main"},
-  "label" {:help "Label related settings"
-           :group "Components"},
-  "collection" {:help "Collection related settings"
-                :group "Components"},
-  "project" {:help "General project settings"
-             :group "Main"},
-  "collectionfactory" {:title "Collection Factory"
-                       :group "Components"}
-  "collection_proxy" {:help "Collection proxy related settings"
-                      :group "Components"}
-  "physics" {:help "Physics settings"
-             :group "Runtime"},
-  "osx" {:help "Mac OSX related settings"
-         :title "OSX"
-         :group "Platforms"},
-  "network" {:help "Network related settings"
-             :group "Runtime"},
-  "script" {:help "Script system settings"
-            :group "Components"},
-  "shader" {:help "Shader related settings"
-            :group "Runtime"}
-  "gui" {:help "GUI related settings"
+           :group "平台配置"},
+  "resource" {:help "资源加载与管理设置"
+              :group "运行时"},
+  "factory" {:help "游戏对象工厂设置"
+             :group "组件配置"},
+  "graphics" {:help "图形渲染设置"
+              :group "运行时"},
+  "engine" {:help "引擎运行时设置"
+            :group "运行时"},
+  "bootstrap" {:help "引擎初始化设置"
+               :group "主设置"},
+  "label" {:help "文本标签设置"
+           :group "组件配置"},
+  "collection" {:help "集合管理设置"
+                :group "组件配置"},
+  "project" {:help "项目通用设置"
+             :group "主设置"},
+  "collectionfactory" {:title "集合工厂"
+                      :group "组件配置"}
+  "collection_proxy" {:help "集合代理设置"
+                     :group "组件配置"}
+  "physics" {:help "物理系统设置"
+             :group "运行时"},
+  "osx" {:help "macOS平台设置"
+         :title "macOS"
+         :group "平台配置"},
+  "network" {:help "网络通信设置"
+             :group "运行时"},
+  "script" {:help "脚本系统设置"
+            :group "组件配置"},
+  "shader" {:help "着色器设置"
+            :group "运行时"}
+  "gui" {:help "图形用户界面设置"
          :title "GUI"
-         :group "Components"},
-  "sprite" {:help "Sprite related settings"
-            :group "Components"},
-  "tilemap" {:help "Tilemap related settings"
-             :group "Components"},
-  "windows" {:help "Windows related settings"
-             :group "Platforms"},
-  "input" {:help "Input related settings"
-           :group "Runtime"},
-  "library" {:help "Settings for when this project is used as a library by another project"
-             :group "Distribution"},
-  "display" {:help "Resolution and other display related settings"
-             :group "Runtime"},
-  "ios" {:help "iOS related settings"
+         :group "组件配置"},
+  "sprite" {:help "精灵组件设置"
+            :group "组件配置"},
+  "tilemap" {:help "瓦片地图设置"
+             :group "组件配置"},
+  "windows" {:help "Windows平台设置"
+             :group "平台配置"},
+  "input" {:help "输入控制系统设置"
+           :group "运行时"},
+  "library" {:help "项目作为库使用的设置"
+             :group "发布管理"},
+  "display" {:help "分辨率与显示设置"
+             :group "运行时"},
+  "ios" {:help "iOS平台设置"
          :title "iOS"
-         :group "Platforms"},
-  "mesh" {:group "Components"}
-  "model" {:group "Components"}
-  "render" {:group "Runtime"}
-  "particle_fx" {:help "Particle FX related settings"
-                 :title "Particle FX"
-                 :group "Components"},
-  "android" {:help "Android related settings"
-             :group "Platforms"},
-  "liveupdate" {:help "Liveupdate settings"
-                :group "Distribution"},
-  "native_extension" {:help "Settings for native extensions"
-                      :group "Distribution"},
-  "profiler" {:help "Settings related to the runtime profiler"
-              :group "Runtime"}}}
+         :group "平台配置"},
+  "mesh" {:group "组件配置"}
+  "model" {:group "组件配置"}
+  "render" {:group "运行时"}
+  "particle_fx" {:help "粒子特效设置"
+                 :title "粒子系统"
+                 :group "组件配置"},
+  "android" {:help "Android平台设置"
+             :group "平台配置"},
+  "liveupdate" {:help "热更新配置"
+                :group "发布管理"},
+  "native_extension" {:help "原生扩展设置"
+                      :group "发布管理"},
+  "profiler" {:help "性能分析器设置"
+              :group "运行时"}}
