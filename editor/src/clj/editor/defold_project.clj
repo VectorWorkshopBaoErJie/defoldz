@@ -1113,29 +1113,29 @@
     (lsp/check-if-polled-resources-are-modified! (lsp/get-graph-lsp project-graph))))
 
 (handler/register-menu! ::menubar :editor.app-view/view
-  [{:label "Project"
+[{:label "项目" ; Project
     :id ::project
-    :children [{:label "Build"
+    :children [{:label "构建" ; Build
                 :command :project.build}
-               {:label "Clean Build"
+               {:label "清理构建" ; Clean Build
                 :command :project.clean-build}
-               {:label "Build HTML5"
+               {:label "构建HTML5" ; Build HTML5
                 :command :project.build-html5}
-               {:label "Clean Build HTML5"
+               {:label "清理构建HTML5" ; Clean Build HTML5
                 :command :project.clean-build-html5}
-               {:label "Bundle"
+               {:label "打包" ; Bundle
                 :id ::bundle
                 :command :project.bundle}
-               {:label "Rebundle"
+               {:label "重新打包" ; Rebundle
                 :command :project.rebundle}
-               {:label "Fetch Libraries"
+               {:label "获取库" ; Fetch Libraries
                 :command :project.fetch-libraries}
-               {:label "Reload Editor Scripts"
+               {:label "重新加载编辑器脚本" ; Reload Editor Scripts
                 :command :project.reload-editor-scripts}
                {:label :separator}
-               {:label "Shared Editor Settings"
+               {:label "共享编辑器设置" ; Shared Editor Settings
                 :command :file.open-shared-editor-settings}
-               {:label "Live Update Settings"
+               {:label "实时更新设置" ; Live Update Settings
                 :command :file.open-liveupdate-settings}
                {:label :separator
                 :id ::targets}

@@ -1601,161 +1601,161 @@ If you do not specifically require different script states, consider changing th
             (process/start! {:dir install-dir} (system/defold-launcherpath)))))
 
 (handler/register-menu! ::menubar
-  [{:label "File"
+[{:label "文件" ; File
     :id ::file
-    :children [{:label "New..."
+    :children [{:label "新建..."
                 :id ::new
                 :command :file.new}
-               {:label "Open..."
+               {:label "打开..."
                 :id ::open
                 :command :file.open}
-               {:label "Load External Changes"
+               {:label "加载外部更改" ; Load External Changes
                 :id ::async-reload
                 :command :file.load-external-changes}
-               {:label "Save All"
+               {:label "全部保存" ; Save All
                 :id ::save-all
                 :command :file.save-all}
-               {:label "Upgrade File Formats..."
+               {:label "升级文件格式..." ; Upgrade File Formats...
                 :id ::save-and-upgrade-all
                 :command :file.save-and-upgrade-all}
-               {:label :separator}
-               {:label "Search in Files..."
+               {:label :separator} ; separator (保持不变)
+               {:label "在文件中搜索..." ; Search in Files...
                 :command :file.search}
-               {:label "Recent Files"
+               {:label "最近文件" ; Recent Files
                 :command :private/recent-files}
-               {:label :separator}
-               {:label "Close"
+               {:label :separator} ; separator (保持不变)
+               {:label "关闭" ; Close
                 :command :window.tab.close}
-               {:label "Close All"
+               {:label "全部关闭" ; Close All
                 :command :window.tab.close-all}
-               {:label "Close Others"
+               {:label "关闭其他" ; Close Others
                 :command :window.tab.close-others}
-               {:label :separator}
-               {:label "Referencing Files..."
+               {:label :separator} ; separator (保持不变)
+               {:label "引用文件..." ; Referencing Files...
                 :command :file.show-references}
-               {:label "Dependencies..."
+               {:label "依赖项..." ; Dependencies...
                 :command :file.show-dependencies}
-               {:label "Show Overrides"
+               {:label "显示重写" ; Show Overrides
                 :command :edit.show-overrides}
-               {:label "Hot Reload"
+               {:label "热重载" ; Hot Reload
                 :command :run.hot-reload}
-               {:label :separator}
-               {:label "Open Project..."
+               {:label :separator} ; separator (保持不变)
+               {:label "打开项目..." ; Open Project...
                 :command :file.open-project}
-               {:label "Preferences..."
+               {:label "首选项..." ; Preferences...
                 :command :app.preferences}
-               {:label "Quit"
+               {:label "退出" ; Quit
                 :command :app.quit}]}
-   {:label "Edit"
+{:label "编辑" ; Edit
     :id ::edit
-    :children [{:label "Undo"
+    :children [{:label "撤销" ; Undo
                 :icon "icons/undo.png"
                 :command :edit.undo}
-               {:label "Redo"
+               {:label "重做" ; Redo
                 :icon "icons/redo.png"
                 :command :edit.redo}
-               {:label :separator}
-               {:label "Cut"
+               {:label :separator} ; 分隔线
+               {:label "剪切" ; Cut
                 :command :edit.cut}
-               {:label "Copy"
+               {:label "复制" ; Copy
                 :command :edit.copy}
-               {:label "Paste"
+               {:label "粘贴" ; Paste
                 :command :edit.paste}
-               {:label "Select All"
+               {:label "全选" ; Select All
                 :command :code.select-all}
-               {:label "Delete"
+               {:label "删除" ; Delete
                 :icon "icons/32/Icons_M_06_trash.png"
                 :command :edit.delete}
-               {:label :separator}
-               {:label "Move Up"
+               {:label :separator} ; 分隔线
+               {:label "上移" ; Move Up
                 :command :edit.reorder-up}
-               {:label "Move Down"
+               {:label "下移" ; Move Down
                 :command :edit.reorder-down}
-               {:label :separator
+               {:label :separator ; 分隔线
                 :id ::edit-end}]}
-   {:label "View"
+{:label "视图" ; View
     :id ::view
-    :children [{:label "Toggle Assets Pane"
+    :children [{:label "切换资源面板" ; Toggle Assets Pane
                 :command :window.toggle-left-pane}
-               {:label "Toggle Changed Files"
+               {:label "切换更改文件面板" ; Toggle Changed Files
                 :command :window.toggle-changed-files-pane}
-               {:label "Toggle Tools Pane"
+               {:label "切换工具面板" ; Toggle Tools Pane
                 :command :window.toggle-bottom-pane}
-               {:label "Toggle Properties Pane"
+               {:label "切换属性面板" ; Toggle Properties Pane
                 :command :window.toggle-right-pane}
                {:label :separator}
-               {:label "Show Console"
+               {:label "显示控制台" ; Show Console
                 :command :window.show-console}
-               {:label "Show Curve Editor"
+               {:label "显示曲线编辑器" ; Show Curve Editor
                 :command :window.show-curve-editor}
-               {:label "Show Build Errors"
+               {:label "显示构建错误" ; Show Build Errors
                 :command :window.show-build-errors}
-               {:label "Show Search Results"
+               {:label "显示搜索结果" ; Show Search Results
                 :command :window.show-search-results}
                {:label :separator
                 :id ::view-end}]}
-   {:label "Help"
-    :children [{:label "Reload Stylesheet"
+   {:label "帮助" ; Help
+    :children [{:label "重新加载样式表" ; Reload Stylesheet
                 :command :dev.reload-css}
-               {:label "Show Logs"
+               {:label "显示日志" ; Show Logs
                 :command :help.open-logs}
                {:label :separator}
-               {:label "Create Desktop Entry"
+               {:label "创建桌面快捷方式" ; Create Desktop Entry
                 :command :file.create-desktop-entry}
                {:label :separator}
-               {:label "Documentation"
+               {:label "文档" ; Documentation
                 :command :help.open-documentation}
-               {:label "Support Forum"
+               {:label "支持论坛" ; Support Forum
                 :command :help.open-forum}
-               {:label "Find Assets"
+               {:label "查找资源" ; Find Assets
                 :command :help.open-asset-portal}
                {:label :separator}
-               {:label "Report Issue"
+               {:label "报告问题" ; Report Issue
                 :command :help.report-issue}
-               {:label "Report Suggestion"
+               {:label "提交建议" ; Report Suggestion
                 :command :help.report-suggestion}
-               {:label "Search Issues"
+               {:label "搜索问题" ; Search Issues
                 :command :help.open-issues}
                {:label :separator}
-               {:label "Development Fund"
+               {:label "开发基金" ; Development Fund
                 :command :help.open-donations}
                {:label :separator}
-               {:label "About"
+               {:label "关于" ; About
                 :command :app.about}]}])
 
 (handler/register-menu! ::tab-menu
-  [{:label "Close"
+ [{:label "关闭" ; Close
     :command :window.tab.close}
-   {:label "Close Others"
+   {:label "关闭其他" ; Close Others
     :command :window.tab.close-others}
-   {:label "Close All"
+   {:label "关闭所有" ; Close All
     :command :window.tab.close-all}
    {:label :separator}
-   {:label "Move to Other Tab Pane"
+   {:label "移动到其他标签页窗格" ; Move to Other Tab Pane
     :command :window.tab.move-to-other-group}
-   {:label "Swap With Other Tab Pane"
+   {:label "与其他标签页窗格交换" ; Swap With Other Tab Pane
     :command :window.tab.swap-with-other-group}
-   {:label "Join Tab Panes"
+   {:label "合并标签页窗格" ; Join Tab Panes
     :command :window.tab.join-groups}
    {:label :separator}
-   {:label "Copy Resource Path"
+   {:label "复制资源路径" ; Copy Resource Path
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径" ; Copy Full Path
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径" ; Copy Require Path
     :command :edit.copy-require-path}
    {:label :separator}
-   {:label "Show in Asset Browser"
+   {:label "在资源浏览器中显示" ; Show in Asset Browser
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-assets}
-   {:label "Show in Desktop"
+   {:label "在桌面中显示" ; Show in Desktop
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..." ; Referencing Files...
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..." ; Dependencies...
     :command :file.show-dependencies}
-   {:label "Show Overrides"
+   {:label "显示覆盖" ; Show Overrides
     :command :edit.show-overrides}])
 
 (defrecord SelectionProvider [app-view]
@@ -2167,7 +2167,7 @@ If you do not specifically require different script states, consider changing th
   (active? [] true)
   (options [prefs workspace app-view]
     (g/with-auto-evaluation-context evaluation-context
-      (-> [{:label "Re-Open Closed File"
+      (-> [{:label "重新打开关闭的文件"
             :command :file.reopen-recent}]
           (cond-> (recent-files/exist? prefs workspace evaluation-context)
                   (->
@@ -2179,7 +2179,7 @@ If you do not specifically require different script states, consider changing th
                               :user-data resource+view-type}))
                       (recent-files/some-recent prefs workspace evaluation-context))
                     (conj {:label :separator})))
-          (conj {:label "More..."
+          (conj {:label "更多..."
                  :command :file.open-recent})))))
 
 (handler/defhandler :private/open-selected-recent-file :global

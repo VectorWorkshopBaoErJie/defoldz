@@ -85,53 +85,53 @@
           children)))))
 
 (handler/register-menu! ::resource-menu
-  [{:label "Open"
+[{:label "打开" ; Open
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-selected}
-   {:label "Open As"
+   {:label "打开为" ; Open As
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-as}
    {:label :separator}
-   {:label "Copy Resource Path"
+   {:label "复制资源路径" ; Copy Resource Path
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径" ; Copy Full Path
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径" ; Copy Require Path
     :command :edit.copy-require-path}
    {:label :separator}
-   {:label "Show in Desktop"
+   {:label "在桌面显示" ; Show in Desktop
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..." ; Referencing Files...
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..." ; Dependencies...
     :command :file.show-dependencies}
-   {:label "Show Overrides"
+   {:label "显示覆盖项" ; Show Overrides
     :command :edit.show-overrides}
    {:label :separator}
-   {:label "New"
+   {:label "新建" ; New (likely a submenu trigger)
     :command :file.new
     :expand true
     :icon "icons/64/Icons_29-AT-Unknown.png"}
-   {:label "New File"
+   {:label "新建文件" ; New File
     :command :file.new
     :user-data {:any-file true}
     :icon "icons/64/Icons_29-AT-Unknown.png"}
-   {:label "New Folder"
+   {:label "新建文件夹" ; New Folder
     :command :file.new-folder
     :icon "icons/32/Icons_01-Folder-closed.png"}
    {:label :separator}
-   {:label "Cut"
+   {:label "剪切" ; Cut
     :command :edit.cut}
-   {:label "Copy"
+   {:label "复制" ; Copy
     :command :edit.copy}
-   {:label "Paste"
+   {:label "粘贴" ; Paste
     :command :edit.paste}
-   {:label "Delete"
+   {:label "删除" ; Delete
     :command :edit.delete
     :icon "icons/32/Icons_M_06_trash.png"}
    {:label :separator}
-   {:label "Rename..."
+   {:label "重命名..." ; Rename...
     :command :file.rename}
    {:label :separator
     :id ::context-menu-end}])
@@ -503,7 +503,7 @@
 
 (handler/defhandler :file.new :global
   (label [user-data] (if-not user-data
-                       "New..."
+                       "新建..."
                        (let [rt (:resource-type user-data)]
                          (or (:label rt) (:ext rt)))))
   (active? [selection selection-context] (or (= :global selection-context) (and (= :asset-browser selection-context)
