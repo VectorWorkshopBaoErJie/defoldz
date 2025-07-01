@@ -218,69 +218,69 @@
                                                   (alt-selection tree-selection))))
 
 (handler/register-menu! ::outline-menu
-  [{:label "Open"
+ [{:label "打开" 
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-selected}
-   {:label "Open As"
+   {:label "打开方式"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-as}
    {:label :separator}
-   {:label "Copy Resource Path"
+   {:label "复制资源路径"
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径"
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径"
     :command :edit.copy-require-path}
    {:label :separator}
-   {:label "Show in Asset Browser"
+   {:label "在资源浏览器中显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-assets}
-   {:label "Show in Desktop"
+   {:label "在桌面显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..."
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..."
     :command :file.show-dependencies}
-   {:label "Show Overrides"
+   {:label "显示覆盖项"
     :command :edit.show-overrides}
    {:label :separator}
-   {:label "Add"
+   {:label "添加"
     :icon "icons/32/Icons_M_07_plus.png"
     :command :edit.add-embedded-component
     :expand true}
-   {:label "Add From File"
+   {:label "从文件添加"
     :icon "icons/32/Icons_M_07_plus.png"
     :command :edit.add-referenced-component}
-   {:label "Add Secondary"
+   {:label "添加次级项"
     :icon "icons/32/Icons_M_07_plus.png"
     :command :edit.add-secondary-embedded-component}
-   {:label "Add Secondary From File"
+   {:label "从文件添加次级项"
     :icon "icons/32/Icons_M_07_plus.png"
     :command :edit.add-secondary-referenced-component}
    {:label :separator}
-   {:label "Cut"
+   {:label "剪切"
     :command :edit.cut}
-   {:label "Copy"
+   {:label "复制"
     :command :edit.copy}
-   {:label "Paste"
+   {:label "粘贴"
     :command :edit.paste}
-   {:label "Delete"
+   {:label "删除"
     :icon "icons/32/Icons_M_06_trash.png"
     :command :edit.delete}
    {:label :separator}
-   {:label "Move Up"
+   {:label "上移"
     :command :edit.reorder-up}
-   {:label "Move Down"
+   {:label "下移"
     :command :edit.reorder-down}
    {:label :separator}
-   {:label "Show/Hide Objects"
+   {:label "显示/隐藏对象"
     :command :scene.visibility.toggle-selection}
-   {:label "Hide Unselected Objects"
+   {:label "隐藏未选对象"
     :command :scene.visibility.hide-unselected}
-   {:label "Show Last Hidden Objects"
+   {:label "显示上次隐藏对象"
     :command :scene.visibility.show-last-hidden}
-   {:label "Show All Hidden Objects"
+   {:label "显示所有隐藏对象"
     :command :scene.visibility.show-all}
    {:label :separator
     :id ::context-menu-end}])

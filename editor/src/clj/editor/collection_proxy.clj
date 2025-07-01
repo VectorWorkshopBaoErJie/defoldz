@@ -36,9 +36,9 @@
               :set protobuf-forms-util/set-form-op
               :clear protobuf-forms-util/clear-form-op}
    :navigation false
-   :sections [{:title "Collection Proxy"
+   :sections [{:title "集合代理"
                :fields [{:path [:collection]
-                         :label "Collection"
+                         :label "集合"
                          :type :resource
                          :filter "collection"}]}]
    :values {[:collection] collection-resource}})
@@ -103,7 +103,7 @@
   (output node-outline outline/OutlineData :cached (g/fnk [_node-id collection]
                                                      (cond-> {:node-id _node-id
                                                               :node-outline-key "Collection Proxy"
-                                                              :label "Collection Proxy"
+                                                              :label "集合代理"
                                                               :icon collection-proxy-icon}
 
                                                              (resource/resource? collection)
@@ -125,4 +125,4 @@
     :view-opts {}
     :tags #{:component}
     :tag-opts {:component {:transform-properties #{}}}
-    :label "Collection Proxy"))
+    :label "集合代理"))

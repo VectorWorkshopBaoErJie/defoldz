@@ -66,37 +66,37 @@
               (error-reporting/report-exception! error))))))))
 
 (handler/register-menu! ::changes-menu
-  [{:label "Open"
+[{:label "打开"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-selected}
-   {:label "Open As"
+   {:label "打开方式"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.open-as}
    {:label :separator}
-   {:label "Copy Resource Path"
+   {:label "复制资源路径"
     :command :edit.copy-resource-path}
-   {:label "Copy Full Path"
+   {:label "复制完整路径"
     :command :edit.copy-absolute-path}
-   {:label "Copy Require Path"
+   {:label "复制引用路径"
     :command :edit.copy-require-path}
    {:label :separator}
-   {:label "Show in Asset Browser"
+   {:label "在资源浏览器中显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-assets}
-   {:label "Show in Desktop"
+   {:label "在桌面显示"
     :icon "icons/32/Icons_S_14_linkarrow.png"
     :command :file.show-in-desktop}
-   {:label "Referencing Files..."
+   {:label "引用文件..."
     :command :file.show-references}
-   {:label "Dependencies..."
+   {:label "依赖项..."
     :command :file.show-dependencies}
-   {:label "Show Overrides"
+   {:label "显示覆盖项"
     :command :edit.show-overrides}
    {:label :separator}
-   {:label "View Diff"
+   {:label "查看差异"
     :icon "icons/32/Icons_S_06_arrowup.png"
     :command :vcs.diff}
-   {:label "Revert"
+   {:label "恢复"
     :icon "icons/32/Icons_S_02_Reset.png"
     :command :vcs.revert}])
 
