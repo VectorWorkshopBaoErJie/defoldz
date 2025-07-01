@@ -260,11 +260,11 @@
             key-font (Font. "" 13)
             color (Color. 1.0 1.0 0.59765625 0.6)]
         (.clear (.getChildren grid-pane))
-        (->> [[:file.open "Open Asset"]
-              [:file.reopen-recent "Re-Open Closed File"]
-              [:file.search "Search in Files"]
-              [:project.build "Build and Run Project"]
-              [:debugger.start "Start or Attach Debugger"]]
+        (->> [[:file.open "打开资源"]
+              [:file.reopen-recent "重新打开已关闭文件"]
+              [:file.search "在文件中搜索"]
+              [:project.build "构建并运行项目"]
+              [:debugger.start "启动或附加调试器"]]
              (e/keep (fn [[command label]]
                        (when-let [display-text (keymap/display-text keymap command nil)]
                          (coll/pair label display-text))))

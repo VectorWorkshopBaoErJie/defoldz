@@ -36,21 +36,21 @@
 (set! *warn-on-reflection* true)
 
 (handler/register-menu! ::scene-selection-menu
-                        [{:label "Cut"
+                        [{:label "剪切"
                           :command :edit.cut}
-                         {:label "Copy"
+                         {:label "复制"
                           :command :edit.copy}
-                         {:label "Paste"
+                         {:label "粘贴"
                           :command :edit.paste}
-                         {:label "Delete"
+                         {:label "删除"
                           :icon "icons/32/Icons_M_06_trash.png"
                           :command :edit.delete}
                          {:label :separator}
-                         {:label "Show/Hide Objects"
+                         {:label "显示/隐藏对象"
                           :command :scene.visibility.toggle-selection}
-                         {:label "Hide Unselected Objects"
+                         {:label "隐藏未选对象"
                           :command :scene.visibility.hide-unselected}
-                         {:label "Show All Hidden Objects"
+                         {:label "显示所有隐藏对象"
                           :command :scene.visibility.show-all}
                          {:label :separator
                           :id ::context-menu-end}])

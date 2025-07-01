@@ -2791,7 +2791,7 @@ To pass on arbitrary options to waf: build.py OPTIONS COMMANDS -- WAF_OPTIONS
         else:
             start = time.time()
             print("Running '%s'" % cmd)
-            f( )
+            f()
             c.wait_uploads()
             duration = (time.time() - start)
             print("'%s' completed in %.2f s" % (cmd, duration))

@@ -49,13 +49,13 @@
 (g/deftype ^:private NameCounts {s/Str s/Int})
 
 (def shape-type-ui
-  {:type-sphere  {:label "Sphere"
+  {:type-sphere  {:label "球体"
                   :icon  "icons/32/Icons_45-Collistionshape-convex-Sphere.png"
                   :physics-types #{"2D" "3D"}}
-   :type-box     {:label "Box"
+   :type-box     {:label "长方体"
                   :icon  "icons/32/Icons_44-Collistionshape-convex-Box.png"
                   :physics-types #{"2D" "3D"}}
-   :type-capsule {:label "Capsule"
+   :type-capsule {:label "胶囊体"
                   :icon  "icons/32/Icons_46-Collistionshape-convex-Cylinder.png"
                   :physics-types #{"3D"}}})
 
@@ -661,7 +661,7 @@
   (output node-outline outline/OutlineData :cached (g/fnk [_node-id child-outlines]
                                                      {:node-id _node-id
                                                       :node-outline-key "Collision Object"
-                                                      :label "Collision Object"
+                                                      :label "碰撞对象"
                                                       :icon collision-object-icon
                                                       :children (outline/natural-sort child-outlines)
                                                       :child-reqs [{:node-type Shape
@@ -689,7 +689,7 @@
     :view-opts {:scene {:grid true}}
     :tags #{:component}
     :tag-opts {:component {:transform-properties #{}}}
-    :label "Collision Object"))
+    :label "碰撞对象"))
 
 ;; outline context menu
 

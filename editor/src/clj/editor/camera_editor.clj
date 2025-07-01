@@ -60,28 +60,29 @@
               :set protobuf-forms-util/set-form-op
               :clear protobuf-forms-util/clear-form-op}
    :navigation false
-   :sections [{:title "Camera"
-               :fields [{:path [:aspect-ratio]
-                         :label "Aspect Ratio"
-                         :type :number}
-                        {:path [:fov]
-                         :label "FOV"
-                         :type :number}
-                        {:path [:near-z]
-                         :label "Near-Z"
-                         :type :number}
-                        {:path [:far-z]
-                         :label "Far-Z"
-                         :type :number}
-                        {:path [:auto-aspect-ratio]
-                         :label "Auto Aspect Ratio"
-                         :type :boolean}
-                        {:path [:orthographic-projection]
-                         :label "Orthographic Projection"
-                         :type :boolean}
-                        {:path [:orthographic-zoom]
-                         :label "Orthographic Zoom"
-                         :type :number}]}]
+  :sections [{:title "摄像机"
+                :fields [{:path [:aspect-ratio]
+                          :label "宽高比"
+                          :type :number}
+                          {:path [:fov]
+                          :label "视野 (FOV)"
+                          :type :number}
+                          {:path [:near-z]
+                          :label "近平面 (Near-Z)"
+                          :type :number}
+                          {:path [:far-z]
+                          :label "远平面 (Far-Z)"
+                          :type :number}
+                          {:path [:auto-aspect-ratio]
+                          :label "自动宽高比"
+                          :type :boolean}
+                          {:path [:orthographic-projection]
+                          :label "正交投影"
+                          :type :boolean}
+                          {:path [:orthographic-zoom]
+                          :label "正交缩放"
+                          :type :number}]}]
+                          
    :values {[:aspect-ratio] aspect-ratio
             [:fov] fov
             [:near-z] near-z

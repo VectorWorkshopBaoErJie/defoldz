@@ -430,7 +430,7 @@
                                       [(get outlines false) (get outlines true)])]
     {:node-id _node-id
      :node-outline-key "Collection"
-     :label "Collection"
+     :label "集合"
      :icon collection-common/collection-icon
      :children (into (outline/natural-sort coll-outlines) (outline/natural-sort go-outlines))
      :child-reqs [{:node-type ReferencedGOInstanceNode
@@ -658,7 +658,7 @@
         id (gen-instance-id coll-node base)]
     (g/transact
       (concat
-        (g/operation-label "Add Game Object")
+        (g/operation-label "添加游戏对象")
         (make-ref-go coll-node resource id nil parent nil select-fn)))))
 
 (defn- select-go-file [workspace project]
@@ -666,7 +666,7 @@
 
 (handler/defhandler :edit.add-referenced-component :workbench
   (active? [selection] (selection->collection selection))
-  (label [selection] "Add Game Object File")
+  (label [selection] "添加游戏对象文件")
   (run [workspace project app-view selection]
        (let [collection (selection->collection selection)]
          (when-let [resource (first (resource-dialog/make workspace project {:ext "go" :title "Select Game Object File"}))]
@@ -709,12 +709,12 @@
         id (gen-instance-id coll-node ext)]
     (g/transact
       (concat
-        (g/operation-label "Add Game Object")
+        (g/operation-label "添加游戏对象")
         (make-embedded-go coll-node project prototype-desc id nil parent select-fn)))))
 
 (handler/defhandler :edit.add-embedded-component :workbench
   (active? [selection] (selection->collection selection))
-  (label [selection user-data] "Add Game Object")
+  (label [selection user-data] "添加游戏对象")
   (run [selection workspace project user-data app-view]
        (let [collection (selection->collection selection)]
          (add-embedded-game-object! workspace project collection collection (fn [node-ids] (app-view/select app-view node-ids))))))
@@ -737,12 +737,12 @@
 (defn add-referenced-collection! [self source-resource id transform-properties overrides select-fn]
   (g/transact
     (concat
-      (g/operation-label "Add Collection")
+      (g/operation-label "添加集合")
       (make-collection-instance self source-resource id transform-properties overrides select-fn))))
 
 (handler/defhandler :edit.add-secondary-embedded-component :workbench
   (active? [selection] (selection->game-object-instance selection))
-  (label [] "Add Game Object")
+  (label [] "添加游戏对象")
   (run [selection project workspace app-view]
        (let [go-node (selection->game-object-instance selection)
              collection (core/scope-of-type go-node CollectionNode)]
@@ -759,13 +759,13 @@
   (active? [selection] (or (selection->collection selection)
                          (selection->game-object-instance selection)))
   (label [selection] (if (selection->collection selection)
-                       "Add Collection File"
-                       "Add Game Object File"))
+                       "添加集合文件"
+                       "添加游戏对象文件"))
   (run [selection workspace project app-view]
        (if-let [coll-node (selection->collection selection)]
          (let [ext "collection"
                accept (complement (partial contains-resource? project coll-node))]
-           (when-let [resource (first (resource-dialog/make workspace project {:ext ext :title "Select Collection File" :accept-fn accept}))]
+           (when-let [resource (first (resource-dialog/make workspace project {:ext ext :title "选择集合文件" :accept-fn accept}))]
              (let [base (resource/base-name resource)
                    id (gen-instance-id coll-node base)
                    select-fn (fn [node-ids] (app-view/select app-view node-ids))]
@@ -854,7 +854,7 @@
 (defn register-resource-types [workspace]
   (resource-node/register-ddf-resource-type workspace
     :ext "collection"
-    :label "Collection"
+    :label "集合"
     :node-type CollectionNode
     :ddf-type GameObject$CollectionDesc
     :load-fn load-collection

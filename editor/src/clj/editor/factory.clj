@@ -30,11 +30,11 @@
 
 (def ^:const factory-types
   {:game-object {:icon "icons/32/Icons_07-Factory.png"
-                 :title "Factory"
+                 :title "工厂"
                  :ext "go"
                  :pb-type GameSystem$FactoryDesc}
    :collection  {:icon "icons/32/Icons_08-Collection-factory.png"
-                 :title "Collection Factory"
+                 :title "集合工厂"
                  :ext "collection"
                  :pb-type GameSystem$CollectionFactoryDesc}})
 
@@ -46,14 +46,14 @@
    :navigation false
    :sections [{:title (get-in factory-types [factory-type :title])
                :fields [{:path [:prototype]
-                         :label "Prototype"
+                         :label "原型"
                          :type :resource
                          :filter (get-in factory-types [factory-type :ext])}
                         {:path [:load-dynamically]
-                         :label "Load Dynamically"
+                         :label "动态加载"
                          :type :boolean}
                         {:path [:dynamic-prototype]
-                         :label "Dynamic Prototype"
+                         :label "动态原型"
                          :type :boolean}]}]
    :values {[:prototype] prototype-resource
             [:load-dynamically] load-dynamically
@@ -150,7 +150,7 @@
       :view-opts {}
       :tags #{:component}
       :tag-opts {:component {:transform-properties #{}}}
-      :label "Factory")
+      :label "工厂")
     (resource-node/register-ddf-resource-type workspace
       :textual? true
       :ext "collectionfactory"
@@ -163,4 +163,4 @@
       :view-opts {}
       :tags #{:component}
       :tag-opts {:component {:transform-properties #{}}}
-      :label "Collection Factory")))
+      :label "集合工厂")))

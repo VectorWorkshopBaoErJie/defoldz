@@ -450,17 +450,17 @@
        (kill-launched-targets!)))
 
 (handler/register-menu! ::menubar :editor.defold-project/targets
-  [{:label "Target"
-    :id ::target
-    :on-submenu-open update!
-    :command :run.select-target
-    :expand true}
-   {:label "Close Engine"
-    :command :run.stop}
-   {:label "Launched Instance Count"
-    :command :run.set-instance-count
-    :expand true}
-   {:label "Enter Target IP"
-    :command :run.set-target-ip}
-   {:label "Target Discovery Log"
-    :command :run.show-target-log}])
+  [{:label "目标平台"  ; Target → 目标平台（指运行环境/设备）
+      :id ::target
+      :on-submenu-open update!
+      :command :run.select-target
+      :expand true}
+    {:label "关闭引擎"  ; Close Engine → 关闭引擎
+      :command :run.stop}
+    {:label "启动实例数"  ; Launched Instance Count → 启动实例数
+      :command :run.set-instance-count
+      :expand true}
+    {:label "输入目标IP"  ; Enter Target IP → 输入目标IP
+      :command :run.set-target-ip}
+    {:label "目标发现日志"  ; Target Discovery Log → 目标发现日志
+      :command :run.show-target-log}])
