@@ -259,7 +259,11 @@ def full_jdk_url(jdk_platform):
     return 'https://github.com/adoptium/temurin%s-binaries/releases/download/jdk-%s/OpenJDK%sU-jdk_%s_hotspot_%s.%s' % (major_version, version, major_version, platform, artifact_version, extension)
 
 def full_build_jdk_url():
-    return full_jdk_url(python_platform_to_java["%s-%s" % (platform.machine(), sys.platform)])
+    machine = platform.machine()
+    # 将AMD64转换为x86_64以匹配字典键
+    if machine == 'AMD64' :
+        machine = 'x86_64'
+    return full_jdk_url(python_platform_to_java["%s-%s" % ( machine, sys.platform)])
 
 def download_build_jdk():
     print('Downloading build jdk')
