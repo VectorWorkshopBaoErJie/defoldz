@@ -450,32 +450,32 @@
 
 (handler/register-menu! :toolbar
   [{:id :select
-    :tooltip "Select tool"
+    :tooltip "选择工具"
     :icon "icons/45/Icons_T_01_Select.png"
     :command :scene.select-select-tool}
    {:id :move
-    :tooltip "Move tool"
+    :tooltip "移动工具"
     :icon "icons/45/Icons_T_02_Move.png"
     :command :scene.select-move-tool}
    {:id :rotate
-    :tooltip "Rotate tool"
+    :tooltip "旋转工具"
     :icon "icons/45/Icons_T_03_Rotate.png"
     :command :scene.select-rotate-tool}
    {:id :scale
-    :tooltip "Scale tool"
+    :tooltip "缩放工具"
     :icon "icons/45/Icons_T_04_Scale.png"
     :command :scene.select-scale-tool}
    {:label :separator}
    {:id :2d-mode
-    :tooltip "2d mode"
+    :tooltip "2d模式"
     :graphic-fn (partial icons/make-svg-icon-graphic mode-2d-svg-path)
     :command :scene.toggle-interaction-mode}
    {:id :perspective-camera
-    :tooltip "Perspective camera"
+    :tooltip "透视相机"
     :graphic-fn (partial icons/make-svg-icon-graphic perspective-icon-svg-path)
     :command :scene.toggle-camera-type}
    {:id :visibility-settings
-    :tooltip "Visibility settings"
+    :tooltip "可见性设置"
     :graphic-fn make-visibility-settings-graphic
     :command :scene.visibility.show-settings}])
 

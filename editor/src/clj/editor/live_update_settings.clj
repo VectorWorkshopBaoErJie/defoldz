@@ -112,7 +112,7 @@
 (defn register-resource-types [workspace]
   (resource-node/register-settings-resource-type workspace
     :ext "settings"
-    :label "Live Update Settings"
+    :label "热更新设置"
     :node-type LiveUpdateSettingsNode
     :load-fn load-live-update-settings
     :meta-settings (:settings basic-meta-info)

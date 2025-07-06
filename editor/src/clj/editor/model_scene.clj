@@ -488,7 +488,7 @@
 (defn register-resource-types [workspace]
   (workspace/register-resource-type workspace
     :ext model-file-types
-    :label "Model Scene"
+    :label "模型场景"
     :node-type ModelSceneNode
     :icon mesh-icon
     :icon-class :design

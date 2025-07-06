@@ -446,9 +446,9 @@
                             name
                             :title (cond
                                      dir "Rename Folder"
-                                     (= 1 (count selection)) "Rename File"
-                                     :else "Rename Files")
-                            :label (if dir "New Folder Name" "New File Name")
+                                     (= 1 (count selection)) "重命令文件"
+                                     :else "重命令这此文件")
+                            :label (if dir "New Folder Name" "新文件名")
                             :extensions extensions
                             :validate (fn [file-name]
                                         (some #(validate-new-resource-name project-directory % file-name) parent-paths)))]
@@ -461,31 +461,31 @@
                    (handler/adapt-single resource/Resource))]
       (when (if (= 1 (count selection))
               (dialogs/make-confirmation-dialog
-                {:title "Delete File?"
+                {:title "删除文件?"
                  :icon :icon/circle-question
-                 :header (format "Are you sure you want to delete %s?"
+                 :header (format "确认删除 %s?"
                                  (resource/resource-name (first selection)))
-                 :buttons [{:text "Cancel"
+                 :buttons [{:text "取消"
                             :cancel-button true
                             :default-button true
                             :result false}
-                           {:text "Delete"
+                           {:text "删除"
                             :variant :danger
                             :result true}]})
               (dialogs/make-info-dialog
-                {:title "Delete Files?"
+                {:title "删除这些文件?"
                  :icon :icon/circle-question
-                 :header "Are you sure you want to delete these files?"
-                 :content {:text (str "You are about to delete:\n"
+                 :header "确认要删除这些文件?"
+                 :content {:text (str "您即将删除:\n"
                                       (->> selection
                                            (map #(str "\u00A0\u00A0\u2022\u00A0"
                                                       (resource/resource-name %)))
                                            (string/join "\n")))}
-                 :buttons [{:text "Cancel"
+                 :buttons [{:text "取消"
                             :cancel-button true
                             :default-button true
                             :result false}
-                           {:text "Delete"
+                           {:text "删除"
                             :variant :danger
                             :result true}]}))
         (when (and (delete selection) next)
@@ -544,7 +544,7 @@
   (options [workspace selection user-data]
     (when (not user-data)
       (sort-by (comp string/lower-case :label)
-               (into [{:label "File"
+               (into [{:label "文件"
                        :icon "icons/64/Icons_29-AT-Unknown.png"
                        :command :file.new
                        :user-data {:any-file true}}]
