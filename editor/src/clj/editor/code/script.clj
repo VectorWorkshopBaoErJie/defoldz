@@ -130,7 +130,7 @@
           :script-property-type-boolean
           :script-property-type-resource))
 
-(def script-defs [{:ext "脚本"
+(def script-defs [{:ext "script"
                    :label "Script"
                    :icon "icons/32/Icons_12-Script-type.png"
                    :icon-class :script
