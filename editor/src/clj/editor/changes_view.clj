@@ -110,15 +110,15 @@
                  (pos? (count selection))))
   (run [async-reload! selection git changes-view workspace]
     (when (dialogs/make-confirmation-dialog
-            {:title "Revert Changes?"
+            {:title "确认恢复更改?"
              :size :large
              :icon :icon/circle-question
-             :header "Are you sure you want to revert changes on selected files?"
-             :buttons [{:text "Cancel"
+             :header "确定要恢复选中文件的更改吗?"
+             :buttons [{:text "取消"
                         :cancel-button true
                         :default-button true
                         :result false}
-                       {:text "Revert Changes"
+                       {:text "恢复更改"
                         :variant :danger
                         :result true}]})
       (let [moved-files (mapv #(vector (path->file workspace (:new-path %)) (path->file workspace (:old-path %))) (filter #(= (:change-type %) :rename) selection))]

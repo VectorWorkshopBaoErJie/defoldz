@@ -489,7 +489,7 @@
 (defn register-resource-types [workspace]
   (resource-node/register-ddf-resource-type workspace
     :ext "mesh"
-    :label "Mesh"
+    :label "网格"
     :node-type MeshNode
     :ddf-type MeshProto$MeshDesc
     :load-fn load-mesh

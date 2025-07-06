@@ -295,7 +295,7 @@
   (output node-outline outline/OutlineData :cached (g/fnk [_node-id]
                                                      {:node-id _node-id
                                                       :node-outline-key "Camera"
-                                                      :label "Camera"
+                                                      :label "摄相机"
                                                       :icon camera-icon}))
 
   (output save-value g/Any :cached produce-save-value)
@@ -315,4 +315,4 @@
     :view-opts {}
     :tags #{:component}
     :tag-opts {:component {:transform-properties #{}}}
-    :label "Camera"))
+    :label "摄相机"))

@@ -26,12 +26,12 @@
             <Button id="error-button" text="Exit" visible="false" />
             <TextFlow id="startup-tip" maxWidth="500.0"/>
             <Label id="version" text="No Version" visible="false" wrapText="true" />
-            <Label id="copyright" text="2009-2025 Defold Foundation. All rights reserved." wrapText="true" />
+            <Label id="copyright" text="© 2009-2025 Defold 基金会。保留所有权利。" wrapText="true" />
           </VBox>
        </AnchorPane>
        <AnchorPane id="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
           <VBox prefWidth="500.0" AnchorPane.leftAnchor="39.0" AnchorPane.bottomAnchor="0.0">
-             <Label id="sponsors" text="Corporate Partners:" />
+             <Label id="sponsors" text="企业合作伙伴:" />
              <HBox id="sponsor-icons">
                 <ImageView fitHeight="30.0" preserveRatio="true">
                     <Image url="@/sponsors/melsoft.png" />
