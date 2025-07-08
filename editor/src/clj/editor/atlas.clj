@@ -894,7 +894,7 @@
                                                          ;; We use evaluation context to get child node types that should never change
                                                          {:node-id          _node-id
                                                           :node-outline-key "Atlas"
-                                                          :label            "Í¼¼¯"
+                                                          :label            "å›¾é›†"
                                                           :children         (vec (sort-by (partial atlas-outline-sort-by-fn (:basis _evaluation-context))  child-outlines))
                                                           :icon             atlas-icon
                                                           :outline-error?   (g/error-fatal? own-build-errors)
@@ -1024,7 +1024,7 @@
 (defn- add-images-handler [app-view workspace project parent accept-fn] ; parent = new parent of images
   (when-some [image-resources (seq (resource-dialog/make workspace project
                                                          {:ext image/exts
-                                                          :title "Ñ¡ÔñÍ¼Ïñ"
+                                                          :title "Ñ¡ï¿½ï¿½Í¼ï¿½ï¿½"
                                                           :selection :multiple
                                                           :accept-fn accept-fn}))]
     (let [op-seq (gensym)
@@ -1298,7 +1298,7 @@
       :get (attachment/nodes-by-type-getter AtlasImage))
     (resource-node/register-ddf-resource-type workspace
       :ext "atlas"
-      :label "Í¼¼¯"
+      :label "å›¾é›†"
       :build-ext "a.texturesetc"
       :node-type AtlasNode
       :ddf-type AtlasProto$Atlas

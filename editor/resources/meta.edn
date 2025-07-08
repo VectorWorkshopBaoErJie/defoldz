@@ -1,78 +1,78 @@
 {:settings
  [{:type :string,
-   :help "Ó¦ÓÃ±êÌâ",
+   :help "åº”ç”¨æ ‡é¢˜",
    :default "unnamed",
-   :label "±êÌâ",
+   :label "æ ‡é¢˜",
    :path ["project" "title"]}
   {:type :string,
-   :help "Ó¦ÓÃ°æ±¾",
+   :help "åº”ç”¨ç‰ˆæœ¬",
    :default "1.0",
-   :label "°æ±¾",
+   :label "ç‰ˆæœ¬",
    :path ["project" "version"]}
   {:type :string,
-   :help "·¢ĞĞÉÌÃû³Æ",
+   :help "å‘è¡Œå•†åç§°",
    :default "",
-   :label "·¢ĞĞÉÌ"
+   :label "å‘è¡Œå•†"
    :path ["project" "publisher"]}
   {:type :string,
-   :help "¿ª·¢ÕßÃû³Æ",
+   :help "å¼€å‘è€…åç§°",
    :default "",
-   :label "¿ª·¢Õß"
+   :label "å¼€å‘è€…"
    :path ["project" "developer"]}
   {:type :boolean,
-   :help "½«ÈÕÖ¾ĞÅÏ¢Ğ´Èë´ÅÅÌ",
+   :help "å°†æ—¥å¿—ä¿¡æ¯å†™å…¥ç£ç›˜",
    :default false,
-   :label "¼ÇÂ¼ÈÕÖ¾",
+   :label "è®°å½•æ—¥å¿—",
    :path ["project" "write_log"]}
   {:type :string,
-   :help "?½öÏÔÊ¾×îµÍÈÕÖ¾¼¶±ğ¼°¸ü¸ß¼¶±ğµÄÈÕÖ¾",
+   :help "?ä»…æ˜¾ç¤ºæœ€ä½æ—¥å¿—çº§åˆ«åŠæ›´é«˜çº§åˆ«çš„æ—¥å¿—",
    :default "1",
-   :label "×îµÍÈÕÖ¾¼¶±ğ",
+   :label "æœ€ä½æ—¥å¿—çº§åˆ«",
    :path ["project" "minimum_log_level"]
    :options [["0" "DEBUG = 0"] ["1" "USER DEBUG = 1"] ["2" "INFO = 2"] ["3" "WARNING = 3"] ["4" "ERROR = 4"] ["5" "FATAL = 5"]]}
   {:type :boolean,
-   :help "Ñ¹ËõÖÆÆ·£¬·Ç°²×¿",
+   :help "å‹ç¼©åˆ¶å“ï¼Œéå®‰å“",
    :default true,
-   :label "Ñ¹ËõÖÆÆ·",
+   :label "å‹ç¼©åˆ¶å“",
    :path ["project" "compress_archive"]}
   {:type :list,
    :help
-   "?±¾ÏîÄ¿ËùĞèÒÀÀµÏîÄ¿µÄ URL ÁĞ±í£¬ÒÔ¶ººÅ·Ö¸ô",
-   :label "ÒÀÀµ",
+   "?æœ¬é¡¹ç›®æ‰€éœ€ä¾èµ–é¡¹ç›®çš„ URL åˆ—è¡¨ï¼Œä»¥é€—å·åˆ†éš”",
+   :label "ä¾èµ–",
    :path ["project" "dependencies"]
    :element {:type :url
              :default "https://url.to/library"}}
   {:type :string,
    :help
-   "ÏîÄ¿×ÊÔ´°üº¬ÁĞ±í£¬ÒÔ¶ººÅ·Ö¸ô¡£ÈôÖ¸¶¨Ä¿Â¼£¬Ôò¸ÃÄ¿Â¼ÏÂµÄËùÓĞÎÄ¼ş¼°×ÓÄ¿Â¼½«±»µİ¹é°üº¬",
+   "é¡¹ç›®èµ„æºåŒ…å«åˆ—è¡¨ï¼Œä»¥é€—å·åˆ†éš”ã€‚è‹¥æŒ‡å®šç›®å½•ï¼Œåˆ™è¯¥ç›®å½•ä¸‹çš„æ‰€æœ‰æ–‡ä»¶åŠå­ç›®å½•å°†è¢«é€’å½’åŒ…å«",
    :default "",
-   :label "×Ô¶¨Òå×ÊÔ´",
+   :label "è‡ªå®šä¹‰èµ„æº",
    :path ["project" "custom_resources"]}
   {:type :string,
    :help
-   "Ò»¸ö°üº¬×ÊÔ´ÎÄ¼şºÍÎÄ¼ş¼ĞµÄÄ¿Â¼£¬ÔÚ´ò°üÊ±±»Ô­Ñù¸´ÖÆµ½½á¹û°üÖĞ¡£Ïê¼ûÎÄµµ",
+   "ä¸€ä¸ªåŒ…å«èµ„æºæ–‡ä»¶å’Œæ–‡ä»¶å¤¹çš„ç›®å½•ï¼Œåœ¨æ‰“åŒ…æ—¶è¢«åŸæ ·å¤åˆ¶åˆ°ç»“æœåŒ…ä¸­ã€‚è¯¦è§æ–‡æ¡£",
    :default "",
-   :label "´ò°ü×ÊÔ´",
+   :label "æ‰“åŒ…èµ„æº",
    :path ["project" "bundle_resources"]}
   {:type :string,
    :help
-   "²»Ó¦°üº¬ÔÚ´ò°ü²úÎïÖĞµÄ×ÊÔ´ÁĞ±í£¬¼´±»ÅÅ³ı¡£ÒÔ¶ººÅ·Ö¸ô",
+   "ä¸åº”åŒ…å«åœ¨æ‰“åŒ…äº§ç‰©ä¸­çš„èµ„æºåˆ—è¡¨ï¼Œå³è¢«æ’é™¤ã€‚ä»¥é€—å·åˆ†éš”",
    :default "",
-   :label "´ò°üÅÅ³ı×ÊÔ´",
+   :label "æ‰“åŒ…æ’é™¤èµ„æº",
    :path ["project" "bundle_exclude_resources"]}
   {:type :resource,
    :filter "collection",
    :help
-   "?Ó¦ÓÃÆô¶¯Ê±Ê¹ÓÃµÄ¼¯ºÏÎÄ¼ş£¬Ä¬ÈÏÎª /logic/main.collection",
+   "?åº”ç”¨å¯åŠ¨æ—¶ä½¿ç”¨çš„é›†åˆæ–‡ä»¶ï¼Œé»˜è®¤ä¸º /logic/main.collection",
    :default "/logic/main.collection",
-   :label "Æô¶¯¼¯ºÏ",
+   :label "å¯åŠ¨é›†åˆ",
    :path ["bootstrap" "main_collection"]}
   {:type :resource,
    :filter "render",
    :help
-   "Ê¹ÓÃäÖÈ¾ÎÄ¼ş¶¨ÒåäÖÈ¾¹ÜÏß£¬Ä¬ÈÏÎª /builtins/render/default.render",
+   "ä½¿ç”¨æ¸²æŸ“æ–‡ä»¶å®šä¹‰æ¸²æŸ“ç®¡çº¿ï¼Œé»˜è®¤ä¸º /builtins/render/default.render",
    :default "/builtins/render/default.render",
-   :label "äÖÈ¾Æ÷",
+   :label "æ¸²æŸ“å™¨",
    :path ["bootstrap" "render"]}
   {:type :resource,
    :filter "lua",
@@ -81,245 +81,245 @@
    :path ["bootstrap" "debug_init_script"]
    :hidden? true}
   {:type :string,
-   :help "½«´ËÏîÄ¿×÷Îª¿âÊ¹ÓÃÊ±ĞèÒª°üº¬µÄÄ¿Â¼",
+   :help "å°†æ­¤é¡¹ç›®ä½œä¸ºåº“ä½¿ç”¨æ—¶éœ€è¦åŒ…å«çš„ç›®å½•",
    :default "",
-   :label "¿âÄ¿Â¼",
+   :label "åº“ç›®å½•",
    :path ["library" "include_dirs"]}
   {:type :boolean,
-   :help "ËùÓĞ½Å±¾ÀàĞÍ¹²ÏíÍ¬Ò»¸ö Lua ×´Ì¬»ú",
+   :help "æ‰€æœ‰è„šæœ¬ç±»å‹å…±äº«åŒä¸€ä¸ª Lua çŠ¶æ€æœº",
    :default false,
-   :label "¹²Ïí×´Ì¬",
+   :label "å…±äº«çŠ¶æ€",
    :path ["script" "shared_state"]}
   {:type :boolean,
-   :help "ÔÊĞí´°¿Ú×îĞ¡»¯Ê±±£³ÖÒıÇæÔËĞĞ£¬½öÏŞ×ÀÃæÆ½Ì¨",
+   :help "å…è®¸çª—å£æœ€å°åŒ–æ—¶ä¿æŒå¼•æ“è¿è¡Œï¼Œä»…é™æ¡Œé¢å¹³å°",
    :default false,
-   :label "ºóÌ¨ÔËĞĞ",
+   :label "åå°è¿è¡Œ",
    :path ["engine" "run_while_iconified"]}
   {:type :integer,
-   :help "ÔÊĞí²¿·Ö×é¼şÊ¹ÓÃ¹Ì¶¨Ö¡ÂÊ£¬0 ±íÊ¾½ûÓÃ´Ë¹¦ÄÜ£¬µ¥Î»£ººÕ×È",
+   :help "å…è®¸éƒ¨åˆ†ç»„ä»¶ä½¿ç”¨å›ºå®šå¸§ç‡ï¼Œ0 è¡¨ç¤ºç¦ç”¨æ­¤åŠŸèƒ½ï¼Œå•ä½ï¼šèµ«å…¹",
    :default 60,
-   :label "¹Ì¶¨Ö¡ÂÊ",
+   :label "å›ºå®šå¸§ç‡",
    :path ["engine" "fixed_update_frequency"]}
   {:type :number,
-   :help "Èôµ¥Ö¡Ê±¼ä¹ı³¤£¬½«±»ÏŞÖÆÎª´Ë×î´óÖµ£¬µ¥Î»£ºÃë",
+   :help "è‹¥å•å¸§æ—¶é—´è¿‡é•¿ï¼Œå°†è¢«é™åˆ¶ä¸ºæ­¤æœ€å¤§å€¼ï¼Œå•ä½ï¼šç§’",
    :default 0.033333,
-   :label "µ¥Ö¡×î´óÊ±¼ä",
+   :label "å•å¸§æœ€å¤§æ—¶é—´",
    :path ["engine" "max_time_step"]}
   {:type :integer,
    :help
-   "?Ó¦ÓÃ³ÌĞò´°¿Ú¿í¶È£¬Ä¬ÈÏÎª 960 ÏñËØ",
+   "?åº”ç”¨ç¨‹åºçª—å£å®½åº¦ï¼Œé»˜è®¤ä¸º 960 åƒç´ ",
    :default 960,
-   :label "¿í¶È",
+   :label "å®½åº¦",
    :path ["display" "width"]}
   {:type :integer,
    :help
-   "Ó¦ÓÃ³ÌĞò´°¿Ú¸ß¶È£¬Ä¬ÈÏÎª 640  ÏñËØ",
+   "åº”ç”¨ç¨‹åºçª—å£é«˜åº¦ï¼Œé»˜è®¤ä¸º 640  åƒç´ ",
    :default 640,
-   :label "¸ß¶È",
+   :label "é«˜åº¦",
    :path ["display" "height"]}
   {:type :boolean,
-   :help "?ÔÚ¿ÉÓÃÊ±ÆôÓÃ¸ß DPI ºó»º³åÇø",
+   :help "?åœ¨å¯ç”¨æ—¶å¯ç”¨é«˜ DPI åç¼“å†²åŒº",
    :default false,
-   :label "¸ß DPI",
+   :label "é«˜ DPI",
    :path ["display" "high_dpi"]}
   {:type :integer,
    :help
-   "?³¬²ÉÑù¿¹¾â³İ SSAA µÄ²ÉÑùÊıÉèÖÃ£¬Ä¬ÈÏÎª 0 £¬±íÊ¾¹Ø±Õ¸Ã¹¦ÄÜ",
+   "?è¶…é‡‡æ ·æŠ—é”¯é½¿ SSAA çš„é‡‡æ ·æ•°è®¾ç½®ï¼Œé»˜è®¤ä¸º 0 ï¼Œè¡¨ç¤ºå…³é—­è¯¥åŠŸèƒ½",
    :default 0,
    :path ["display" "samples"]}
   {:type :boolean,
    :help
-   "ÒÔÈ«ÆÁÄ£Ê½Æô¶¯Ó¦ÓÃ³ÌĞò",
+   "ä»¥å…¨å±æ¨¡å¼å¯åŠ¨åº”ç”¨ç¨‹åº",
    :default false,
-   :label "È«ÆÁ",
+   :label "å…¨å±",
    :path ["display" "fullscreen"]}
   {:type :resource,
    :filter "display_profiles",
    :help
-   "´ËÓ¦ÓÃËùÊ¹ÓÃµÄÏÔÊ¾ÅäÖÃÎÄ¼ş",
+   "æ­¤åº”ç”¨æ‰€ä½¿ç”¨çš„æ˜¾ç¤ºé…ç½®æ–‡ä»¶",
    :default "/builtins/render/default.display_profiles",
-   :label "ÏÔÊ¾ÅäÖÃ",
+   :label "æ˜¾ç¤ºé…ç½®",
    :path ["display" "display_profiles"]}
   {:type :boolean,
-   :help "?¶¯Ì¬ÆÁÄ»·½ÏòÖ§³Ö",
+   :help "?åŠ¨æ€å±å¹•æ–¹å‘æ”¯æŒ",
    :default false,
-   :label "¶¯Ì¬·½Ïò",
+   :label "åŠ¨æ€æ–¹å‘",
    :path ["display" "dynamic_orientation"]}
   {:type :integer,
-   :help "?ÓÎÏ·Ö÷Ñ­»·Ã¿Ãë¸üĞÂ´ÎÊı¡£ÉèÎª 0 ±íÊ¾¿É±äÖ¡ÂÊ£¬ÉèÎª 30 ÔòÏŞÖÆ¸üĞÂÆµÂÊ",
+   :help "?æ¸¸æˆä¸»å¾ªç¯æ¯ç§’æ›´æ–°æ¬¡æ•°ã€‚è®¾ä¸º 0 è¡¨ç¤ºå¯å˜å¸§ç‡ï¼Œè®¾ä¸º 30 åˆ™é™åˆ¶æ›´æ–°é¢‘ç‡",
    :default 0,
-   :label "Ë¢ĞÂÂÊ",
+   :label "åˆ·æ–°ç‡",
    :path ["display" "update_frequency"]}
   {:type :integer,
-   :help "?´¹Ö±Í¬²½¼ä¸ôÊ±¼ä¡£ÉèÎª 0 ±íÊ¾½ûÓÃ´Ë¹¦ÄÜ",
+   :help "?å‚ç›´åŒæ­¥é—´éš”æ—¶é—´ã€‚è®¾ä¸º 0 è¡¨ç¤ºç¦ç”¨æ­¤åŠŸèƒ½",
    :default 1,
-   :label "Í¬²½¼ä¸ô",
+   :label "åŒæ­¥é—´éš”",
    :path ["display" "swap_interval"]}
   {:type :boolean,
-   :help "´¹Ö±Í¬²½£¬ÒÀÀµÓ²¼ş´¹Ö±Í¬²½½øĞĞÖ¡¼ÆÊ±¡£¾ßÌåÊµÏÖ¿ÉÄÜÒòÏÔ¿¨Çı¶¯ºÍÆ½Ì¨²îÒì¶ø±»¸²¸Ç¡£ÈçĞèÄ£ÄâÒÑÆúÓÃµÄ 'variable_dt' ĞĞÎª£¬ÇëÈ¡Ïû¹´Ñ¡´ËÉèÖÃ²¢½«Ö¡ÉÏÏŞÉèÎª 0 ",
+   :help "å‚ç›´åŒæ­¥ï¼Œä¾èµ–ç¡¬ä»¶å‚ç›´åŒæ­¥è¿›è¡Œå¸§è®¡æ—¶ã€‚å…·ä½“å®ç°å¯èƒ½å› æ˜¾å¡é©±åŠ¨å’Œå¹³å°å·®å¼‚è€Œè¢«è¦†ç›–ã€‚å¦‚éœ€æ¨¡æ‹Ÿå·²å¼ƒç”¨çš„ 'variable_dt' è¡Œä¸ºï¼Œè¯·å–æ¶ˆå‹¾é€‰æ­¤è®¾ç½®å¹¶å°†å¸§ä¸Šé™è®¾ä¸º 0 ",
    :default true,
-   :label "´¹Ö±Í¬²½",
+   :label "å‚ç›´åŒæ­¥",
    :path ["display" "vsync"]}
   {:type :boolean
    :default false
    :deprecated true
    :severity-override :fatal
    :severity-default :warning
-   :help "?´ËÉèÖÃÒÑÆúÓÃ¡£¹´Ñ¡ºó£¬½«½ûÓÃ´¹Ö±Í¬²½²¢½«Ö¡ÊıÉÏÏŞÉèÎª 0 £¬ÒÔÊµÏÖµÈĞ§µÄÔËĞĞĞ§¹û"
+   :help "?æ­¤è®¾ç½®å·²å¼ƒç”¨ã€‚å‹¾é€‰åï¼Œå°†ç¦ç”¨å‚ç›´åŒæ­¥å¹¶å°†å¸§æ•°ä¸Šé™è®¾ä¸º 0 ï¼Œä»¥å®ç°ç­‰æ•ˆçš„è¿è¡Œæ•ˆæœ"
    :path ["display" "variable_dt"]}
   {:type :boolean,
-   :help "ÔÚÆô¶¯Ê±½« GPU ĞÅÏ¢Êä³öµ½¿ØÖÆÌ¨",
+   :help "åœ¨å¯åŠ¨æ—¶å°† GPU ä¿¡æ¯è¾“å‡ºåˆ°æ§åˆ¶å°",
    :default false,
-   :label "ÏÔÊ¾Ó²¼şĞÅÏ¢",
+   :label "æ˜¾ç¤ºç¡¬ä»¶ä¿¡æ¯",
    :path ["display" "display_device_info"]}
   {:type :number,
-   :help "äÖÈ¾Çå³ıÉ« - ºìÉ«Í¨µÀ",
-   :label "Çå³ıÉ«ºì"
+   :help "æ¸²æŸ“æ¸…é™¤è‰² - çº¢è‰²é€šé“",
+   :label "æ¸…é™¤è‰²çº¢"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_red"]}
   {:type :number,
-   :help "äÖÈ¾Çå³ıÉ« - ÂÌÉ«Í¨µÀ",
-   :label "Çå³ıÉ«ÂÌ"
+   :help "æ¸²æŸ“æ¸…é™¤è‰² - ç»¿è‰²é€šé“",
+   :label "æ¸…é™¤è‰²ç»¿"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_green"]}
   {:type :number,
-   :help "äÖÈ¾Çå³ıÉ« - À¶É«Í¨µÀ",
-   :label "Çå³ıÉ«À¶"
+   :help "æ¸²æŸ“æ¸…é™¤è‰² - è“è‰²é€šé“",
+   :label "æ¸…é™¤è‰²è“"
    :default 0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_blue"]}
   {:type :number,
-   :help "äÖÈ¾Çå³ıÉ« - Í¸Ã÷Í¨µÀ",
-   :label "Çå³ıÉ«Í¸Ã÷"
+   :help "æ¸²æŸ“æ¸…é™¤è‰² - é€æ˜é€šé“",
+   :label "æ¸…é™¤è‰²é€æ˜"
    :default 1.0,
    :minimum 0.0,
    :maximum 1.0,
    :path ["render" "clear_color_alpha"]}
   {:type :integer,
-   :help "Ä¬ÈÏ×î¶à 128 ¸öÅö×²ÎïÌå",
+   :help "é»˜è®¤æœ€å¤š 128 ä¸ªç¢°æ’ç‰©ä½“",
    :default 128,
-   :label "×î´óÅö×²¶ÔÏóÊı",
+   :label "æœ€å¤§ç¢°æ’å¯¹è±¡æ•°",
    :path ["physics" "max_collision_object_count"]}
   {:type :string,
-   :help "?Ê¹ÓÃºÎÖÖÎïÀíÏµÍ³£º2D£¨Ä¬ÈÏ£©»ò3D",
+   :help "?ä½¿ç”¨ä½•ç§ç‰©ç†ç³»ç»Ÿï¼š2Dï¼ˆé»˜è®¤ï¼‰æˆ–3D",
    :default "2D",
-   :label "ÀàĞÍ",
+   :label "ç±»å‹",
    :path ["physics" "type"]
    :options [["2D" "2D"] ["3D" "3D"]]}
   {:type :boolean,
-   :help "ÎïÀíÒıÇæÊÇ·ñ²ÉÓÃ¹Ì¶¨Ê±¼ä²½³¤£¬Ïê¼û engine.fixed_update_frequency",
+   :help "ç‰©ç†å¼•æ“æ˜¯å¦é‡‡ç”¨å›ºå®šæ—¶é—´æ­¥é•¿ï¼Œè¯¦è§ engine.fixed_update_frequency",
    :default false,
-   :label "Ê¹ÓÃ¹Ì¶¨Ê±¼ä²½³¤",
+   :label "ä½¿ç”¨å›ºå®šæ—¶é—´æ­¥é•¿",
    :path ["physics" "use_fixed_timestep"]}
   {:type :boolean,
    :help
-   "?¿ÉÊÓ»¯ÎïÀíÊı¾İÓÃÓÚµ÷ÊÔ",
+   "?å¯è§†åŒ–ç‰©ç†æ•°æ®ç”¨äºè°ƒè¯•",
    :default false,
-   :label "µ÷ÊÔ",
+   :label "è°ƒè¯•",
    :path ["physics" "debug"]}
   {:type :number,
    :help
-   "?¿ÉÊÓ»¯ÎïÀíÊı¾İµÄÍ¸Ã÷¶È£¬·¶Î§ 0 ÖÁ 1£¬Ä¬ÈÏÎª 0.9",
+   "?å¯è§†åŒ–ç‰©ç†æ•°æ®çš„é€æ˜åº¦ï¼ŒèŒƒå›´ 0 è‡³ 1ï¼Œé»˜è®¤ä¸º 0.9",
    :default 0.9,
-   :label "µ÷ÊÔÍ¸Ã÷¶È",
+   :label "è°ƒè¯•é€æ˜åº¦",
    :path ["physics" "debug_alpha"]}
   {:type :number,
    :help
-   "ÎïÀíµ÷ÊÔ»ù×¼Í¼ÔªµÄ»æÖÆ³ß´ç£¬Ä¬ÈÏÎª 30 µ¥Î»",
+   "ç‰©ç†è°ƒè¯•åŸºå‡†å›¾å…ƒçš„ç»˜åˆ¶å°ºå¯¸ï¼Œé»˜è®¤ä¸º 30 å•ä½",
    :default 30.0,
-   :label "µ÷ÊÔ³ß´ç",
+   :label "è°ƒè¯•å°ºå¯¸",
    :path ["physics" "debug_scale"]}
   {:type :integer,
    :help
-   "×î´ó²¢ĞĞÎïÀíÊÀ½çÊıÁ¿£¬Ä¬ÈÏÎª 4 £¬×¢Òâ£º¸ÃÉèÖÃ»áÏÔÖøÔö¼ÓÄÚ´æÕ¼ÓÃ",
+   "æœ€å¤§å¹¶è¡Œç‰©ç†ä¸–ç•Œæ•°é‡ï¼Œé»˜è®¤ä¸º 4 ï¼Œæ³¨æ„ï¼šè¯¥è®¾ç½®ä¼šæ˜¾è‘—å¢åŠ å†…å­˜å ç”¨",
    :default 4,
-   :label "ÊÀ½çÊıÁ¿",
+   :label "ä¸–ç•Œæ•°é‡",
    :path ["physics" "world_count"]}
   {:type :number,
-   :help "?ÎïÀíÊÀ½ç X Öá·½ÏòµÄÖØÁ¦Öµ£¬Ä¬ÈÏÎª 0",
+   :help "?ç‰©ç†ä¸–ç•Œ X è½´æ–¹å‘çš„é‡åŠ›å€¼ï¼Œé»˜è®¤ä¸º 0",
    :default 0.0,
-   :label "X ÖáÖØÁ¦",
+   :label "X è½´é‡åŠ›",
    :path ["physics" "gravity_x"]}
   {:type :number,
    :help
-   "ÎïÀíÊÀ½ç Y Öá·½ÏòµÄÖØÁ¦Öµ£¬Ä¬ÈÏÎª -10£¬¼´×ÔÈ»ÖØÁ¦Öµ",
+   "ç‰©ç†ä¸–ç•Œ Y è½´æ–¹å‘çš„é‡åŠ›å€¼ï¼Œé»˜è®¤ä¸º -10ï¼Œå³è‡ªç„¶é‡åŠ›å€¼",
    :default -10.0,
-   :label "Y ÖáÖØÁ¦",
+   :label "Y è½´é‡åŠ›",
    :path ["physics" "gravity_y"]}
   {:type :number,
-   :help "?ÎïÀíÊÀ½ç Z Öá·½ÏòµÄÖØÁ¦Öµ£¬Ä¬ÈÏÎª 0",
+   :help "?ç‰©ç†ä¸–ç•Œ Z è½´æ–¹å‘çš„é‡åŠ›å€¼ï¼Œé»˜è®¤ä¸º 0",
    :default 0.0,
-   :label "Z ÖáÖØÁ¦",
+   :label "Z è½´é‡åŠ›",
    :path ["physics" "gravity_z"]}
   {:type :number,
    :help
-   "?ÎïÀíÊÀ½çÏà¶ÔÓÚÓÎÏ·ÊÀ½çµÄËõ·Å±ÈÀı£¬ÓÃÓÚÌáÉıÊıÖµ¾«¶È£¬È¡Öµ·¶Î§ 0.01~1 £¬Ä¬ÈÏÎª 1",
+   "?ç‰©ç†ä¸–ç•Œç›¸å¯¹äºæ¸¸æˆä¸–ç•Œçš„ç¼©æ”¾æ¯”ä¾‹ï¼Œç”¨äºæå‡æ•°å€¼ç²¾åº¦ï¼Œå–å€¼èŒƒå›´ 0.01~1 ï¼Œé»˜è®¤ä¸º 1",
    :default 1.0,
-   :label "Ëõ·Å",
+   :label "ç¼©æ”¾",
    :path ["physics" "scale"]}
   {:type :boolean,
    :help
-   "ÈôÆôÓÃ£¬ÔÊĞíÉèÖÃ¶¯Ì¬¸ÕÌåµÄËõ·Å¡¢Î»ÖÃ¼°Ğı×ª£¬Ä¬ÈÏÖµÎª true",
+   "è‹¥å¯ç”¨ï¼Œå…è®¸è®¾ç½®åŠ¨æ€åˆšä½“çš„ç¼©æ”¾ã€ä½ç½®åŠæ—‹è½¬ï¼Œé»˜è®¤å€¼ä¸º true",
    :default true,
-   :label "ÔÊĞí¶¯Ì¬±ä»»",
+   :label "å…è®¸åŠ¨æ€å˜æ¢",
    :path ["physics" "allow_dynamic_transforms"]}
   {:type :integer,
    :help
-   "½Å±¾¿É½ÓÊÕµÄÅö×²ÊÂ¼şÊıÁ¿ÉÏÏŞ£¬Ä¬ÈÏÎª 64",
+   "è„šæœ¬å¯æ¥æ”¶çš„ç¢°æ’äº‹ä»¶æ•°é‡ä¸Šé™ï¼Œé»˜è®¤ä¸º 64",
    :default 64,
-   :label "×î´óÅö×²Öµ",
+   :label "æœ€å¤§ç¢°æ’å€¼",
    :path ["physics" "max_collisions"]}
   {:type :integer,
    :help
-   "?½Å±¾¿É½ÓÊÕµÄ½Ó´¥µãÊıÁ¿ÉÏÏŞ£¬Ä¬ÈÏÎª 128£¬¼´Åö×²·¢ÉúÊ±Á½¸öÅö×²ÌåÖ®¼äµÄ¾«È·½Ó´¥Î»ÖÃ¼¯ºÏ",
+   "?è„šæœ¬å¯æ¥æ”¶çš„æ¥è§¦ç‚¹æ•°é‡ä¸Šé™ï¼Œé»˜è®¤ä¸º 128ï¼Œå³ç¢°æ’å‘ç”Ÿæ—¶ä¸¤ä¸ªç¢°æ’ä½“ä¹‹é—´çš„ç²¾ç¡®æ¥è§¦ä½ç½®é›†åˆ",
    :default 128,
-   :label "×î´ó´¥µãÖµ",
+   :label "æœ€å¤§è§¦ç‚¹å€¼",
    :path ["physics" "max_contacts"]}
   {:type :number,
-   :help "³åÁ¿µÍÓÚ´ËãĞÖµµÄ½Ó´¥µã²»»áÉÏ±¨ÖÁ½Å±¾£¬Ä¬ÈÏÖµ 0 ±íÊ¾½ûÓÃ¹ıÂË",
+   :help "å†²é‡ä½äºæ­¤é˜ˆå€¼çš„æ¥è§¦ç‚¹ä¸ä¼šä¸ŠæŠ¥è‡³è„šæœ¬ï¼Œé»˜è®¤å€¼ 0 è¡¨ç¤ºç¦ç”¨è¿‡æ»¤",
    :default 0.0,
-   :label "½Ó´¥³åÁ¿ãĞÖµ",  ; Ô­ÅäÖÃÒÑ´æÔÚ±êÇ©
+   :label "æ¥è§¦å†²é‡é˜ˆå€¼",  ; åŸé…ç½®å·²å­˜åœ¨æ ‡ç­¾
    :path ["physics" "contact_impulse_limit"]}
 
   {:type :integer,
-   :help "2D ÎïÀíÏµÍ³Ã¿Ö¡×î´óÉäÏßÍ¶ÉäÊıÁ¿",
+   :help "2D ç‰©ç†ç³»ç»Ÿæ¯å¸§æœ€å¤§å°„çº¿æŠ•å°„æ•°é‡",
    :default 64,
-   :label "2D ÉäÏßÍ¶ÉäÉÏÏŞ",  ; Ô­ÅäÖÃÒÑ´æÔÚ±êÇ©
+   :label "2D å°„çº¿æŠ•å°„ä¸Šé™",  ; åŸé…ç½®å·²å­˜åœ¨æ ‡ç­¾
    :path ["physics" "ray_cast_limit_2d"]}
 
   {:type :integer,
-   :help "3D ÎïÀíÏµÍ³µ¥Ö¡×î´óÉäÏßÍ¶ÉäÊıÁ¿",
+   :help "3D ç‰©ç†ç³»ç»Ÿå•å¸§æœ€å¤§å°„çº¿æŠ•å°„æ•°é‡",
    :default 128,
-   :label "3D ÉäÏßÍ¶ÉäÉÏÏŞ",  ; Ô­ÅäÖÃÒÑ´æÔÚ±êÇ©
+   :label "3D å°„çº¿æŠ•å°„ä¸Šé™",  ; åŸé…ç½®å·²å­˜åœ¨æ ‡ç­¾
    :path ["physics" "ray_cast_limit_3d"]}
 
   {:type :integer,
-   :help "¿É¼ì²âµÄÖØµş´¥·¢Æ÷×î´óÊıÁ¿£¬Ä¬ÈÏÎª 16",
+   :help "å¯æ£€æµ‹çš„é‡å è§¦å‘å™¨æœ€å¤§æ•°é‡ï¼Œé»˜è®¤ä¸º 16",
    :default 16,
-   :label "´¥·¢Æ÷ÖØµşÈİÁ¿ÉÏÏŞ", 
+   :label "è§¦å‘å™¨é‡å å®¹é‡ä¸Šé™", 
    :path ["physics" "trigger_overlap_capacity"]}
 
   {:type :number,
-   :help "µ¼ÖÂµ¯ĞÔÅö×²ËùĞèµÄ×îĞ¡ËÙ¶ÈãĞÖµ", 
+   :help "å¯¼è‡´å¼¹æ€§ç¢°æ’æ‰€éœ€çš„æœ€å°é€Ÿåº¦é˜ˆå€¼", 
    :default 1.0,
-   :label "ËÙ¶ÈãĞÖµ", 
+   :label "é€Ÿåº¦é˜ˆå€¼", 
    :path ["physics" "velocity_threshold"]}
  
   {:type :integer,
-   :help "Ê¹ÓÃ¹Ì¶¨Ê±¼ä²½³¤Ê±Ä£ÄâµÄ×î´ó²½Êı£¨½öÏŞ 3D£©", 
+   :help "ä½¿ç”¨å›ºå®šæ—¶é—´æ­¥é•¿æ—¶æ¨¡æ‹Ÿçš„æœ€å¤§æ­¥æ•°ï¼ˆä»…é™ 3Dï¼‰", 
    :default 2,
-   :label "×î´ó¹Ì¶¨Ê±¼ä²½", 
+   :label "æœ€å¤§å›ºå®šæ—¶é—´æ­¥", 
    :path ["physics" "max_fixed_timesteps"]}
   
   {:type :string,
-   :help "ÎÆÀíËõĞ¡¹ıÂËµÄÄ¬ÈÏ¹ıÂË·½Ê½£¬Ä¬ÈÏÎªÏßĞÔ¹ıÂË",
+   :help "çº¹ç†ç¼©å°è¿‡æ»¤çš„é»˜è®¤è¿‡æ»¤æ–¹å¼ï¼Œé»˜è®¤ä¸ºçº¿æ€§è¿‡æ»¤",
    :default "linear",
-   :label "ÎÆÀíËõĞ¡¹ıÂË·½Ê½", 
+   :label "çº¹ç†ç¼©å°è¿‡æ»¤æ–¹å¼", 
    :path ["graphics" "default_texture_min_filter"]
    :options [["linear" "linear"]
              ["nearest" "nearest"]
@@ -329,52 +329,52 @@
              ["linear_mipmap_linear" "linear mipmap linear"]]}
   
   {:type :string,
-   :help "ÎÆÀí·Å´ó¹ıÂËµÄÄ¬ÈÏ¹ıÂË·½Ê½£¬ÏßĞÔ£¨Ä¬ÈÏ£©»òÁÚ½ü",
+   :help "çº¹ç†æ”¾å¤§è¿‡æ»¤çš„é»˜è®¤è¿‡æ»¤æ–¹å¼ï¼Œçº¿æ€§ï¼ˆé»˜è®¤ï¼‰æˆ–é‚»è¿‘",
    :default "linear",
-   :label "ÎÆÀí·Å´ó¹ıÂË·½Ê½", 
+   :label "çº¹ç†æ”¾å¤§è¿‡æ»¤æ–¹å¼", 
    :path ["graphics" "default_texture_mag_filter"]
    :options [["linear" "linear"] ["nearest" "nearest"]]}
   
   {:type :integer,
-   :help "Ã¿Ö¡×î´ó»æÖÆµ÷ÓÃ´ÎÊı",
+   :help "æ¯å¸§æœ€å¤§ç»˜åˆ¶è°ƒç”¨æ¬¡æ•°",
    :default 1024,
-   :label "×î´ó»æÖÆµ÷ÓÃÊı", 
+   :label "æœ€å¤§ç»˜åˆ¶è°ƒç”¨æ•°", 
    :path ["graphics" "max_draw_calls"]}
   
   {:type :integer,
-   :help "Ã¿Ö¡¿ÉÏÔÊ¾µÄ×î´ó×Ö·ûÊı£¨ÎÄ±¾£©",
+   :help "æ¯å¸§å¯æ˜¾ç¤ºçš„æœ€å¤§å­—ç¬¦æ•°ï¼ˆæ–‡æœ¬ï¼‰",
    :default 8192,
-   :label "×î´ó×Ö·ûÊı", 
+   :label "æœ€å¤§å­—ç¬¦æ•°", 
    :path ["graphics" "max_characters"]}
   
   {:type :integer,
-   :help "Ã¿Ö¡¿ÉÏÔÊ¾µÄ×î´óÎÄ±¾Åú´ÎÊıÁ¿",
+   :help "æ¯å¸§å¯æ˜¾ç¤ºçš„æœ€å¤§æ–‡æœ¬æ‰¹æ¬¡æ•°é‡",
    :default 128,
-   :label "×î´ó×ÖÌåÅú´Î", 
+   :label "æœ€å¤§å­—ä½“æ‰¹æ¬¡", 
    :path ["graphics" "max_font_batches"]}
   
   {:type :integer,
-   :help "µ÷ÊÔ¶¥µãµÄ×î´óÊıÁ¿£¨ÓÃÓÚÎïÀíĞÎ×´äÖÈ¾µÈ£©£¬Ä¬ÈÏÎª 10000",
+   :help "è°ƒè¯•é¡¶ç‚¹çš„æœ€å¤§æ•°é‡ï¼ˆç”¨äºç‰©ç†å½¢çŠ¶æ¸²æŸ“ç­‰ï¼‰ï¼Œé»˜è®¤ä¸º 10000",
    :default 10000,
-   :label "×î´óµ÷ÊÔ¶¥µãÊı", 
+   :label "æœ€å¤§è°ƒè¯•é¡¶ç‚¹æ•°", 
    :path ["graphics" "max_debug_vertices"]}
   
   {:type :resource,
    :filter "texture_profiles",
    :preserve-extension true,
-   :help "Ö¸¶¨×ÊÔ´Â·¾¶Ê¹ÓÃµÄÎÆÀíÅäÖÃÎÄ¼ş£¨¸ñÊ½¡¢MipmapºÍ×î´óÎÆÀí³ß´ç£©",
+   :help "æŒ‡å®šèµ„æºè·¯å¾„ä½¿ç”¨çš„çº¹ç†é…ç½®æ–‡ä»¶ï¼ˆæ ¼å¼ã€Mipmapå’Œæœ€å¤§çº¹ç†å°ºå¯¸ï¼‰",
    :default "/builtins/graphics/default.texture_profiles",
-   :label "ÎÆÀíÅäÖÃÎÄ¼ş", 
+   :label "çº¹ç†é…ç½®æ–‡ä»¶", 
    :path ["graphics" "texture_profiles"]}
   
   {:type :boolean,
-   :help "ÔÚÃ¿´ÎÍ¼ĞÎµ÷ÓÃºóÑéÖ¤·µ»ØÖµ",
+   :help "åœ¨æ¯æ¬¡å›¾å½¢è°ƒç”¨åéªŒè¯è¿”å›å€¼",
    :default true,
-   :label "ÑéÖ¤Í¼ĞÎµ÷ÓÃ", 
+   :label "éªŒè¯å›¾å½¢è°ƒç”¨", 
    :path ["graphics" "verify_graphics_calls"]}
   
   {:type :string,
-   :help "OpenGL ÉÏÏÂÎÄ°æ±¾ÌáÊ¾¡£ÈôÖ¸¶¨°æ±¾£¬½«×÷Îª×îµÍÒªÇó°æ±¾£¨²»ÊÊÓÃÓÚ OpenGL ES£©£¬Ä¬ÈÏÎª OpenGL 3.3",
+   :help "OpenGL ä¸Šä¸‹æ–‡ç‰ˆæœ¬æç¤ºã€‚è‹¥æŒ‡å®šç‰ˆæœ¬ï¼Œå°†ä½œä¸ºæœ€ä½è¦æ±‚ç‰ˆæœ¬ï¼ˆä¸é€‚ç”¨äº OpenGL ESï¼‰ï¼Œé»˜è®¤ä¸º OpenGL 3.3",
    :default "33",
    :path ["graphics" "opengl_version_hint"]
    :options [["33" "OpenGL 3.3"]
@@ -385,378 +385,378 @@
              ["44" "OpenGL 4.4"]
              ["45" "OpenGL 4.5"]
              ["46" "OpenGL 4.6"]
-             ["0" "µ±Ç°×î¸ß°æ±¾"]]} 
+             ["0" "å½“å‰æœ€é«˜ç‰ˆæœ¬"]]} 
   
   {:type :boolean,
-   :help "´´½¨ÉÏÏÂÎÄÊ±ÉèÖÃ 'core' OpenGL ÅäÖÃÌáÊ¾¡£ºËĞÄÅäÖÃÒÆ³ıÁËOpenGLÖĞËùÓĞ¹ıÊ±¹¦ÄÜ£¨Èç¼´Ê±äÖÈ¾Ä£Ê½£©£¬²»ÊÊÓÃÓÚOpenGL ES",
+   :help "åˆ›å»ºä¸Šä¸‹æ–‡æ—¶è®¾ç½® 'core' OpenGL é…ç½®æç¤ºã€‚æ ¸å¿ƒé…ç½®ç§»é™¤äº†OpenGLä¸­æ‰€æœ‰è¿‡æ—¶åŠŸèƒ½ï¼ˆå¦‚å³æ—¶æ¸²æŸ“æ¨¡å¼ï¼‰ï¼Œä¸é€‚ç”¨äºOpenGL ES",
    :default true,
-   :label "OpenGLºËĞÄÅäÖÃÌáÊ¾", 
+   :label "OpenGLæ ¸å¿ƒé…ç½®æç¤º", 
    :path ["graphics" "opengl_core_profile_hint"]}
   
   {:type :boolean,
-   :help "´ËÉèÖÃÒÑÆúÓÃ¡£±àÒë²¢Êä³öSPIR-V×ÅÉ«Æ÷ÒÔ¹©Metal»òVulkanÊ¹ÓÃ",
+   :help "æ­¤è®¾ç½®å·²å¼ƒç”¨ã€‚ç¼–è¯‘å¹¶è¾“å‡ºSPIR-Vç€è‰²å™¨ä»¥ä¾›Metalæˆ–Vulkanä½¿ç”¨",
    :default false,
    :deprecated true,
-   :label "Êä³öSPIR-V", 
+   :label "è¾“å‡ºSPIR-V", 
    :path ["shader" "output_spirv"]}
   
   {:type :number,
-   :help "¼üÅÌ°´¼ü³ÖĞø°´×¡ºó¡¢¿ªÊ¼ÖØ¸´´¥·¢Ç°µÄµÈ´ıÊ±¼ä£¨Ãë£©",
+   :help "é”®ç›˜æŒ‰é”®æŒç»­æŒ‰ä½åã€å¼€å§‹é‡å¤è§¦å‘å‰çš„ç­‰å¾…æ—¶é—´ï¼ˆç§’ï¼‰",
    :default 0.5,
-   :label "°´¼üÖØ¸´ÑÓ³Ù", 
+   :label "æŒ‰é”®é‡å¤å»¶è¿Ÿ", 
    :path ["input" "repeat_delay"]}
   
   
    {:type :number,
-   :help "¼üÅÌ°´¼ü³ÖĞø°´×¡ºó£¬Ã¿´ÎÖØ¸´´¥·¢Ö®¼äµÄµÈ´ıÊ±¼ä£¨Ãë£©",
+   :help "é”®ç›˜æŒ‰é”®æŒç»­æŒ‰ä½åï¼Œæ¯æ¬¡é‡å¤è§¦å‘ä¹‹é—´çš„ç­‰å¾…æ—¶é—´ï¼ˆç§’ï¼‰",
    :default 0.2,
-   :label "°´¼üÖØ¸´¼ä¸ô",
+   :label "æŒ‰é”®é‡å¤é—´éš”",
    :path ["input" "repeat_interval"]}
   
   {:type :resource,
    :filter "gamepads",
-   :help "ÓÎÏ·ÊÖ±úÅäÖÃÎÄ¼şÒıÓÃ£¨½«ÊÖ±úĞÅºÅÓ³Éäµ½²Ù×÷ÏµÍ³£©£¬Ä¬ÈÏÎª /builtins/input/default.gamepads",
+   :help "æ¸¸æˆæ‰‹æŸ„é…ç½®æ–‡ä»¶å¼•ç”¨ï¼ˆå°†æ‰‹æŸ„ä¿¡å·æ˜ å°„åˆ°æ“ä½œç³»ç»Ÿï¼‰ï¼Œé»˜è®¤ä¸º /builtins/input/default.gamepads",
    :default "/builtins/input/default.gamepads",
-   :label "ÊÖ±úÅäÖÃÎÄ¼ş", 
+   :label "æ‰‹æŸ„é…ç½®æ–‡ä»¶", 
    :path ["input" "gamepads"]}
   
   {:type :resource,
    :filter "input_binding",
-   :help "ÊäÈëÅäÖÃÎÄ¼şÒıÓÃ£¨½«Ó²¼şÊäÈëÓ³Éäµ½²Ù×÷Ö¸Áî£©£¬Ä¬ÈÏÎª /input/game.input_binding",
+   :help "è¾“å…¥é…ç½®æ–‡ä»¶å¼•ç”¨ï¼ˆå°†ç¡¬ä»¶è¾“å…¥æ˜ å°„åˆ°æ“ä½œæŒ‡ä»¤ï¼‰ï¼Œé»˜è®¤ä¸º /input/game.input_binding",
    :default "/input/game.input_binding",
-   :label "ÊäÈë°ó¶¨ÅäÖÃ", 
+   :label "è¾“å…¥ç»‘å®šé…ç½®", 
    :path ["input" "game_binding"]}
   
   {:type :boolean,
-   :help "ÊÇ·ñÆôÓÃ¼ÓËÙ¶È¼ÆÊÂ¼ş½ÓÊÕ",
+   :help "æ˜¯å¦å¯ç”¨åŠ é€Ÿåº¦è®¡äº‹ä»¶æ¥æ”¶",
    :default true,
-   :label "ÆôÓÃ¼ÓËÙ¶È¼Æ", 
+   :label "å¯ç”¨åŠ é€Ÿåº¦è®¡", 
    :path ["input" "use_accelerometer"]}
   
   {:type :boolean,
-   :help "Ê¹ÓÃHTTP»º´æ¼ÓËÙÍøÂç×ÊÔ´¼ÓÔØ",
+   :help "ä½¿ç”¨HTTPç¼“å­˜åŠ é€Ÿç½‘ç»œèµ„æºåŠ è½½",
    :default false,
-   :label "HTTP»º´æ", 
+   :label "HTTPç¼“å­˜", 
    :path ["resource" "http_cache"]}
   
   {:type :string,
-   :help "game.projectÎÄ¼şÎ»ÖÃ£¨URI¸ñÊ½£©",
+   :help "game.projectæ–‡ä»¶ä½ç½®ï¼ˆURIæ ¼å¼ï¼‰",
    :default "",
-   :label "ÏîÄ¿ÎÄ¼şURI", 
+   :label "é¡¹ç›®æ–‡ä»¶URI", 
    :path ["resource" "uri"]}
   
   {:type :integer,
-   :help "¿ÉÍ¬Ê±¼ÓÔØµÄ×î´ó×ÊÔ´ÊıÁ¿£¬Ä¬ÈÏÎª1024",
+   :help "å¯åŒæ—¶åŠ è½½çš„æœ€å¤§èµ„æºæ•°é‡ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
-   :label "×î´ó×ÊÔ´¼ÓÔØÊı", 
+   :label "æœ€å¤§èµ„æºåŠ è½½æ•°", 
    :path ["resource" "max_resources"]}
   
   {:type :number,
-   :help "HTTP³¬Ê±Ê±³¤£¨Ãë£©£¬0±íÊ¾½ûÓÃ³¬Ê±",
+   :help "HTTPè¶…æ—¶æ—¶é•¿ï¼ˆç§’ï¼‰ï¼Œ0è¡¨ç¤ºç¦ç”¨è¶…æ—¶",
    :default 0.0,
-   :label "HTTP³¬Ê±", 
+   :label "HTTPè¶…æ—¶", 
    :path ["network" "http_timeout"]}
   
   {:type :resource,
    :filter "pem",
    :default "",
-   :help "SSLÖ¤ÊéPEMÎÄ¼şÒıÓÃ",
+   :help "SSLè¯ä¹¦PEMæ–‡ä»¶å¼•ç”¨",
    :preserve-extension true,
-   :label "SSLÖ¤ÊéÎÄ¼ş", 
+   :label "SSLè¯ä¹¦æ–‡ä»¶", 
    :path ["network" "ssl_certificates"]}
   
   {:type :integer,
    :default 4,
-   :help "HTTP·şÎñµÄ¹¤×÷Ïß³ÌÊıÁ¿",
-   :label "HTTP¹¤×÷Ïß³ÌÊı", 
+   :help "HTTPæœåŠ¡çš„å·¥ä½œçº¿ç¨‹æ•°é‡",
+   :label "HTTPå·¥ä½œçº¿ç¨‹æ•°", 
    :path ["network" "http_thread_count"]}
   
   {:type :boolean,
    :default true,
-   :help "ÊÇ·ñ³Ö¾Ã»¯ÏÂÔØÊı¾İÒÔ¼ÓËÙºóĞø¼ìË÷",
-   :label "HTTP»º´æ³Ö¾Ã»¯", 
+   :help "æ˜¯å¦æŒä¹…åŒ–ä¸‹è½½æ•°æ®ä»¥åŠ é€Ÿåç»­æ£€ç´¢",
+   :label "HTTPç¼“å­˜æŒä¹…åŒ–", 
    :path ["network" "http_cache_enabled"]}
   
   {:type :integer,
-   :help "Ã¿¸ö¼¯ºÏµÄ×î´óÊµÀıÊıÁ¿£¬Ä¬ÈÏÎª1024",
+   :help "æ¯ä¸ªé›†åˆçš„æœ€å¤§å®ä¾‹æ•°é‡ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
    :minimum 1,
    :maximum 32765,
-   :label "×î´óÊµÀıÊı", 
+   :label "æœ€å¤§å®ä¾‹æ•°", 
    :path ["collection" "max_instances"]}
   
   {:type :integer,
-   :help "ÊäÈëÕ»ÖĞÓÎÏ·¶ÔÏóµÄ×î´óÊıÁ¿£¬Ä¬ÈÏÎª16",
+   :help "è¾“å…¥æ ˆä¸­æ¸¸æˆå¯¹è±¡çš„æœ€å¤§æ•°é‡ï¼Œé»˜è®¤ä¸º16",
    :default 16,
-   :label "ÊäÈëÕ»ÈİÁ¿", 
+   :label "è¾“å…¥æ ˆå®¹é‡", 
    :path ["collection" "max_input_stack_entries"]}
   
   {:type :number,
-   :help "È«¾ÖÒôÁ¿ÔöÒæÖµ£¬Ä¬ÈÏÎª1.0",
+   :help "å…¨å±€éŸ³é‡å¢ç›Šå€¼ï¼Œé»˜è®¤ä¸º1.0",
    :default 1.0,
-   :label "È«¾ÖÒôÁ¿ÔöÒæ", 
+   :label "å…¨å±€éŸ³é‡å¢ç›Š", 
    :path ["sound" "gain"]}
   
   {:type :boolean,
-   :help "ÆôÓÃÊ±Ê¹ÓÃÏßĞÔÔöÒæ£¨0.5±íÊ¾°ëÒôÁ¿£©£¬½ûÓÃÊ±Ê¹ÓÃÖ¸ÊıÇúÏß£¬Ä¬ÈÏÎªÆôÓÃ",
+   :help "å¯ç”¨æ—¶ä½¿ç”¨çº¿æ€§å¢ç›Šï¼ˆ0.5è¡¨ç¤ºåŠéŸ³é‡ï¼‰ï¼Œç¦ç”¨æ—¶ä½¿ç”¨æŒ‡æ•°æ›²çº¿ï¼Œé»˜è®¤ä¸ºå¯ç”¨",
    :default true,
-   :label "ÏßĞÔÒôÁ¿ÔöÒæ", 
+   :label "çº¿æ€§éŸ³é‡å¢ç›Š", 
    :path ["sound" "use_linear_gain"]}
   
   {:type :integer,
-   :help "×î´óÒôĞ§×ÊÔ´ÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§éŸ³æ•ˆèµ„æºæ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "×î´óÒôĞ§Êı", 
+   :label "æœ€å¤§éŸ³æ•ˆæ•°", 
    :path ["sound" "max_sound_data"]}
   
   {:type :integer,
-   :help "×î´ó²¢·¢ÒôĞ§»º³åÇøÊıÁ¿£¬Ä¬ÈÏÎª32",
+   :help "æœ€å¤§å¹¶å‘éŸ³æ•ˆç¼“å†²åŒºæ•°é‡ï¼Œé»˜è®¤ä¸º32",
    :default 32,
-   :label "ÒôĞ§»º³åÇøÉÏÏŞ", 
+   :label "éŸ³æ•ˆç¼“å†²åŒºä¸Šé™", 
    :path ["sound" "max_sound_buffers"]}
   
   {:type :integer,
-   :help "×î´ó²¢·¢²¥·ÅÒôÔ´Êı£¬Ä¬ÈÏÎª16",
+   :help "æœ€å¤§å¹¶å‘æ’­æ”¾éŸ³æºæ•°ï¼Œé»˜è®¤ä¸º16",
    :default 16,
-   :label "²¢·¢ÒôÔ´ÉÏÏŞ", 
+   :label "å¹¶å‘éŸ³æºä¸Šé™", 
    :path ["sound" "max_sound_sources"]}
   
   {:type :integer,
-   :help "×î´ó²¢·¢ÒôĞ§ÊµÀıÊı£¨ÉùµÀ£©£¬Ä¬ÈÏÎª256",
+   :help "æœ€å¤§å¹¶å‘éŸ³æ•ˆå®ä¾‹æ•°ï¼ˆå£°é“ï¼‰ï¼Œé»˜è®¤ä¸º256",
    :default 256,
-   :label "×î´óÒôĞ§ÊµÀı", 
+   :label "æœ€å¤§éŸ³æ•ˆå®ä¾‹", 
    :path ["sound" "max_sound_instances"]}
   
   {:type :integer,
-   :help "µ¥¸ö¼¯ºÏÖĞÒôĞ§×é¼şµÄ×î´óÊıÁ¿£¬Ä¬ÈÏÎª32",
+   :help "å•ä¸ªé›†åˆä¸­éŸ³æ•ˆç»„ä»¶çš„æœ€å¤§æ•°é‡ï¼Œé»˜è®¤ä¸º32",
    :default 32,
-   :label "¼¯ºÏÒôĞ§×é¼şÉÏÏŞ", 
+   :label "é›†åˆéŸ³æ•ˆç»„ä»¶ä¸Šé™", 
    :path ["sound" "max_component_count"]}
   
    {:type :integer,
-   :help "Ã¿´ÎÒôÆµ¸üĞÂÊ¹ÓÃµÄ²ÉÑùÖ¡Êı£¨0±íÊ¾×Ô¶¯ÅäÖÃ£º48kHzÉè±¸ÓÃ1024£¬44.1kHzÉè±¸ÓÃ768£©",
+   :help "æ¯æ¬¡éŸ³é¢‘æ›´æ–°ä½¿ç”¨çš„é‡‡æ ·å¸§æ•°ï¼ˆ0è¡¨ç¤ºè‡ªåŠ¨é…ç½®ï¼š48kHzè®¾å¤‡ç”¨1024ï¼Œ44.1kHzè®¾å¤‡ç”¨768ï¼‰",
    :default 0,
-   :label "²ÉÑùÖ¡Êı", 
+   :label "é‡‡æ ·å¸§æ•°", 
    :path ["sound" "sample_frame_count"]}
   
   {:type :boolean,
-   :help "ÆôÓÃÉùÒô´¦ÀíÏß³Ì",
+   :help "å¯ç”¨å£°éŸ³å¤„ç†çº¿ç¨‹",
    :default true,
-   :label "ÉùÒô¶àÏß³Ì", 
+   :label "å£°éŸ³å¤šçº¿ç¨‹", 
    :path ["sound" "use_thread"]}
   
   {:type :boolean,
-   :help "ÆôÓÃÉùÒôÁ÷Ê½¼ÓÔØ",
+   :help "å¯ç”¨å£°éŸ³æµå¼åŠ è½½",
    :default false,
-   :label "ÉùÒôÁ÷Ê½¼ÓÔØ", 
+   :label "å£°éŸ³æµå¼åŠ è½½", 
    :path ["sound" "stream_enabled"]}
   
   {:type :integer,
-   :help "´ÓÉùÒôÎÄ¼ş¼ÓÔØµÄÃ¿¸öÊı¾İ¿é´óĞ¡£¨×Ö½Ú£©£¬Ä¬ÈÏÎª16384",
+   :help "ä»å£°éŸ³æ–‡ä»¶åŠ è½½çš„æ¯ä¸ªæ•°æ®å—å¤§å°ï¼ˆå­—èŠ‚ï¼‰ï¼Œé»˜è®¤ä¸º16384",
    :default 16384,
-   :label "Á÷Êı¾İ¿é´óĞ¡", 
+   :label "æµæ•°æ®å—å¤§å°", 
    :path ["sound" "stream_chunk_size"]}
   
   {:type :integer,
-   :help "Ã¿¸öÉùÒôÎÄ¼ş³õÊ¼Ô¤¼ÓÔØÊı¾İ¿é´óĞ¡£¨×Ö½Ú£©£¬Ä¬ÈÏÎª16384",
+   :help "æ¯ä¸ªå£°éŸ³æ–‡ä»¶åˆå§‹é¢„åŠ è½½æ•°æ®å—å¤§å°ï¼ˆå­—èŠ‚ï¼‰ï¼Œé»˜è®¤ä¸º16384",
    :default 16384,
-   :label "Á÷Ô¤¼ÓÔØ´óĞ¡", 
+   :label "æµé¢„åŠ è½½å¤§å°", 
    :path ["sound" "stream_preload_size"]}
   
   {:type :integer,
-   :help "ÉùÒôÁ÷»º´æ×ÜÈİÁ¿£¨×Ö½Ú£©£¬Ä¬ÈÏÎª 2MB",
+   :help "å£°éŸ³æµç¼“å­˜æ€»å®¹é‡ï¼ˆå­—èŠ‚ï¼‰ï¼Œé»˜è®¤ä¸º 2MB",
    :default 2097152,
-   :label "Á÷»º´æÈİÁ¿", 
+   :label "æµç¼“å­˜å®¹é‡", 
    :path ["sound" "stream_cache_size"]}
   
   {:type :integer,
-   :help "×î´ó¾«ÁéÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§ç²¾çµæ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "×î´ó¾«ÁéÊı", 
+   :label "æœ€å¤§ç²¾çµæ•°", 
    :path ["sprite" "max_count"]}
   
   {:type :boolean,
-   :help "ÔÊĞí¾«ÁéÏÔÊ¾ÑÇÏñËØ¼¶Î»ÖÃ£¨·ÇÏñËØ¶ÔÆë£©",
+   :help "å…è®¸ç²¾çµæ˜¾ç¤ºäºšåƒç´ çº§ä½ç½®ï¼ˆéåƒç´ å¯¹é½ï¼‰",
    :default true,
-   :label "ÑÇÏñËØäÖÈ¾", 
+   :label "äºšåƒç´ æ¸²æŸ“", 
    :path ["sprite" "subpixels"]}
   
   {:type :integer,
-   :help "×î´óÄ£ĞÍÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§æ¨¡å‹æ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "×î´óÄ£ĞÍÊı", 
+   :label "æœ€å¤§æ¨¡å‹æ•°", 
    :path ["model" "max_count"]}
   
   {:type :boolean,
-   :help "½«³¬¹ı65536¶¥µãµÄÍø¸ñ·Ö¸îÎªĞÂÍø¸ñ£¨Ä¬ÈÏ½ûÓÃ£©",
+   :help "å°†è¶…è¿‡65536é¡¶ç‚¹çš„ç½‘æ ¼åˆ†å‰²ä¸ºæ–°ç½‘æ ¼ï¼ˆé»˜è®¤ç¦ç”¨ï¼‰",
    :default false,
-   :label "Íø¸ñ×Ô¶¯·Ö¸î", 
+   :label "ç½‘æ ¼è‡ªåŠ¨åˆ†å‰²", 
    :path ["model" "split_meshes"]}
   
   {:type :integer,
-   :help "¹Ç÷À¾ØÕóÎÆÀí×î´ó¿í¶È£¨Ä¬ÈÏ1024£©£¬Êµ¼ÊÊ¹ÓÃ³ß´ç°´¶¯»­ĞèÇó¼ÆËã²¢ÏòÉÏÈ¡ÕûÖÁ×î½üPO2Öµ",
+   :help "éª¨éª¼çŸ©é˜µçº¹ç†æœ€å¤§å®½åº¦ï¼ˆé»˜è®¤1024ï¼‰ï¼Œå®é™…ä½¿ç”¨å°ºå¯¸æŒ‰åŠ¨ç”»éœ€æ±‚è®¡ç®—å¹¶å‘ä¸Šå–æ•´è‡³æœ€è¿‘PO2å€¼",
    :default 1024,
-   :label "¹Ç÷ÀÎÆÀí¿í¶È", 
+   :label "éª¨éª¼çº¹ç†å®½åº¦", 
    :path ["model" "max_bone_matrix_texture_width"]}
   
   {:type :integer,
-   :help "¹Ç÷À¾ØÕóÎÆÀí×î´ó¸ß¶È£¨Ä¬ÈÏ1024£©£¬Êµ¼ÊÊ¹ÓÃ³ß´ç°´¶¯»­ĞèÇó¼ÆËã²¢ÏòÉÏÈ¡ÕûÖÁ×î½üPO2Öµ",
+   :help "éª¨éª¼çŸ©é˜µçº¹ç†æœ€å¤§é«˜åº¦ï¼ˆé»˜è®¤1024ï¼‰ï¼Œå®é™…ä½¿ç”¨å°ºå¯¸æŒ‰åŠ¨ç”»éœ€æ±‚è®¡ç®—å¹¶å‘ä¸Šå–æ•´è‡³æœ€è¿‘PO2å€¼",
    :default 1024,
-   :label "¹Ç÷ÀÎÆÀí¸ß¶È", 
+   :label "éª¨éª¼çº¹ç†é«˜åº¦", 
    :path ["model" "max_bone_matrix_texture_height"]}
   
   {:type :integer,
-   :help "×î´óÍø¸ñ×é¼şÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§ç½‘æ ¼ç»„ä»¶æ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "×î´óÍø¸ñ×é¼ş", 
+   :label "æœ€å¤§ç½‘æ ¼ç»„ä»¶", 
    :path ["mesh" "max_count"]}
   
   {:type :integer,
-   :help "Ã¿¸ö¼¯ºÏµÄ×î´óGUI×é¼şÊıÁ¿£¬Ä¬ÈÏÎª64",
+   :help "æ¯ä¸ªé›†åˆçš„æœ€å¤§GUIç»„ä»¶æ•°é‡ï¼Œé»˜è®¤ä¸º64",
    :default 64,
-   :label "GUI×é¼şÉÏÏŞ", 
+   :label "GUIç»„ä»¶ä¸Šé™", 
    :path ["gui" "max_count"]}
   
   {:type :integer,
-   :help "´æ»îÁ£×Ó×ÜÊıÉÏÏŞ£¨¾ö¶¨GPU¶¥µã»º³åÇø´óĞ¡£©£¬Ä¬ÈÏÎª1024",
+   :help "å­˜æ´»ç²’å­æ€»æ•°ä¸Šé™ï¼ˆå†³å®šGPUé¡¶ç‚¹ç¼“å†²åŒºå¤§å°ï¼‰ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
-   :label "×î´óÁ£×Ó×ÜÊı", 
+   :label "æœ€å¤§ç²’å­æ€»æ•°", 
    :path ["particle_fx" "max_particle_count"]}
   
   {:type :integer,
-   :help "Ã¿´ÎÉÏ´«GPUµÄÁ£×ÓÊıÁ¿ÉÏÏŞ£¨ÏŞÖÆCPUÄÚ´æÕ¼ÓÃ£©£¬Ä¬ÈÏÎª1024",
+   :help "æ¯æ¬¡ä¸Šä¼ GPUçš„ç²’å­æ•°é‡ä¸Šé™ï¼ˆé™åˆ¶CPUå†…å­˜å ç”¨ï¼‰ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
-   :label "Á£×Ó»º³åÇøÉÏÏŞ", 
+   :label "ç²’å­ç¼“å†²åŒºä¸Šé™", 
    :path ["particle_fx" "max_particle_buffer_count"]}
   
   {:type :integer,
-   :help "GUIÖĞ×î´ó»î¶¯¶¯»­×ÜÊı£¬Ä¬ÈÏÎª1024",
+   :help "GUIä¸­æœ€å¤§æ´»åŠ¨åŠ¨ç”»æ€»æ•°ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
-   :label "GUI¶¯»­ÉÏÏŞ", 
+   :label "GUIåŠ¨ç”»ä¸Šé™", 
    :path ["gui" "max_animation_count"]}
   
   {:type :integer,
-   :help "Ã¿¸ö¼¯ºÏGUIÁ£×Ó×î´ó´æ»îÊıÁ¿£¬Ä¬ÈÏÎª1024",
+   :help "æ¯ä¸ªé›†åˆGUIç²’å­æœ€å¤§å­˜æ´»æ•°é‡ï¼Œé»˜è®¤ä¸º1024",
    :default 1024,
-   :label "GUIÁ£×ÓÉÏÏŞ", 
+   :label "GUIç²’å­ä¸Šé™", 
    :path ["gui" "max_particle_count"]}
   
   {:type :integer,
-   :help "×î´óÎÄ±¾±êÇ©ÊıÁ¿£¬Ä¬ÈÏÎª64",
+   :help "æœ€å¤§æ–‡æœ¬æ ‡ç­¾æ•°é‡ï¼Œé»˜è®¤ä¸º64",
    :default 64,
-   :label "×î´ó±êÇ©Êı", 
+   :label "æœ€å¤§æ ‡ç­¾æ•°", 
    :path ["label" "max_count"]}
   
   {:type :boolean,
-   :help "ÔÊĞíÎÄ±¾±êÇ©ÏÔÊ¾ÑÇÏñËØ¼¶Î»ÖÃ£¨´ËĞ§¹ûÍ¬Ê±ÊÜÏà»úÎ»ÖÃ¶ÔÆëÓ°Ïì£©",
+   :help "å…è®¸æ–‡æœ¬æ ‡ç­¾æ˜¾ç¤ºäºšåƒç´ çº§ä½ç½®ï¼ˆæ­¤æ•ˆæœåŒæ—¶å—ç›¸æœºä½ç½®å¯¹é½å½±å“ï¼‰",
    :default true,
-   :label "±êÇ©ÑÇÏñËØäÖÈ¾", 
+   :label "æ ‡ç­¾äºšåƒç´ æ¸²æŸ“", 
    :path ["label" "subpixels"]}
   
   {:type :integer,
-   :help "×î´óÁ£×ÓÌØĞ§×é¼şÊıÁ¿£¬Ä¬ÈÏÎª64",
+   :help "æœ€å¤§ç²’å­ç‰¹æ•ˆç»„ä»¶æ•°é‡ï¼Œé»˜è®¤ä¸º64",
    :default 64,
-   :label "Á£×Ó×é¼şÉÏÏŞ", 
+   :label "ç²’å­ç»„ä»¶ä¸Šé™", 
    :path ["particle_fx" "max_count"]}
   
   {:type :integer,
-   :help "×î´óÁ£×Ó·¢ÉäÆ÷ÊıÁ¿£¬Ä¬ÈÏÎª64",
+   :help "æœ€å¤§ç²’å­å‘å°„å™¨æ•°é‡ï¼Œé»˜è®¤ä¸º64",
    :default 64,
-   :label "Á£×Ó·¢ÉäÆ÷ÉÏÏŞ", 
+   :label "ç²’å­å‘å°„å™¨ä¸Šé™", 
    :path ["particle_fx" "max_emitter_count"]}
   
   {:type :integer,
-   :help "×î´ó¼¯ºÏ´úÀíÊıÁ¿£¬Ä¬ÈÏÎª8",
+   :help "æœ€å¤§é›†åˆä»£ç†æ•°é‡ï¼Œé»˜è®¤ä¸º8",
    :default 8,
-   :label "¼¯ºÏ´úÀíÉÏÏŞ", 
+   :label "é›†åˆä»£ç†ä¸Šé™", 
    :path ["collection_proxy" "max_count"]}
    {:type :integer,
-   :help "×î´ó¼¯ºÏ¹¤³§ÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§é›†åˆå·¥å‚æ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "¼¯ºÏ¹¤³§ÉÏÏŞ", 
+   :label "é›†åˆå·¥å‚ä¸Šé™", 
    :path ["collectionfactory" "max_count"]}
   
   {:type :integer,
-   :help "×î´ó¹¤³§ÊıÁ¿£¬Ä¬ÈÏÎª128",
+   :help "æœ€å¤§å·¥å‚æ•°é‡ï¼Œé»˜è®¤ä¸º128",
    :default 128,
-   :label "¹¤³§ÉÏÏŞ", 
+   :label "å·¥å‚ä¸Šé™", 
    :path ["factory" "max_count"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "iPadÖ÷ÆÁÄ»Í¼±ê£¨.png¸ñÊ½£©",
-   :label "iPadÍ¼±ê76x76", 
+   :help "iPadä¸»å±å¹•å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "iPadå›¾æ ‡76x76", 
    :path ["ios" "app_icon_76x76"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "iPad RetinaÏÔÊ¾ÆÁÖ÷ÆÁÄ»Í¼±ê£¨.png¸ñÊ½£©",
-   :label "iPad RetinaÍ¼±ê152x152", 
+   :help "iPad Retinaæ˜¾ç¤ºå±ä¸»å±å¹•å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "iPad Retinaå›¾æ ‡152x152", 
    :path ["ios" "app_icon_152x152"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "iPad ProÖ÷ÆÁÄ»Í¼±ê£¨.png¸ñÊ½£©",
-   :label "iPad ProÍ¼±ê167x167", 
+   :help "iPad Proä¸»å±å¹•å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "iPad Proå›¾æ ‡167x167", 
    :path ["ios" "app_icon_167x167"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "iPhone/iPod Touch RetinaÏÔÊ¾ÆÁÖ÷ÆÁÄ»Í¼±ê£¨.png¸ñÊ½£©",
-   :label "iPhoneÍ¼±ê120x120", 
+   :help "iPhone/iPod Touch Retinaæ˜¾ç¤ºå±ä¸»å±å¹•å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "iPhoneå›¾æ ‡120x120", 
    :path ["ios" "app_icon_120x120"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "iPhone Retina HDÏÔÊ¾ÆÁÖ÷ÆÁÄ»Í¼±ê£¨.png¸ñÊ½£©",
-   :label "iPhone HDÍ¼±ê180x180", 
+   :help "iPhone Retina HDæ˜¾ç¤ºå±ä¸»å±å¹•å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "iPhone HDå›¾æ ‡180x180", 
    :path ["ios" "app_icon_180x180"]}
   
   {:type :resource,
    :filter "car",
    :preserve-extension true,
-   :help "Í¼±ê×ÊÔ´ÎÄ¼ş£¨.car¸ñÊ½£©",
-   :label "Í¼±ê×ÊÔ´°ü", 
+   :help "å›¾æ ‡èµ„æºæ–‡ä»¶ï¼ˆ.caræ ¼å¼ï¼‰",
+   :label "å›¾æ ‡èµ„æºåŒ…", 
    :path ["ios" "icons_asset"]}
   
   {:type :string,
    :default "/builtins/manifests/ios/LaunchScreen.storyboardc",
    :preserve-extension true,
-   :help "Æô¶¯ÆÁÄ»¹ÊÊÂ°åÎÄ¼ş",
-   :label "Æô¶¯¹ÊÊÂ°å", 
+   :help "å¯åŠ¨å±å¹•æ•…äº‹æ¿æ–‡ä»¶",
+   :label "å¯åŠ¨æ•…äº‹æ¿", 
    :path ["ios" "launch_screen"]}
   
   {:type :boolean,
-   :help "ÉèÎªtrue±íÊ¾Í¼±êÒÑÔ¤äÖÈ¾£¨ÎŞ¹âĞ§µş¼Ó£©",
+   :help "è®¾ä¸ºtrueè¡¨ç¤ºå›¾æ ‡å·²é¢„æ¸²æŸ“ï¼ˆæ— å…‰æ•ˆå åŠ ï¼‰",
    :default false,
-   :label "Í¼±êÔ¤äÖÈ¾", 
+   :label "å›¾æ ‡é¢„æ¸²æŸ“", 
    :path ["ios" "pre_renderered_icons"]}
   
   {:type :string,
-   :help "Ó¦ÓÃ°ü±êÊ¶·û£¨CFBundleIdentifier£©",
+   :help "åº”ç”¨åŒ…æ ‡è¯†ç¬¦ï¼ˆCFBundleIdentifierï¼‰",
    :default "example.unnamed",
-   :label "°ü±êÊ¶·û", 
+   :label "åŒ…æ ‡è¯†ç¬¦", 
    :path ["ios" "bundle_identifier"]}
   
   {:type :string,
-   :help "Ó¦ÓÃ°ü¼ò³Æ£¨CFBundleName£©£¬×î¶à15×Ö·û",
-   :label "Ó¦ÓÃ¼ò³Æ", 
+   :help "åº”ç”¨åŒ…ç®€ç§°ï¼ˆCFBundleNameï¼‰ï¼Œæœ€å¤š15å­—ç¬¦",
+   :label "åº”ç”¨ç®€ç§°", 
    :path ["ios" "bundle_name"]}
   
   {:type :string,
-   :help "¹¹½¨°æ±¾ºÅ£¨CFBundleVersion£©£¬¸ñÊ½ÎªÊı×Ö»òx.y.z",
-   :label "¹¹½¨°æ±¾", 
+   :help "æ„å»ºç‰ˆæœ¬å·ï¼ˆCFBundleVersionï¼‰ï¼Œæ ¼å¼ä¸ºæ•°å­—æˆ–x.y.z",
+   :label "æ„å»ºç‰ˆæœ¬", 
    :path ["ios" "bundle_version"]}
   
   {:type :resource,
    :filter "plist",
    :preserve-extension true,
-   :help "×Ô¶¨ÒåInfo.plistÄ£°åÎÄ¼ş",
+   :help "è‡ªå®šä¹‰Info.plistæ¨¡æ¿æ–‡ä»¶",
    :label "Info.plist", 
    :default "/builtins/manifests/ios/Info.plist",
    :path ["ios" "infoplist"]}
@@ -764,7 +764,7 @@
   {:type :resource,
    :filter "xcprivacy",
    :preserve-extension true,
-   :help "ÒşË½Çåµ¥ÎÄ¼ş",
+   :help "éšç§æ¸…å•æ–‡ä»¶",
    :label "PrivacyInfo.xcprivacy", 
    :default "/builtins/manifests/ios/PrivacyInfo.xcprivacy",
    :path ["ios" "privacymanifest"]}
@@ -772,296 +772,296 @@
   {:type :resource,
    :filter ["entitlements", "xcent", "plist"],
    :preserve-extension true,
-   :help "iOSÇ©ÃûÊ¹ÓÃµÄ×Ô¶¨ÒåÊÚÈ¨ÎÄ¼ş£¨¿ÉÌæ»»Ô¤ÖÃÃèÊöÎÄ¼şÖĞµÄÍ¨ÅäÊÚÈ¨£©",
-   :label "×Ô¶¨ÒåÊÚÈ¨ÎÄ¼ş", 
+   :help "iOSç­¾åä½¿ç”¨çš„è‡ªå®šä¹‰æˆæƒæ–‡ä»¶ï¼ˆå¯æ›¿æ¢é¢„ç½®æè¿°æ–‡ä»¶ä¸­çš„é€šé…æˆæƒï¼‰",
+   :label "è‡ªå®šä¹‰æˆæƒæ–‡ä»¶", 
    :default "",
    :path ["ios" "entitlements"]}
   
   {:type :string,
-   :help "Ó¦ÓÃÊÖ¶¯´¦ÀíµÄ±¾µØ»¯ÓïÑÔÁĞ±í£¨CFBundleLocalizations£©£¬¶ººÅ·Ö¸ô",
+   :help "åº”ç”¨æ‰‹åŠ¨å¤„ç†çš„æœ¬åœ°åŒ–è¯­è¨€åˆ—è¡¨ï¼ˆCFBundleLocalizationsï¼‰ï¼Œé€—å·åˆ†éš”",
    :default "en",
-   :label "Ä¬ÈÏÓïÑÔ", 
+   :label "é»˜è®¤è¯­è¨€", 
    :path ["ios" "default_language"]}
   
   {:type :string,
-   :help "Ó¦ÓÃÊÖ¶¯´¦ÀíµÄ±¾µØ»¯ÓïÑÔ£¨CFBundleLocalizations£©",
+   :help "åº”ç”¨æ‰‹åŠ¨å¤„ç†çš„æœ¬åœ°åŒ–è¯­è¨€ï¼ˆCFBundleLocalizationsï¼‰",
    :default "en",
-   :label "±¾µØ»¯Ö§³Ö", 
+   :label "æœ¬åœ°åŒ–æ”¯æŒ", 
    :path ["ios" "localizations"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android ldpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "ldpiÍ¼±ê36x36", 
+   :help "Android ldpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "ldpiå›¾æ ‡36x36", 
    :path ["android" "app_icon_36x36"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android mdpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "mdpiÍ¼±ê48x48", 
+   :help "Android mdpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "mdpiå›¾æ ‡48x48", 
    :path ["android" "app_icon_48x48"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android hdpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "hdpiÍ¼±ê72x72", 
+   :help "Android hdpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "hdpiå›¾æ ‡72x72", 
    :path ["android" "app_icon_72x72"]}
 
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xhdpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xhdpiÍ¼±ê96x96", 
+   :help "Android xhdpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xhdpiå›¾æ ‡96x96", 
    :path ["android" "app_icon_96x96"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xxhdpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxhdpiÍ¼±ê144x144", 
+   :help "Android xxhdpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxhdpiå›¾æ ‡144x144", 
    :path ["android" "app_icon_144x144"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Android xxxhdpi·Ö±æÂÊÓ¦ÓÃÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxxhdpiÍ¼±ê192x192", 
+   :help "Android xxxhdpiåˆ†è¾¨ç‡åº”ç”¨å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxxhdpiå›¾æ ‡192x192", 
    :path ["android" "app_icon_192x192"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "Ğ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "ÍÆËÍĞ¡Í¼±ê", 
+   :help "å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "æ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "ÍÆËÍ´óÍ¼±ê", 
+   :help "å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "æ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "ldpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "ldpiÍÆËÍĞ¡Í¼±ê", 
+   :help "ldpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "ldpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_ldpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "mdpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "mdpiÍÆËÍĞ¡Í¼±ê", 
+   :help "mdpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "mdpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_mdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "hdpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "hdpiÍÆËÍĞ¡Í¼±ê", 
+   :help "hdpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "hdpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_hdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xhdpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xhdpiÍÆËÍĞ¡Í¼±ê", 
+   :help "xhdpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xhdpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_xhdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xxhdpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxhdpiÍÆËÍĞ¡Í¼±ê", 
+   :help "xxhdpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxhdpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_xxhdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xxxhdpi·Ö±æÂÊĞ¡ĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxxhdpiÍÆËÍĞ¡Í¼±ê", 
+   :help "xxxhdpiåˆ†è¾¨ç‡å°å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxxhdpiæ¨é€å°å›¾æ ‡", 
    :path ["android" "push_icon_small_xxxhdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "ldpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "ldpiÍÆËÍ´óÍ¼±ê", 
+   :help "ldpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "ldpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_ldpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "mdpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "mdpiÍÆËÍ´óÍ¼±ê", 
+   :help "mdpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "mdpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_mdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "hdpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "hdpiÍÆËÍ´óÍ¼±ê", 
+   :help "hdpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "hdpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_hdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xhdpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xhdpiÍÆËÍ´óÍ¼±ê", 
+   :help "xhdpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xhdpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_xhdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xxhdpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxhdpiÍÆËÍ´óÍ¼±ê", 
+   :help "xxhdpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxhdpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_xxhdpi"]}
   
   {:type :resource,
    :filter "png",
    :preserve-extension true,
-   :help "xxxhdpi·Ö±æÂÊ´óĞÍÍÆËÍÍ¨ÖªÍ¼±ê£¨.png¸ñÊ½£©",
-   :label "xxxhdpiÍÆËÍ´óÍ¼±ê", 
+   :help "xxxhdpiåˆ†è¾¨ç‡å¤§å‹æ¨é€é€šçŸ¥å›¾æ ‡ï¼ˆ.pngæ ¼å¼ï¼‰",
+   :label "xxxhdpiæ¨é€å¤§å›¾æ ‡", 
    :path ["android" "push_icon_large_xxxhdpi"]}
   
-  ;; ÍÆËÍºÍÏµÍ³ÅäÖÃ
+  ;; æ¨é€å’Œç³»ç»Ÿé…ç½®
   {:type :string,
-   :help "ÍÆËÍÏûÏ¢ÖĞÓÃ×÷Í¨Öª±êÌâµÄJSON×Ö¶ÎÃû",
+   :help "æ¨é€æ¶ˆæ¯ä¸­ç”¨ä½œé€šçŸ¥æ ‡é¢˜çš„JSONå­—æ®µå",
    :default "",
-   :label "ÍÆËÍ±êÌâ×Ö¶Î", 
+   :label "æ¨é€æ ‡é¢˜å­—æ®µ", 
    :path ["android" "push_field_title"]}
   
   {:type :string,
-   :help "ÍÆËÍÏûÏ¢ÖĞÓÃ×÷Í¨ÖªÕıÎÄµÄJSON×Ö¶ÎÃû",
+   :help "æ¨é€æ¶ˆæ¯ä¸­ç”¨ä½œé€šçŸ¥æ­£æ–‡çš„JSONå­—æ®µå",
    :default "",
-   :label "ÍÆËÍÕıÎÄ×Ö¶Î", 
+   :label "æ¨é€æ­£æ–‡å­—æ®µ", 
    :path ["android" "push_field_text"]}
   
   {:type :integer,
-   :help "Android°æ±¾ºÅ£¨android:versionCode£©",
+   :help "Androidç‰ˆæœ¬å·ï¼ˆandroid:versionCodeï¼‰",
    :default 1,
-   :label "°æ±¾´úÂë", 
+   :label "ç‰ˆæœ¬ä»£ç ", 
    :path ["android" "version_code"]}
   
   {:type :integer,
-   :help "Ó¦ÓÃÔËĞĞËùĞèµÄ×îµÍAPI¼¶±ğ£¨android:minSdkVersion£©",
+   :help "åº”ç”¨è¿è¡Œæ‰€éœ€çš„æœ€ä½APIçº§åˆ«ï¼ˆandroid:minSdkVersionï¼‰",
    :default 19,
    :minimum 19,
-   :label "×îµÍSDK°æ±¾", 
+   :label "æœ€ä½SDKç‰ˆæœ¬", 
    :path ["android" "minimum_sdk_version"]}
 
   {:type :integer,
-   :help "Ó¦ÓÃÄ¿±êAPI¼¶±ğ£¨android:targetSdkVersion£©",
+   :help "åº”ç”¨ç›®æ ‡APIçº§åˆ«ï¼ˆandroid:targetSdkVersionï¼‰",
    :default 35,
    :minimum 19,
-   :label "Ä¿±êSDK°æ±¾", 
+   :label "ç›®æ ‡SDKç‰ˆæœ¬", 
    :path ["android" "target_sdk_version"]}
   
   {:type :string,
-   :help "Ó¦ÓÃ°üÃû",
+   :help "åº”ç”¨åŒ…å",
    :default "com.example.todo",
-   :label "Ó¦ÓÃ°üÃû", 
+   :label "åº”ç”¨åŒ…å", 
    :path ["android" "package"]}
   
   {:type :string,
-   :help "FirebaseÔÆÏûÏ¢·¢ËÍÕßID£¨FCM Sender ID£©",
+   :help "Firebaseäº‘æ¶ˆæ¯å‘é€è€…IDï¼ˆFCM Sender IDï¼‰",
    :default "",
-   :label "FCM·¢ËÍÕßID", 
+   :label "FCMå‘é€è€…ID", 
    :path ["android" "gcm_sender_id"]}
   
   {:type :string,
-   :help "FirebaseÔÆÏûÏ¢Ó¦ÓÃID£¨FCM Application ID£©",
+   :help "Firebaseäº‘æ¶ˆæ¯åº”ç”¨IDï¼ˆFCM Application IDï¼‰",
    :default "",
-   :label "FCMÓ¦ÓÃID", 
+   :label "FCMåº”ç”¨ID", 
    :path ["android" "fcm_application_id"]}
   
   {:type :resource,
    :filter "xml",
    :preserve-extension true,
-   :help "×Ô¶¨ÒåAndroidManifest.xmlÄ£°åÎÄ¼ş",
+   :help "è‡ªå®šä¹‰AndroidManifest.xmlæ¨¡æ¿æ–‡ä»¶",
    :default "/builtins/manifests/android/AndroidManifest.xml",
-   :label "Çåµ¥ÎÄ¼şÄ£°å", 
+   :label "æ¸…å•æ–‡ä»¶æ¨¡æ¿", 
    :path ["android" "manifest"]}
   
   {:type :string,
-   :help "Ó¦ÓÃÄÚ¹º·şÎñÌá¹©ÉÌ£¬Ö§³Ö'GooglePlay'ºÍ'Amazon'",
+   :help "åº”ç”¨å†…è´­æœåŠ¡æä¾›å•†ï¼Œæ”¯æŒ'GooglePlay'å’Œ'Amazon'",
    :default "GooglePlay",
-   :label "Ó¦ÓÃÄÚ¹ºÌá¹©ÉÌ", 
+   :label "åº”ç”¨å†…è´­æä¾›å•†", 
    :path ["android" "iap_provider"]
    :options [["GooglePlay" "GooglePlay"] ["Amazon" "Amazon"]]}
   
   {:type :string,
-   :help "ÊäÈë·¨ÊµÏÖ·½Ê½£¬Ö§³Ö'KeyEvent'(°´¼üÊÂ¼ş)ºÍ'HiddenInputField'(Òş²ØÊäÈë¿ò)",
+   :help "è¾“å…¥æ³•å®ç°æ–¹å¼ï¼Œæ”¯æŒ'KeyEvent'(æŒ‰é”®äº‹ä»¶)å’Œ'HiddenInputField'(éšè—è¾“å…¥æ¡†)",
    :default "KeyEvent",
-   :label "ÊäÈë·¨ÊµÏÖ", 
+   :label "è¾“å…¥æ³•å®ç°", 
    :path ["android" "input_method"]
    :options [["KeyEvent" "KeyEvent"] ["HiddenInputField" "HiddenInputField"]]} 
   
   {:type :boolean,
-   :help "ÆôÓÃ³Á½şÊ½Ä£Ê½£¨Òş²Øµ¼º½À¸ºÍ×´Ì¬À¸£¬Ó¦ÓÃ²¶»ñËùÓĞ´¥ÃşÊÂ¼ş£©",
+   :help "å¯ç”¨æ²‰æµ¸å¼æ¨¡å¼ï¼ˆéšè—å¯¼èˆªæ å’ŒçŠ¶æ€æ ï¼Œåº”ç”¨æ•è·æ‰€æœ‰è§¦æ‘¸äº‹ä»¶ï¼‰",
    :default false,
-   :label "³Á½şÊ½Ä£Ê½", 
+   :label "æ²‰æµ¸å¼æ¨¡å¼", 
    :path ["android" "immersive_mode"]}
   
   {:type :boolean,
-   :help "½«ÏÔÊ¾ÇøÓòÑÓÉìÖÁÁõº£ÆÁÇøÓò",
+   :help "å°†æ˜¾ç¤ºåŒºåŸŸå»¶ä¼¸è‡³åˆ˜æµ·å±åŒºåŸŸ",
    :default true,
-   :label "Áõº£ÆÁÊÊÅä", 
+   :label "åˆ˜æµ·å±é€‚é…", 
    :path ["android" "display_cutout"]}
   
   {:type :boolean,
-   :help "ÆôÓÃÓ¦ÓÃµ÷ÊÔ£¨Ö§³Öµ÷ÊÔºÍÎÄ¼ş·ÃÎÊ£©",
+   :help "å¯ç”¨åº”ç”¨è°ƒè¯•ï¼ˆæ”¯æŒè°ƒè¯•å’Œæ–‡ä»¶è®¿é—®ï¼‰",
    :default false,
-   :label "¿Éµ÷ÊÔÄ£Ê½", 
+   :label "å¯è°ƒè¯•æ¨¡å¼", 
    :path ["android" "debuggable"]}
   
   {:type :resource,
    :filter "pro",
    :preserve-extension true,
-   :help "×Ô¶¨ÒåProGuardÅäÖÃÎÄ¼ş£¨ÓÃÓÚ¾«¼òAPKÖĞµÄÈßÓàJavaÀà£©",
-   :label "ProGuardÅäÖÃ",
+   :help "è‡ªå®šä¹‰ProGuardé…ç½®æ–‡ä»¶ï¼ˆç”¨äºç²¾ç®€APKä¸­çš„å†—ä½™Javaç±»ï¼‰",
+   :label "ProGuardé…ç½®",
    :default "",
    :path ["android" "proguard"]}
   
   {:type :boolean,
-   :help "Ö¸Ê¾°²×°³ÌĞòÊÇ·ñ´ÓAPKÖĞÌáÈ¡Ô­Éú¿âµ½ÎÄ¼şÏµÍ³",
+   :help "æŒ‡ç¤ºå®‰è£…ç¨‹åºæ˜¯å¦ä»APKä¸­æå–åŸç”Ÿåº“åˆ°æ–‡ä»¶ç³»ç»Ÿ",
    :default true,
-   :label "ÌáÈ¡Ô­Éú¿â", 
+   :label "æå–åŸç”Ÿåº“", 
    :path ["android" "extract_native_libs"]}
   
   {:type :resource,
    :filter "icns",
    :preserve-extension true,
-   :help "Ó¦ÓÃÍ¼±êÎÄ¼ş£¨.icns¸ñÊ½£©",
-   :label "Ó¦ÓÃÍ¼±ê", 
+   :help "åº”ç”¨å›¾æ ‡æ–‡ä»¶ï¼ˆ.icnsæ ¼å¼ï¼‰",
+   :label "åº”ç”¨å›¾æ ‡", 
    :path ["osx" "app_icon"]}
   
   {:type :string,
-   :help "Ó¦ÓÃ°ü±êÊ¶·û£¨CFBundleIdentifier£©",
+   :help "åº”ç”¨åŒ…æ ‡è¯†ç¬¦ï¼ˆCFBundleIdentifierï¼‰",
    :default "example.unnamed",
-   :label "°ü±êÊ¶·û", 
+   :label "åŒ…æ ‡è¯†ç¬¦", 
    :path ["osx" "bundle_identifier"]}
   
   {:type :string,
-   :help "Ó¦ÓÃ°ü¼ò³Æ£¨CFBundleName£©£¬×î¶à15×Ö·û",
-   :label "Ó¦ÓÃ¼ò³Æ", 
+   :help "åº”ç”¨åŒ…ç®€ç§°ï¼ˆCFBundleNameï¼‰ï¼Œæœ€å¤š15å­—ç¬¦",
+   :label "åº”ç”¨ç®€ç§°", 
    :path ["osx" "bundle_name"]}
   
   {:type :string,
-   :help "¹¹½¨°æ±¾ºÅ£¨CFBundleVersion£©£¬¸ñÊ½ÎªÊı×Ö»òx.y.z",
+   :help "æ„å»ºç‰ˆæœ¬å·ï¼ˆCFBundleVersionï¼‰ï¼Œæ ¼å¼ä¸ºæ•°å­—æˆ–x.y.z",
    :default "1",
-   :label "¹¹½¨°æ±¾", 
+   :label "æ„å»ºç‰ˆæœ¬", 
    :path ["osx" "bundle_version"]}
   
   {:type :resource,
    :filter "plist",
    :preserve-extension true,
-   :help "×Ô¶¨ÒåInfo.plistÄ£°åÎÄ¼ş",
+   :help "è‡ªå®šä¹‰Info.plistæ¨¡æ¿æ–‡ä»¶",
    :label "Info.plist", 
    :default "/builtins/manifests/osx/Info.plist",
    :path ["osx" "infoplist"]}
@@ -1069,301 +1069,301 @@
   {:type :resource,
    :filter "xcprivacy",
    :preserve-extension true,
-   :help "ÒşË½Çåµ¥ÎÄ¼ş",
+   :help "éšç§æ¸…å•æ–‡ä»¶",
    :label "PrivacyInfo.xcprivacy", 
    :default "/builtins/manifests/osx/PrivacyInfo.xcprivacy",
    :path ["osx" "privacymanifest"]}
   
   {:type :string,
-   :help "Ä¬ÈÏÓïÑÔºÍµØÇø£¨CFBundleDevelopmentRegion£©",
+   :help "é»˜è®¤è¯­è¨€å’Œåœ°åŒºï¼ˆCFBundleDevelopmentRegionï¼‰",
    :default "en",
-   :label "Ä¬ÈÏÓïÑÔÇøÓò", 
+   :label "é»˜è®¤è¯­è¨€åŒºåŸŸ", 
    :path ["osx" "default_language"]}
   
   {:type :string,
-   :help "Ó¦ÓÃÊÖ¶¯´¦ÀíµÄ±¾µØ»¯ÓïÑÔÁĞ±í£¨CFBundleLocalizations£©£¬¶ººÅ·Ö¸ô",
+   :help "åº”ç”¨æ‰‹åŠ¨å¤„ç†çš„æœ¬åœ°åŒ–è¯­è¨€åˆ—è¡¨ï¼ˆCFBundleLocalizationsï¼‰ï¼Œé€—å·åˆ†éš”",
    :default "en",
-   :label "±¾µØ»¯Ö§³Ö", 
+   :label "æœ¬åœ°åŒ–æ”¯æŒ", 
    :path ["osx" "localizations"]}
   
 
   {:type :resource,
    :filter "ico",
    :preserve-extension true,
-   :help "¿ÉÖ´ĞĞÎÄ¼şÍ¼±ê£¨.ico¸ñÊ½£©",
-   :label "Ó¦ÓÃÍ¼±ê", 
+   :help "å¯æ‰§è¡Œæ–‡ä»¶å›¾æ ‡ï¼ˆ.icoæ ¼å¼ï¼‰",
+   :label "åº”ç”¨å›¾æ ‡", 
    :path ["windows" "app_icon"]}
 
   {:type :boolean,
-   :help "´ËÉèÖÃÒÑÆúÓÃ¡£ÉèÎªtrue¿Éµ÷ÕûÓ¦ÓÃ¶ÑÄÚ´æ´óĞ¡",
+   :help "æ­¤è®¾ç½®å·²å¼ƒç”¨ã€‚è®¾ä¸ºtrueå¯è°ƒæ•´åº”ç”¨å †å†…å­˜å¤§å°",
    :default false,
    :deprecated true,
    :severity-override :fatal,
    :severity-default :warning,
-   :label "×Ô¶¨Òå¶ÑÄÚ´æ(ÆúÓÃ)",  
+   :label "è‡ªå®šä¹‰å †å†…å­˜(å¼ƒç”¨)",  
    :path ["html5" "set_custom_heap_size"]}
   
   {:type :integer,
-   :help "´ËÉèÖÃÒÑÆúÓÃ¡£Ó¦ÓÃ¶ÑÄÚ´æ´óĞ¡£¨×Ö½Ú£©",
+   :help "æ­¤è®¾ç½®å·²å¼ƒç”¨ã€‚åº”ç”¨å †å†…å­˜å¤§å°ï¼ˆå­—èŠ‚ï¼‰",
    :default 0,
    :deprecated true,
    :severity-override :fatal,
    :severity-default :warning,
-   :label "¶ÑÄÚ´æ´óĞ¡(ÆúÓÃ)",  
+   :label "å †å†…å­˜å¤§å°(å¼ƒç”¨)",  
    :path ["html5" "custom_heap_size"]}
   
   {:type :integer,
-   :help "Ó¦ÓÃ¶ÑÄÚ´æ´óĞ¡£¨MB£©£¬·¶Î§32-4096",
+   :help "åº”ç”¨å †å†…å­˜å¤§å°ï¼ˆMBï¼‰ï¼ŒèŒƒå›´32-4096",
    :default 256,
    :minimum 32,
    :maximum 4096,
-   :label "¶ÑÄÚ´æ´óĞ¡", 
+   :label "å †å†…å­˜å¤§å°", 
    :path ["html5" "heap_size"]}
   
   {:type :resource,
    :filter "html",
    :preserve-extension true,
-   :help "CanvasµÄHTMLÍâ¿ÇÄ£°å",
+   :help "Canvasçš„HTMLå¤–å£³æ¨¡æ¿",
    :default "/builtins/manifests/web/engine_template.html",
-   :label ".htmlÍâ¿ÇÄ£°å", 
+   :label ".htmlå¤–å£³æ¨¡æ¿", 
    :path ["html5" "htmlfile"]}
   
   {:type :resource,
    :filter "css",
    :preserve-extension true,
-   :help "½«ÄÚÁªµ½index.htmlÄ£°åµÄCSSÑùÊ½",
+   :help "å°†å†…è”åˆ°index.htmlæ¨¡æ¿çš„CSSæ ·å¼",
    :default "/builtins/manifests/web/light_theme.css",
-   :label "×Ô¶¨ÒåCSS", 
+   :label "è‡ªå®šä¹‰CSS", 
    :path ["html5" "cssfile"]}
   
   {:type :resource,
    :filter ["gif", "jpg", "png", "svg"],
    :preserve-extension true,
-   :help "×Ô¶¨ÒåHTMLÆô¶¯»­ÃæÍ¼Æ¬",
-   :label "Æô¶¯»­ÃæÍ¼Æ¬", 
+   :help "è‡ªå®šä¹‰HTMLå¯åŠ¨ç”»é¢å›¾ç‰‡",
+   :label "å¯åŠ¨ç”»é¢å›¾ç‰‡", 
    :path ["html5" "splash_image"]}
   
   {:type :string,
-   :help "×ÊÔ´°üÂ·¾¶Ç°×º£¨¿ÉÎªÍêÕûURL£©",
+   :help "èµ„æºåŒ…è·¯å¾„å‰ç¼€ï¼ˆå¯ä¸ºå®Œæ•´URLï¼‰",
    :default "archive",
-   :label "×ÊÔ´°üÇ°×º",
+   :label "èµ„æºåŒ…å‰ç¼€",
    :path ["html5" "archive_location_prefix"]}
   
   {:type :string,
-   :help "×ÊÔ´°üÂ·¾¶ºó×º",
+   :help "èµ„æºåŒ…è·¯å¾„åç¼€",
    :default "",
-   :label "×ÊÔ´°üºó×º", 
+   :label "èµ„æºåŒ…åç¼€", 
    :path ["html5" "archive_location_suffix"]}
   
   {:type :string,
-   :help "ÒıÇæÆô¶¯²ÎÊı£¨¶ººÅ·Ö¸ô£©",
+   :help "å¼•æ“å¯åŠ¨å‚æ•°ï¼ˆé€—å·åˆ†éš”ï¼‰",
    :default "--verify-graphics-calls=false",
-   :label "ÒıÇæ²ÎÊı", 
+   :label "å¼•æ“å‚æ•°", 
    :path ["html5" "engine_arguments"]}
   
   {:type :boolean,
-   :help "ÆôÓÃWASMÁ÷Ê½¼ÓÔØ£¨¸ü¿ìÇÒÄÚ´æÕ¼ÓÃ¸üµÍ£¬µ«ĞèMIMEÀàĞÍ'application/wasm'£©",
+   :help "å¯ç”¨WASMæµå¼åŠ è½½ï¼ˆæ›´å¿«ä¸”å†…å­˜å ç”¨æ›´ä½ï¼Œä½†éœ€MIMEç±»å‹'application/wasm'ï¼‰",
    :default false,
-   :label "WASMÁ÷Ê½¼ÓÔØ",
+   :label "WASMæµå¼åŠ è½½",
    :path ["html5" "wasm_streaming"]}
   
   {:type :boolean,
-   :help "ÊÇ·ñÏÔÊ¾È«ÆÁ°´Å¥",
+   :help "æ˜¯å¦æ˜¾ç¤ºå…¨å±æŒ‰é’®",
    :default true,
-   :label "È«ÆÁ°´Å¥",
+   :label "å…¨å±æŒ‰é’®",
    :path ["html5" "show_fullscreen_button"]}
   
   {:type :boolean,
-   :help "ÊÇ·ñÏÔÊ¾'Made with Defold'Á´½Ó",
+   :help "æ˜¯å¦æ˜¾ç¤º'Made with Defold'é“¾æ¥",
    :default true,
-   :label "ÏÔÊ¾ÖÆ×÷ĞÅÏ¢", 
+   :label "æ˜¾ç¤ºåˆ¶ä½œä¿¡æ¯", 
    :path ["html5" "show_made_with_defold"]}
   
   {:type :boolean,
-   :help "ÊÇ·ñÔÚä¯ÀÀÆ÷¿ØÖÆÌ¨ÏÔÊ¾'Made with Defold'ºá·ù",
+   :help "æ˜¯å¦åœ¨æµè§ˆå™¨æ§åˆ¶å°æ˜¾ç¤º'Made with Defold'æ¨ªå¹…",
    :default true,
-   :label "¿ØÖÆÌ¨ºá·ù",
+   :label "æ§åˆ¶å°æ¨ªå¹…",
    :path ["html5" "show_console_banner"]}
   
   {:type :string,
-   :help "CanvasËõ·ÅÄ£Ê½£¬Ä¬ÈÏÎª'Downscale Fit'",
+   :help "Canvasç¼©æ”¾æ¨¡å¼ï¼Œé»˜è®¤ä¸º'Downscale Fit'",
    :default "downscale_fit",
-   :label "Ëõ·ÅÄ£Ê½",
+   :label "ç¼©æ”¾æ¨¡å¼",
    :path ["html5" "scale_mode"]
-   :options [["downscale_fit" "µÈ±ÈËõĞ¡ÊÊÅä"]
-             ["fit" "µÈ±ÈÊÊÅä"]
-             ["stretch" "À­Éì"]
-             ["no_scale" "ÎŞËõ·Å"]]} 
+   :options [["downscale_fit" "ç­‰æ¯”ç¼©å°é€‚é…"]
+             ["fit" "ç­‰æ¯”é€‚é…"]
+             ["stretch" "æ‹‰ä¼¸"]
+             ["no_scale" "æ— ç¼©æ”¾"]]} 
   
   {:type :integer,
-   :help "ÎÄ¼şÏÂÔØÊ§°ÜÊ±µÄÖØÊÔ´ÎÊı",
+   :help "æ–‡ä»¶ä¸‹è½½å¤±è´¥æ—¶çš„é‡è¯•æ¬¡æ•°",
    :default 10,
-   :label "ÏÂÔØÖØÊÔ´ÎÊı",
+   :label "ä¸‹è½½é‡è¯•æ¬¡æ•°",
    :path ["html5" "retry_count"]}
   
   {:type :number,
-   :help "ÎÄ¼ş¼ÓÔØÊ§°ÜºóµÄÖØÊÔ¼ä¸ô£¨Ãë£©",
+   :help "æ–‡ä»¶åŠ è½½å¤±è´¥åçš„é‡è¯•é—´éš”ï¼ˆç§’ï¼‰",
    :default 1.0,
-   :label "ÖØÊÔ¼ä¸ô",
+   :label "é‡è¯•é—´éš”",
    :path ["html5" "retry_time"]}
   
   {:type :boolean,
-   :help "ÉèÖÃÍ¼ĞÎÉÏÏÂÎÄ±³¾°Í¸Ã÷",
+   :help "è®¾ç½®å›¾å½¢ä¸Šä¸‹æ–‡èƒŒæ™¯é€æ˜",
    :default false,
-   :label "Í¸Ã÷±³¾°",
+   :label "é€æ˜èƒŒæ™¯",
    :path ["html5" "transparent_graphics_context"]}
   
   {:type :resource,
    :filter "appmanifest",
    :preserve-extension true,
-   :help "Ô­ÉúÀ©Õ¹ÅäÖÃÎÄ¼ş£¨Ìá¹©ÏêÏ¸µÄ¹¹½¨ÉèÖÃ¿ØÖÆ£©",
-   :label "Ô­ÉúÀ©Õ¹Çåµ¥", 
+   :help "åŸç”Ÿæ‰©å±•é…ç½®æ–‡ä»¶ï¼ˆæä¾›è¯¦ç»†çš„æ„å»ºè®¾ç½®æ§åˆ¶ï¼‰",
+   :label "åŸç”Ÿæ‰©å±•æ¸…å•", 
    :path ["native_extension" "app_manifest"]}
   
   {:type :boolean,
-   :help "ÔÚ·¢²¼°æ±¾ÖĞÆôÓÃCPUÊ¹ÓÃÂÊ²ÉÑù",
+   :help "åœ¨å‘å¸ƒç‰ˆæœ¬ä¸­å¯ç”¨CPUä½¿ç”¨ç‡é‡‡æ ·",
    :default false,
-   :label "CPU²ÉÑù",
+   :label "CPUé‡‡æ ·",
    :path ["profiler" "track_cpu"]}
   
   {:type :boolean,
-   :help "ÆôÓÃÓÎÏ·ÄÚĞÔÄÜ·ÖÎöÆ÷",
+   :help "å¯ç”¨æ¸¸æˆå†…æ€§èƒ½åˆ†æå™¨",
    :default true,
-   :label "ĞÔÄÜ·ÖÎöÆ÷", 
+   :label "æ€§èƒ½åˆ†æå™¨", 
    :path ["profiler" "enabled"]}
   
   {:type :integer,
-   :help "·şÎñÆ÷¸üĞÂ¼ä¸ô£¨ºÁÃë£©",
+   :help "æœåŠ¡å™¨æ›´æ–°é—´éš”ï¼ˆæ¯«ç§’ï¼‰",
    :default 0,
-   :label "·ÖÎöÆ÷¸üĞÂ¼ä¸ô", 
+   :label "åˆ†æå™¨æ›´æ–°é—´éš”", 
    :path ["profiler" "sleep_between_server_updates"]}
   {:type :boolean
-   :help "ÆôÓÃä¯ÀÀÆ÷ĞÔÄÜÊ±¼äÏß"
+   :help "å¯ç”¨æµè§ˆå™¨æ€§èƒ½æ—¶é—´çº¿"
    :default false
    :path ["profiler" "performance_timeline_enabled"]}
   {:type :resource
    :filter "settings"
    :default "/liveupdate.settings"
-   :help "ÈÈ¸üĞÂÅäÖÃÎÄ¼ş"
+   :help "çƒ­æ›´æ–°é…ç½®æ–‡ä»¶"
    :preserve-extension true,
-   :label "ÈÈ¸üĞÂÅäÖÃ",  
+   :label "çƒ­æ›´æ–°é…ç½®",  
    :path ["liveupdate" "settings"]}
   
    
   {:type :boolean
    :filter "settings"
    :default true
-   :help "Ó¦ÓÃÆô¶¯Ê±×Ô¶¯¹ÒÔØÏÈÇ°¹ÒÔØµÄ×ÊÔ´"
-   :label "Æô¶¯×Ô¶¯¹ÒÔØ" , 
+   :help "åº”ç”¨å¯åŠ¨æ—¶è‡ªåŠ¨æŒ‚è½½å…ˆå‰æŒ‚è½½çš„èµ„æº"
+   :label "å¯åŠ¨è‡ªåŠ¨æŒ‚è½½" , 
    :path ["liveupdate" "mount_on_start"]}
   
   {:type :integer,
-   :help "µ¥¸ö¼¯ºÏÖĞ×î´ó²¢·¢ÍßÆ¬µØÍ¼ÊıÁ¿",
+   :help "å•ä¸ªé›†åˆä¸­æœ€å¤§å¹¶å‘ç“¦ç‰‡åœ°å›¾æ•°é‡",
    :default 16,
-   :label "ÍßÆ¬µØÍ¼ÉÏÏŞ", 
+   :label "ç“¦ç‰‡åœ°å›¾ä¸Šé™", 
    :path ["tilemap" "max_count"]}
   
   {:type :integer,
-   :help "µ¥¸ö¼¯ºÏÖĞ×î´ó²¢·¢¿É¼ûÍßÆ¬ÊıÁ¿",
+   :help "å•ä¸ªé›†åˆä¸­æœ€å¤§å¹¶å‘å¯è§ç“¦ç‰‡æ•°é‡",
    :default 2048,
-   :label "¿É¼ûÍßÆ¬ÉÏÏŞ", 
+   :label "å¯è§ç“¦ç‰‡ä¸Šé™", 
    :path ["tilemap" "max_tile_count"]}]
 
  :group-order ["Main" "Platforms" "Components" "Runtime" "Distribution"]
  :default-category "project"
  :categories
-{"sound" {:help "ÒôĞ§Ïà¹ØÉèÖÃ"
-           :title "ÒôĞ§"
+{"sound" {:help "éŸ³æ•ˆç›¸å…³è®¾ç½®"
+           :title "éŸ³æ•ˆ"
            :group "Components"},
- "html5" {:help "HTML5 Æ½Ì¨Ïà¹ØÉèÖÃ"
+ "html5" {:help "HTML5 å¹³å°ç›¸å…³è®¾ç½®"
            :title "HTML5"
            :group "Platforms"},
- "resource" {:help "×ÊÔ´¼ÓÔØÓë¹ÜÀíÏà¹ØÉèÖÃ"
-              :title "×ÊÔ´¹ÜÀí"
+ "resource" {:help "èµ„æºåŠ è½½ä¸ç®¡ç†ç›¸å…³è®¾ç½®"
+              :title "èµ„æºç®¡ç†"
               :group "Runtime"},
- "factory" {:help "ÓÎÏ·¶ÔÏó¹¤³§Ïà¹ØÉèÖÃ"
-            :title "¶ÔÏó¹¤³§"
+ "factory" {:help "æ¸¸æˆå¯¹è±¡å·¥å‚ç›¸å…³è®¾ç½®"
+            :title "å¯¹è±¡å·¥å‚"
             :group "Components"},
- "graphics" {:help "Í¼ĞÎäÖÈ¾Ïà¹ØÉèÖÃ"
-              :title "Í¼ĞÎäÖÈ¾"
+ "graphics" {:help "å›¾å½¢æ¸²æŸ“ç›¸å…³è®¾ç½®"
+              :title "å›¾å½¢æ¸²æŸ“"
               :group "Runtime"},
- "engine" {:help "ÒıÇæºËĞÄÔËĞĞÊ±ÉèÖÃ"
-            :title "ÒıÇæºËĞÄ"
+ "engine" {:help "å¼•æ“æ ¸å¿ƒè¿è¡Œæ—¶è®¾ç½®"
+            :title "å¼•æ“æ ¸å¿ƒ"
             :group "Runtime"},
- "bootstrap" {:help "ÒıÇæ³õÊ¼»¯ÉèÖÃ"
-               :title "³õÊ¼»¯ÅäÖÃ"
+ "bootstrap" {:help "å¼•æ“åˆå§‹åŒ–è®¾ç½®"
+               :title "åˆå§‹åŒ–é…ç½®"
                :group "Main"},
- "label" {:help "ÎÄ±¾±êÇ©Ïà¹ØÉèÖÃ"
-           :title "ÎÄ±¾±êÇ©"
+ "label" {:help "æ–‡æœ¬æ ‡ç­¾ç›¸å…³è®¾ç½®"
+           :title "æ–‡æœ¬æ ‡ç­¾"
            :group "Components"},
- "collection" {:help "¼¯ºÏ×é¼şÏà¹ØÉèÖÃ"
-                :title "¼¯ºÏ×é¼ş"
+ "collection" {:help "é›†åˆç»„ä»¶ç›¸å…³è®¾ç½®"
+                :title "é›†åˆç»„ä»¶"
                 :group "Components"},
- "project" {:help "ÏîÄ¿Í¨ÓÃÉèÖÃ"
-             :title "ÏîÄ¿ÅäÖÃ"
+ "project" {:help "é¡¹ç›®é€šç”¨è®¾ç½®"
+             :title "é¡¹ç›®é…ç½®"
              :group "Main"},
- "collectionfactory" {:title "¼¯ºÏ¹¤³§"
+ "collectionfactory" {:title "é›†åˆå·¥å‚"
                        :group "Components"},
- "collection_proxy" {:help "¼¯ºÏ´úÀíÏà¹ØÉèÖÃ"
-                      :title "¼¯ºÏ´úÀí"
+ "collection_proxy" {:help "é›†åˆä»£ç†ç›¸å…³è®¾ç½®"
+                      :title "é›†åˆä»£ç†"
                       :group "Components"},
- "physics" {:help "ÎïÀíÏµÍ³ÉèÖÃ"
-             :title "ÎïÀíÏµÍ³"
+ "physics" {:help "ç‰©ç†ç³»ç»Ÿè®¾ç½®"
+             :title "ç‰©ç†ç³»ç»Ÿ"
              :group "Runtime"},
- "osx" {:help "Mac OSX Æ½Ì¨Ïà¹ØÉèÖÃ"
+ "osx" {:help "Mac OSX å¹³å°ç›¸å…³è®¾ç½®"
          :title "OSX"
          :group "Platforms"},
- "network" {:help "ÍøÂçÍ¨ĞÅÏà¹ØÉèÖÃ"
-             :title "ÍøÂçÍ¨ĞÅ"
+ "network" {:help "ç½‘ç»œé€šä¿¡ç›¸å…³è®¾ç½®"
+             :title "ç½‘ç»œé€šä¿¡"
              :group "Runtime"},
- "script" {:help "½Å±¾ÏµÍ³ÉèÖÃ"
-            :title "½Å±¾ÏµÍ³"
+ "script" {:help "è„šæœ¬ç³»ç»Ÿè®¾ç½®"
+            :title "è„šæœ¬ç³»ç»Ÿ"
             :group "Components"},
- "shader" {:help "×ÅÉ«Æ÷Ïà¹ØÉèÖÃ"
-            :title "×ÅÉ«Æ÷"
+ "shader" {:help "ç€è‰²å™¨ç›¸å…³è®¾ç½®"
+            :title "ç€è‰²å™¨"
             :group "Runtime"},
- "gui" {:help "Í¼ĞÎÓÃ»§½çÃæÏà¹ØÉèÖÃ"
-         :title "Í¼ĞÎ½çÃæ"
+ "gui" {:help "å›¾å½¢ç”¨æˆ·ç•Œé¢ç›¸å…³è®¾ç½®"
+         :title "å›¾å½¢ç•Œé¢"
          :group "Components"},
- "sprite" {:help "¾«ÁéÍ¼Ïà¹ØÉèÖÃ"
-            :title "¾«ÁéÍ¼"
+ "sprite" {:help "ç²¾çµå›¾ç›¸å…³è®¾ç½®"
+            :title "ç²¾çµå›¾"
             :group "Components"},
- "tilemap" {:help "ÍßÆ¬µØÍ¼Ïà¹ØÉèÖÃ"
-             :title "ÍßÆ¬µØÍ¼"
+ "tilemap" {:help "ç“¦ç‰‡åœ°å›¾ç›¸å…³è®¾ç½®"
+             :title "ç“¦ç‰‡åœ°å›¾"
              :group "Components"},
- "windows" {:help "Windows Æ½Ì¨Ïà¹ØÉèÖÃ"
+ "windows" {:help "Windows å¹³å°ç›¸å…³è®¾ç½®"
              :title "Windows"
              :group "Platforms"},
- "input" {:help "ÊäÈë¿ØÖÆÏµÍ³ÉèÖÃ"
-           :title "ÊäÈë¿ØÖÆ"
+ "input" {:help "è¾“å…¥æ§åˆ¶ç³»ç»Ÿè®¾ç½®"
+           :title "è¾“å…¥æ§åˆ¶"
            :group "Runtime"},
- "library" {:help "±¾ÏîÄ¿×÷ÎªÆäËûÏîÄ¿µÄÒÀÀµ¿âÊ±µÄÉèÖÃ"
-             :title "ÒÀÀµ¿â"
+ "library" {:help "æœ¬é¡¹ç›®ä½œä¸ºå…¶ä»–é¡¹ç›®çš„ä¾èµ–åº“æ—¶çš„è®¾ç½®"
+             :title "ä¾èµ–åº“"
              :group "Distribution"},
- "display" {:help "·Ö±æÂÊ¼°ÆäËûÏÔÊ¾Ïà¹ØÉèÖÃ"
-             :title "ÏÔÊ¾ÉèÖÃ"
+ "display" {:help "åˆ†è¾¨ç‡åŠå…¶ä»–æ˜¾ç¤ºç›¸å…³è®¾ç½®"
+             :title "æ˜¾ç¤ºè®¾ç½®"
              :group "Runtime"},
- "ios" {:help "iOS Æ½Ì¨Ïà¹ØÉèÖÃ"
+ "ios" {:help "iOS å¹³å°ç›¸å…³è®¾ç½®"
          :title "iOS"
          :group "Platforms"},
- "mesh" {:title "Íø¸ñÄ£ĞÍ"
+ "mesh" {:title "ç½‘æ ¼æ¨¡å‹"
          :group "Components"},
- "model" {:title "3DÄ£ĞÍ"
+ "model" {:title "3Dæ¨¡å‹"
           :group "Components"},
- "render" {:title "äÖÈ¾Æ÷"
+ "render" {:title "æ¸²æŸ“å™¨"
            :group "Runtime"},
- "particle_fx" {:help "Á£×ÓÌØĞ§Ïà¹ØÉèÖÃ"
-                 :title "Á£×ÓÌØĞ§"
+ "particle_fx" {:help "ç²’å­ç‰¹æ•ˆç›¸å…³è®¾ç½®"
+                 :title "ç²’å­ç‰¹æ•ˆ"
                  :group "Components"},
- "android" {:help "Android Æ½Ì¨Ïà¹ØÉèÖÃ"
+ "android" {:help "Android å¹³å°ç›¸å…³è®¾ç½®"
              :title "Android"
              :group "Platforms"},
- "liveupdate" {:help "ÈÈ¸üĞÂ¹¦ÄÜÉèÖÃ"
-                :title "ÈÈ¸üĞÂ"
+ "liveupdate" {:help "çƒ­æ›´æ–°åŠŸèƒ½è®¾ç½®"
+                :title "çƒ­æ›´æ–°"
                 :group "Distribution"},
- "native_extension" {:help "Ô­ÉúÀ©Õ¹¹¦ÄÜÉèÖÃ"
-                      :title "Ô­ÉúÀ©Õ¹"
+ "native_extension" {:help "åŸç”Ÿæ‰©å±•åŠŸèƒ½è®¾ç½®"
+                      :title "åŸç”Ÿæ‰©å±•"
                       :group "Distribution"},
- "profiler" {:help "ÔËĞĞÊ±ĞÔÄÜ·ÖÎöÆ÷ÉèÖÃ"
-              :title "ĞÔÄÜ·ÖÎöÆ÷"
+ "profiler" {:help "è¿è¡Œæ—¶æ€§èƒ½åˆ†æå™¨è®¾ç½®"
+              :title "æ€§èƒ½åˆ†æå™¨"
               :group "Runtime"}}}

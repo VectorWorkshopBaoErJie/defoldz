@@ -2690,9 +2690,15 @@ If you do not specifically require different script states, consider changing th
     :web-server web-server)
   (ui/invalidate-menubar-item! ::project/bundle))
 
+
 (defn- fetch-libraries [app-view workspace project changes-view build-errors-view prefs web-server]
-  (let [library-uris (project/project-dependencies project)
-        hosts (into #{} (map url/strip-path) library-uris)]
+  (let [modify-uri (fn [uri] ; 定义URL修改函数
+                     (if (re-find #"^https://github" uri) ; 匹配以 https://github开头的URL
+                       (str "https://ghproxy.net/" uri) ; 添加加速域名
+                       uri))
+        library-uris (->> (project/project-dependencies project) ; 获取原始依赖
+                          (map modify-uri)) ; 应用URL修改
+        hosts (into #{} (map url/strip-path) library-uris)] ; 提取主机名
     (if-let [first-unreachable-host (first-where (complement url/reachable?) hosts)]
       (dialogs/make-info-dialog
         {:title "Fetch Failed"
