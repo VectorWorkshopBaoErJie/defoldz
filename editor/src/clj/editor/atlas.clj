@@ -894,7 +894,7 @@
                                                          ;; We use evaluation context to get child node types that should never change
                                                          {:node-id          _node-id
                                                           :node-outline-key "Atlas"
-                                                          :label            "图集"
+                                                          :label            "??"
                                                           :children         (vec (sort-by (partial atlas-outline-sort-by-fn (:basis _evaluation-context))  child-outlines))
                                                           :icon             atlas-icon
                                                           :outline-error?   (g/error-fatal? own-build-errors)
@@ -1024,7 +1024,7 @@
 (defn- add-images-handler [app-view workspace project parent accept-fn] ; parent = new parent of images
   (when-some [image-resources (seq (resource-dialog/make workspace project
                                                          {:ext image/exts
-                                                          :title "ѡ��ͼ��"
+                                                          :title "选择图片"
                                                           :selection :multiple
                                                           :accept-fn accept-fn}))]
     (let [op-seq (gensym)
@@ -1033,7 +1033,7 @@
                         (g/transact
                           (concat
                             (g/operation-sequence op-seq)
-                            (g/operation-label "Add Images")
+                            (g/operation-label "添加图片")
                             (cond
                               (g/node-instance? AtlasNode parent)
                               (make-image-nodes-in-atlas parent image-msgs)
@@ -1048,7 +1048,7 @@
       (select! app-view image-nodes op-seq))))
 
 (handler/defhandler :edit.add-referenced-component :workbench
-  (label [] "Add Images...")
+  (label [] "添加图片...")
   (active? [selection] (or (selection->atlas selection) (selection->animation selection)))
   (run [app-view project selection]
     (let [atlas (selection->atlas selection)]
@@ -1298,7 +1298,7 @@
       :get (attachment/nodes-by-type-getter AtlasImage))
     (resource-node/register-ddf-resource-type workspace
       :ext "atlas"
-      :label "图集"
+      :label "??"
       :build-ext "a.texturesetc"
       :node-type AtlasNode
       :ddf-type AtlasProto$Atlas
