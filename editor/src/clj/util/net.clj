@@ -26,20 +26,6 @@
 
 (defn- default-progress-callback [current total])
 
-
-(defn- is-github-repo? [url]
-  (try
-    (let [uri (java.net.URI. url)
-          host (.getHost uri)]
-      (and (or (= "http" (.getScheme uri)) (= "https" (.getScheme uri)))
-           (when host
-             (= "github.com" (.toLowerCase host)))))
-    (catch Exception _ false)))
-
-(defn- add-ghproxy [url]
-  (str "https://ghproxy.net/" url))
-
-
 (defn download! [url out & {:keys [read-timeout connect-timeout chunk-size progress-callback cancelled-derefable]
                             :or {read-timeout default-read-timeout
                                  connect-timeout default-connect-timeout
@@ -47,8 +33,7 @@
                                  cancelled-derefable default-cancelled-derefable
                                  progress-callback default-progress-callback}
                             :as args}]
-  (let [url (if (is-github-repo? url) (add-ghproxy url) url) ; 修改后的URL处理
-    ^HttpURLConnection conn (doto (.openConnection (io/as-url  url)) 
+  (let [^HttpURLConnection conn (doto (.openConnection (io/as-url url))
                                   (.setRequestProperty "Connection" "close")
                                   (.setConnectTimeout connect-timeout)
                                   (.setReadTimeout read-timeout))

@@ -1,29 +1,29 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加初始化代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加终结化代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加更新代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	-- 在此处添加消息处理代码
+	-- 了解更多：https://defold.com/manuals/message-passing/
+	-- 如不需要可删除此函数
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
+	-- 在此处添加重载处理代码
+	-- 了解更多：https://defold.com/manuals/hot-reload/
+	-- 如不需要可删除此函数
 end

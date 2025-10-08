@@ -2853,13 +2853,7 @@ If you do not specifically require different script states, consider changing th
 
 
 (defn- fetch-libraries [app-view workspace project changes-view build-errors-view prefs web-server]
-  (let [modify-uri (fn [uri] ;; 修复：正确处理 URI 对象
-                    (let [uri-str (str uri)]
-                      (if (re-find #"^https?://([^/]+\.)?github\.com" uri-str)
-                        (java.net.URI. (str "https://ghproxy.net/" uri-str)) ; 转换为新 URI 对象
-                        uri)))
-        library-uris (->> (project/project-dependencies project)
-                          (map modify-uri)) ; 输入输出都保持 URI 类型
+  (let [library-uris (project/project-dependencies project)
         hosts (into #{} (map url/strip-path) library-uris)]
     (if-let [first-unreachable-host (first-where (complement url/reachable?) hosts)]
       (dialogs/make-info-dialog

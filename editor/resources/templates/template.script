@@ -1,50 +1,50 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加初始化代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加终结化代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 在此处添加更新代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function fixed_update(self, dt)
-	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
-	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
-	-- Physics section of game.project
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	-- 如果在 game.project 的 Engine 部分启用了"Fixed Update Frequency"，则会调用此函数
+	-- 如果在 game.project 的 Physics 部分启用了"Use Fixed Timestep"，
+	-- 可以与物理模拟的固定更新配合使用
+	-- 在此处添加更新代码
+	-- 了解更多：https://defold.com/manuals/script/
+	-- 如不需要可删除此函数
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	-- 在此处添加消息处理代码
+	-- 了解更多：https://defold.com/manuals/message-passing/
+	-- 如不需要可删除此函数
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
+	-- 在此处添加输入处理代码。此脚本附加的游戏对象
+	-- 必须已获取输入焦点：
 	--
 	--    msg.post(".", "acquire_input_focus")
 	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+	-- 所有映射的输入绑定都将被接收。鼠标和触摸输入
+	-- 无论发生在屏幕上的哪个位置都会被接收。
+	-- 了解更多：https://defold.com/manuals/input/
+	-- 如不需要可删除此函数
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
+	-- 在此处添加重载处理代码
+	-- 了解更多：https://defold.com/manuals/hot-reload/
+	-- 如不需要可删除此函数
 end
