@@ -62,28 +62,28 @@
               :set protobuf-forms-util/set-form-op
               :clear protobuf-forms-util/clear-form-op}
    :navigation false
-  :sections [{:title "摄像机"
-                :fields [{:path [:aspect-ratio]
-                          :label "宽高比"
-                          :type :number}
-                          {:path [:fov]
-                          :label "视野 (FOV)"
-                          :type :number}
-                          {:path [:near-z]
-                          :label "近平面 (Near-Z)"
-                          :type :number}
-                          {:path [:far-z]
-                          :label "远平面 (Far-Z)"
-                          :type :number}
-                          {:path [:auto-aspect-ratio]
-                          :label "自动宽高比"
-                          :type :boolean}
-                          {:path [:orthographic-projection]
-                          :label "正交投影"
-                          :type :boolean}
-                          {:path [:orthographic-mode]
-                          :label "正交模式"
-                          :type :choicebox}]}]
+   :sections [{:title "摄像机"
+               :fields [{:path [:aspect-ratio]
+                         :label "宽高比"
+                         :type :number}
+                        {:path [:fov]
+                         :label "视野"
+                         :type :number}
+                        {:path [:near-z]
+                         :label "近平面Z"
+                         :type :number}
+                        {:path [:far-z]
+                         :label "远平面Z"
+                         :type :number}
+                        {:path [:auto-aspect-ratio]
+                         :label "自动宽高比"
+                         :type :boolean}
+                        {:path [:orthographic-projection]
+                         :label "正交投影"
+                         :type :boolean}
+                        {:path [:orthographic-mode]
+                         :label "正交缩放模式"
+                         :type :choicebox
                          :options (sort-by first (protobuf-forms/make-enum-options Camera$OrthoZoomMode))}
                         {:path [:orthographic-zoom]
                          :label "正交缩放"
@@ -307,7 +307,7 @@
   (output node-outline outline/OutlineData :cached (g/fnk [_node-id]
                                                      {:node-id _node-id
                                                       :node-outline-key "Camera"
-                                                      :label "摄相机"
+                                                      :label "摄像机"
                                                       :icon camera-icon}))
 
   (output save-value g/Any :cached produce-save-value)
@@ -327,4 +327,4 @@
     :view-opts {}
     :tags #{:component}
     :tag-opts {:component {:transform-properties #{}}}
-    :label "摄相机"))
+    :label "摄像机"))

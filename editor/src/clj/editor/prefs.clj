@@ -93,21 +93,21 @@
                            :ui {:label "自定义快捷键映射路径"}}}}
     :code {:type :object
            :properties
-           {:custom-editor {:type :string :ui {:label "自定义编辑器"}}
-            :open-file {:type :string :default "{file}" :ui {:label "打开文件"}}
+           {:custom-editor {:type :string}
+            :open-file {:type :string :default "{file}"}
             :open-file-at-line {:type :string
-                                :default "{file}:{line}"                                
-                                :ui {:label "打开文件并跳转到指定行"}}
-            :zoom-on-scroll {:type :boolean :ui {:label "滚动缩放"}}
+                                :default "{file}:{line}"
+                                :ui {:label "在指定行打开文件"}}
+            :zoom-on-scroll {:type :boolean :ui {:label "滚动时缩放"}}
             :hover {:type :boolean
                     :default true
-                    :ui {:label "悬停提示"
-                         :description "悬停时显示代码文档提示框"}}
+                    :ui {:label "悬停弹出框"
+                         :description "悬停时显示代码文档弹出框"}}
             :font {:type :object
                    :properties
                    {:name {:type :string
                            :default "Dejavu Sans Mono"
-                           :ui {:label "代码编辑器字体 (需要重启)"}}
+                           :ui {:label "代码编辑器字体"}}
                     :size {:type :number :default 12.0}}}
             :find {:type :object
                    :scope :project
@@ -119,7 +119,7 @@
                     :wrap {:type :boolean :default true}}}
             :auto-closing-parens {:type :boolean
                                   :default true
-                                  :ui {:label "Auto-insert closing parens"}}
+                                  :ui {:label "自动插入闭合括号"}}
             :visibility {:type :object
                          :properties
                          {:indentation-guides {:type :boolean :default true}
@@ -128,19 +128,19 @@
     :tools {:type :object
             :properties
             {:adb-path {:type :string
-                        :ui {:label "ADB 路径"
-                             :description "ADB 命令路径，用于打包后安装启动安卓应用"}}
+                        :ui {:label "ADB path"
+                             :description "ADB 命令路径 用于在 Android 应用打包后安装和启动"}}
              :ios-deploy-path {:type :string
-                               :ui {:label "iOS部署工具路径"
-                                    :description "ios-deploy 命令路径，用于打包后安装启动 iOS 应用"}}}}
+                               :ui {:label "ios-deploy path"
+                                    :description "ios-deploy 命令路径 用于在 iOS 应用打包后安装和启动 "}}}}
     :extensions {:type :object
                  :properties
                  {:build-server {:type :string
-                                 :ui {:prompt connection-properties/defold-build-server-url :label "构建服务"}}
-                  :build-server-username {:type :string :ui {:label "构建服务用户名"}}
-                  :build-server-password {:type :password :ui {:label "构建服务密码"}}
+                                 :ui {:prompt (connection-properties/defold-build-server-url)}}
+                  :build-server-username {:type :string}
+                  :build-server-password {:type :password}
                   :build-server-headers {:type :string
-                                         :ui {:multiline true :label "构建服务头部信息"}}}}
+                                         :ui {:multiline true}}}}
     :search-in-files {:type :object
                       :scope :project
                       :properties
@@ -156,12 +156,12 @@
             :properties
             {:lint-code {:type :boolean
                          :default true
-                         :ui {:label "构建时执行代码规范检查"}}
+                         :ui {:label "构建时检查代码"}}
              :texture-compression {:type :boolean
                                    :ui {:label "启用纹理压缩"}}
              :open-html5-build {:type :boolean
                                 :default true
-                                :ui {:label "构建HTML5后打开浏览器"}}}}
+                                :ui {:label "构建 HTML5 后打开浏览器"}}}}
     :bundle {:type :object
              :scope :project
              :properties
@@ -186,7 +186,7 @@
                :properties
                {:load-external-changes-on-app-focus {:type :boolean
                                                      :default true
-                                                     :ui {:label "聚焦应用时加载外部更改"}}
+                                                     :ui {:label "应用获得焦点时加载外部更改"}}
                 :recent-files {:type :array
                                :item {:type :tuple :items [{:type :string} {:type :keyword}]}
                                :scope :project}
@@ -204,15 +204,14 @@
            :selected-target-id {:type :any}
            :manual-target-ip+port {:type :string}
            :quit-on-escape {:type :boolean
-                            :ui {:label "ESC 退出游戏"}}
+                            :ui {:label "Esc 键退出游戏"}}
            :simulate-rotated-device {:type :boolean :scope :project}
            :simulated-resolution {:type :any :scope :project}
            :engine-arguments {:type :string
                               :scope :project
                               :ui {:multiline true
-                                   :label "引擎参数"
                                    :prompt "每行一个参数"
-                                   :description "在编辑器构建并运行时，将传递给 dmengine 可执行文件的参数。\n每行输入一个参数。例如：\n--config=bootstrap.main_collection=/my dir/1.collectionc\n--verbose\n--graphics-adapter=vulkan"}}}}
+                                   :description "传递给 dmengine 可执行文件的参数 在编辑器构建并运行时使用 \n每行一个参数。例如：\n--config=bootstrap.main_collection=/my dir/1.collectionc\n--verbose\n--graphics-adapter=vulkan"}}}}
     :scene {:type :object
             :properties
             {:move-whole-pixels {:type :boolean :default true}
@@ -232,7 +231,7 @@
     :dev {:type :object
           :properties
           {:custom-engine {:type :any
-                           :ui {:type :string :label "自定义引擎"}}}}
+                           :ui {:type :string}}}}
     :git {:type :object
           :properties
           {:credentials {:type :any :scope :project}}}
