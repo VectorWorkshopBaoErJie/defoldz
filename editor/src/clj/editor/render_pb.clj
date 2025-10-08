@@ -63,20 +63,20 @@
 
 (def ^:private form-sections
   {:navigation false
-   :sections [{:title "Render"
+   :sections [{:title "渲染器"
                :fields [{:path [:script]
                          :type :resource
                          :filter "render_script"
-                         :label "Script"}
+                         :label "脚本"}
                         {:path [:named-render-resources]
                          :type :table
-                         :label "Render Resources"
+                         :label "渲染资源"
                          :columns [{:path [:name]
-                                    :label "Name"
+                                    :label "名称"
                                     :type :string
                                     :default "New Render Resource"}
                                    {:path [:path]
-                                    :label "Render Resource"
+                                    :label "渲染资源"
                                     :type :resource
                                     :filter ["material" "render_target" "compute"]
                                     :default nil}]}]}]})

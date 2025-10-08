@@ -84,7 +84,7 @@
   (resource-type [this]
     (let [ext (resource/ext this)]
       {:ext ext
-       :label "Custom Resource"
+       :label "自定义资源"
        :build-ext ext}))
   (source-type [this] (resource/source-type resource))
   (exists? [this] (resource/exists? resource))
@@ -211,7 +211,7 @@
                          :severity :fatal}))))))
 
   (output outline g/Any :cached
-          (g/fnk [_node-id] {:node-id _node-id :label "Game Project" :icon game-project-icon}))
+          (g/fnk [_node-id] {:node-id _node-id :label "游戏对象" :icon game-project-icon}))
 
   (input save-value g/Any)
   (output save-value g/Any (gu/passthrough save-value))

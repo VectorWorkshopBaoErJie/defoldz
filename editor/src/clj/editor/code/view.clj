@@ -2511,10 +2511,10 @@
     (ui/set-cursor node cursor)))
 
 (handler/register-menu! ::code-context-menu
-  [{:command :edit.cut :label "Cut"}
-   {:command :edit.copy :label "Copy"}
-   {:command :edit.paste :label "Paste"}
-   {:command :code.select-all :label "Select All"}
+  [{:command :edit.cut :label "剪切"}
+   {:command :edit.copy :label "拷贝"}
+   {:command :edit.paste :label "粘贴"}
+   {:command :code.select-all :label "选择全部"}
    (menu-items/separator-with-id :editor.app-view/edit-end)])
 
 (defn handle-mouse-pressed! [view-node ^MouseEvent event]

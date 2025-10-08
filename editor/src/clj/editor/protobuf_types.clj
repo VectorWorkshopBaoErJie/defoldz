@@ -93,27 +93,27 @@
                :icon "icons/32/Icons_35-Inputbinding.png"
                :icon-class :property
                :pb-class Input$InputBinding
-               :label "Input Binding"
+               :label "输入绑定"
                :view-types [:cljfx-form-view :text]}
               {:ext "light"
-               :label "Light"
+               :label "光源"
                :icon "icons/32/Icons_21-Light.png"
                :pb-class GameSystem$LightDesc
                :tags #{:component}
                :tag-opts {:component {:transform-properties #{}}}}
               {:ext "gamepads"
-               :label "Gamepads"
+               :label "游戏手柄"
                :icon "icons/32/Icons_34-Gamepad.png"
                :icon-class :property
                :pb-class Input$GamepadMaps
                :view-types [:cljfx-form-view :text]}
               {:ext "convexshape"
-               :label "Convex Shape"
+               :label "凸面体形状"
                ; TODO - missing icon
                :icon "icons/32/Icons_43-Tilesource-Collgroup.png"
                :pb-class Physics$ConvexShape}
               {:ext "texture_profiles"
-               :label "Texture Profiles"
+               :label "纹理配置文件"
                :view-types [:cljfx-form-view :text]
                :icon "icons/32/Icons_37-Texture-profile.png"
                :icon-class :property

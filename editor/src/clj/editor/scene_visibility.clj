@@ -32,27 +32,27 @@
 (set! *warn-on-reflection* true)
 
 (def ^:private renderable-tag-toggles-info
-  (cond-> [{:label "Collision Shapes" :tag :collision-shape}
-           {:label "Camera" :tag :camera}
-           #_{:label "GUI Elements" :tag :gui} ; This tag exists, but we decided to hide it and put in granular control instead. Add back if we make the toggles hierarchical?
-           {:label "GUI Bounds" :tag :gui-bounds}
-           {:label "GUI Shapes" :tag :gui-shape}
-           {:label "GUI Particle Effects" :tag :gui-particlefx}
-           {:label "GUI Spine Scenes" :tag :gui-spine}
-           {:label "GUI Text" :tag :gui-text}
-           {:label "Models" :tag :model}
-           {:label "Particle Effects" :tag :particlefx}
-           {:label "Skeletons" :tag :skeleton}
-           {:label "Spine Scenes" :tag :spine}
-           {:label "Sprites" :tag :sprite}
-           {:label "Text" :tag :text}
-           {:label "Tile Maps" :tag :tilemap}
+  (cond-> [{:label "碰撞形状" :tag :collision-shape}
+           {:label "相机" :tag :camera}
+           #_{:label "GUI元素" :tag :gui} ; This tag exists, but we decided to hide it and put in granular control instead. Add back if we make the toggles hierarchical?
+           {:label "GUI边界" :tag :gui-bounds}
+           {:label "GUI形状" :tag :gui-shape}
+           {:label "GUI粒子特效" :tag :gui-particlefx}
+           {:label "GUI Spine场景" :tag :gui-spine}
+           {:label "GUI文本t" :tag :gui-text}
+           {:label "模型" :tag :model}
+           {:label "粒子特效" :tag :particlefx}
+           {:label "骨骼" :tag :skeleton}
+           {:label "Spine场景" :tag :spine}
+           {:label "精灵" :tag :sprite}
+           {:label "文本" :tag :text}
+           {:label "瓦片地图" :tag :tilemap}
            {:label :separator}
-           {:label "Component Guides" :tag :outline :command :scene.visibility.toggle-component-guides :always-enabled true}]
+           {:label "组件引导线" :tag :outline :command :scene.visibility.toggle-component-guides :always-enabled true}]
 
           (system/defold-dev?)
           (into [{:label :separator}
-                 {:label "Scene Visibility Bounds" :tag :dev-visibility-bounds :appear-filtered false}])))
+                 {:label "场景可见性边界" :tag :dev-visibility-bounds :appear-filtered false}])))
 
 (def ^:private appear-filtered-renderable-tags
   (into #{}
@@ -339,7 +339,7 @@
             (update-fn hidden-tags enabled)))
 
         [filters-enabled-control filters-enabled-update-fn]
-        (make-toggle {:label "Visibility Filters"
+        (make-toggle {:label "可见性过滤器"
                       :acc (keymap/display-text keymap :scene.visibility.toggle-filters "")
                       :on-change (fn [checked]
                                    (set-filters-enabled! scene-visibility checked))})

@@ -318,7 +318,7 @@
 (g/defnk produce-node-outline [_node-id]
   {:node-id _node-id
    :node-outline-key "Non-Editable Game Object"
-   :label "Non-Editable Game Object"
+   :label "不可编辑的游戏对象"
    :icon game-object-common/game-object-icon})
 
 (g/defnk produce-scene [_node-id prototype-desc embedded-component-resource-data->scene-index embedded-component-scenes referenced-component-proj-path->scene-index referenced-component-scenes]
@@ -380,7 +380,7 @@
     (resource-node/register-ddf-resource-type workspace
       :editable false
       :ext "go"
-      :label "Non-Editable Game Object"
+      :label "不可编辑的游戏对象"
       :node-type NonEditableGameObjectNode
       :ddf-type GameObject$PrototypeDesc
       :dependencies-fn (game-object-common/make-game-object-dependencies-fn #(workspace/get-resource-type-map workspace :non-editable))

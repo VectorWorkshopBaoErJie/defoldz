@@ -733,7 +733,7 @@
     (attachment/define-alternative workspace EmbeddedComponent embedded-component-attachment-alternative)
     (resource-node/register-ddf-resource-type workspace
       :ext "go"
-      :label "Game Object"
+      :label "游戏对象"
       :node-type GameObjectNode
       :ddf-type GameObject$PrototypeDesc
       :load-fn load-game-object

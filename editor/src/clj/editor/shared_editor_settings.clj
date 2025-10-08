@@ -43,23 +43,23 @@
     {:settings [{:path (:cache-capacity setting-paths)
                  :type :integer
                  :default 20000
-                 :label "Cache Size"
-                 :help "Maximum number of temporary cache entries. Increase if you experience frequent editor slowdowns. Use -1 for unlimited, 20000 by default."}
+                 :label "缓存大小"
+                 :help "临时缓存条目的最大数量。如果遇到频繁的编辑器卡顿，请增加此值。使用 -1 表示无限制，默认为 20000。"}
                 {:path (:non-editable-directories setting-paths)
                  :type :list
-                 :label "Non-editable Directories"
-                 :help "Project directories whose contents can't be edited. Use for externally generated content to conserve memory and project load time."
+                 :label "不可编辑目录"
+                 :help "无法编辑内容的项目目录。用于外部生成的内容以节省内存和项目加载时间。"
                  :element {:type :directory
                            :in-project true}}
                 {:path (:build-server setting-paths)
                  :type :string
-                 :label "Build Server"
-                 :help "Build server URL used for building native extensions"}]
+                 :label "构建服务器"
+                 :help "用于构建原生扩展的构建服务器 URL"}]
      :group-order ["Shared Settings"]
      :default-category "performance"
-     :categories {"performance" {:help "Editor performance tweaks for your project. Some settings may require restarting the editor to take effect."
+     :categories {"performance" {:help "针对您项目的编辑器性能调整。某些设置可能需要重启编辑器才能生效。"
                                  :group "Shared Settings"}
-                  "extensions" {:help "Common settings for native extensions"
+                  "extensions" {:help "原生扩展的通用设置"
                                 :group "Shared Settings"}}}))
 
 (defn shared-editor-settings-file
@@ -84,7 +84,7 @@
 (defn register-resource-types [workspace]
   (settings/register-simple-settings-resource-type workspace
     :ext "shared_editor_settings"
-    :label "Shared Editor Settings"
+    :label "共享编辑器设置"
     :icon shared-editor-settings-icon
     :meta-info meta-info))
 
@@ -97,7 +97,7 @@
               :exception exception)
     (ui/run-later
       (dialogs/make-info-dialog
-        {:title "Error Loading Shared Editor Settings"
+        {:title "加载共享编辑器设置时出错"
          :icon :icon/triangle-error
          :always-on-top true
          :header {:fx/type fx.v-box/lifecycle

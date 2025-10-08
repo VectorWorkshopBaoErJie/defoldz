@@ -41,7 +41,7 @@
     :ext "properties"
     :node-type GameProperties
     :additional-load-fn additional-load-fn
-    :label "Properties"
+    :label "属性"
     :icon "icons/32/Icons_05-Project-info.png"
     :language "ini"
     :view-types [:code :default]

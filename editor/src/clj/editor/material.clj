@@ -283,36 +283,36 @@
 
 (def ^:private vertex-attribute-fields
   [{:path [:semantic-type]
-    :label "Semantic Type"
+    :label "语义类型"
     :type :choicebox
     :options (remove #(unsupported-semantic-types (first %)) (protobuf-forms/make-enum-options Graphics$VertexAttribute$SemanticType))
     :default graphics/default-attribute-semantic-type}
    {:path [:step-function]
-    :label "Step Function"
+    :label "步进函数"
     :type :choicebox
     :options (protobuf-forms/make-enum-options Graphics$VertexStepFunction)
     :default graphics/default-attribute-step-function}
    {:path [:coordinate-space]
-    :label "Coordinate Space"
+    :label "坐标空间"
     :type :choicebox
     :options (protobuf-forms/make-enum-options Graphics$CoordinateSpace)
     :default :coordinate-space-local}
    {:path [:data-type]
-    :label "Data Type"
+    :label "数据类型"
     :type :choicebox
     :options (protobuf-forms/make-enum-options Graphics$VertexAttribute$DataType)
     :default graphics/default-attribute-data-type}
    {:path [:vector-type]
-    :label "Vector Type"
+    :label "向量类型"
     :type :choicebox
     :options (protobuf-forms/make-enum-options Graphics$VertexAttribute$VectorType)
     :default graphics/default-attribute-vector-type}
    {:path [:values]
-    :label "Value"
+    :label "数值"
     :type (vector-type->form-field-type graphics/default-attribute-vector-type)
     :default (graphics/default-attribute-doubles graphics/default-attribute-semantic-type graphics/default-attribute-vector-type)}
    {:path [:normalize]
-    :label "Normalize"
+    :label "归一化"
     :type :boolean
     :default false}])
 
@@ -323,20 +323,20 @@
 (def ^:private form-data
   {:navigation false
    :sections
-   [{:title "Material"
+   [{:title "材质"
      :fields
      [{:path [:name]
-       :label "Name"
+       :label "名称"
        :type :string
        :default "New Material"}
       {:path [:vertex-program]
-       :label "Vertex Program"
+       :label "顶点程序"
        :type :resource :filter "vp"}
       {:path [:fragment-program]
-       :label "Fragment Program"
+       :label "片段程序"
        :type :resource :filter "fp"}
       {:path [:attributes]
-       :label "Vertex Attributes"
+       :label "顶点属性"
        :type :2panel
        :panel-key {:path [:name]
                    :type :string
@@ -360,23 +360,23 @@
                       type (vector-type->form-field-type vector-type)
                       default (graphics/default-attribute-doubles semantic-type vector-type)]
                   {:path [:values]
-                   :label "Value"
+                   :label "数值"
                    :type type
                    :default default})))}]})}
       (render-program-utils/gen-form-data-constants "Vertex Constants" :vertex-constants)
       (render-program-utils/gen-form-data-constants "Fragment Constants" :fragment-constants)
       (render-program-utils/gen-form-data-samplers "Samplers" :samplers)
       {:path [:tags]
-       :label "Tags"
+       :label "标签"
        :type :list
        :element {:type :string :default "New Tag"}}
       {:path [:vertex-space]
-       :label "Vertex Space"
+       :label "顶点空间"
        :type :choicebox
        :options (protobuf-forms/make-enum-options Material$MaterialDesc$VertexSpace)
        :default (ffirst (protobuf/enum-values Material$MaterialDesc$VertexSpace))}
       {:path [:max-page-count]
-       :label "Max Atlas Pages"
+       :label "最大图集页数"
        :type :integer
        :default 0}]}]})
 
@@ -644,7 +644,7 @@
 (defn register-resource-types [workspace]
   (resource-node/register-ddf-resource-type workspace
     :ext "material"
-    :label "Material"
+    :label "材质"
     :node-type MaterialNode
     :ddf-type Material$MaterialDesc
     :load-fn load-material

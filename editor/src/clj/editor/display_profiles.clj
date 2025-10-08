@@ -77,12 +77,12 @@
 (g/defnk produce-form-data-desc [_node-id]
   {:navigation false
    :sections
-   [{:title "Display Profiles"
+   [{:title "显示配置文件"
      :fields [{:path [:auto-layout-selection]
-               :label "Auto Layout Selection"
+               :label "自动布局选择"
                :type :boolean}
               {:path [:profiles]
-               :label "Profile"
+               :label "配置文件"
                :type :2panel
                :panel-key {:path [:name] :type :string :default "New Display Profile"}
                :on-add #(add-profile! _node-id "New Display Profile" [])
@@ -90,16 +90,16 @@
                :set (fn [v path val] (g/set-property! (:node-id v) (first path) val))
                :panel-form {:sections
                             [{:fields [{:path [:qualifiers]
-                                        :label "Qualifiers"
+                                        :label "限定条件"
                                         :type :table
                                         :columns [{:path [:width]
-                                                   :label "Width"
+                                                   :label "宽度"
                                                    :type :integer}
                                                   {:path [:height]
-                                                   :label "Height"
+                                                   :label "高度"
                                                    :type :integer}
                                                   {:path [:device-models]
-                                                   :label "Device Models"
+                                                   :label "设备型号"
                                                    :type :string}]}]}]}}]}]})
 
 (g/defnk produce-form-data [_node-id form-data-desc form-values]

@@ -62,31 +62,31 @@
               :set protobuf-forms-util/set-form-op
               :clear protobuf-forms-util/clear-form-op}
    :navigation false
-  :sections [{:title "ÉãÏñ»ú"
+  :sections [{:title "æ‘„åƒæœº"
                 :fields [{:path [:aspect-ratio]
-                          :label "¿í¸ß±È"
+                          :label "å®½é«˜æ¯”"
                           :type :number}
                           {:path [:fov]
-                          :label "ÊÓÒ° (FOV)"
+                          :label "è§†é‡ (FOV)"
                           :type :number}
                           {:path [:near-z]
-                          :label "½üÆ½Ãæ (Near-Z)"
+                          :label "è¿‘å¹³é¢ (Near-Z)"
                           :type :number}
                           {:path [:far-z]
-                          :label "Ô¶Æ½Ãæ (Far-Z)"
+                          :label "è¿œå¹³é¢ (Far-Z)"
                           :type :number}
                           {:path [:auto-aspect-ratio]
-                          :label "×Ô¶¯¿í¸ß±È"
+                          :label "è‡ªåŠ¨å®½é«˜æ¯”"
                           :type :boolean}
                           {:path [:orthographic-projection]
-                          :label "Õı½»Í¶Ó°"
+                          :label "æ­£äº¤æŠ•å½±"
                           :type :boolean}
                           {:path [:orthographic-mode]
-                          :label "Õı½»Ä£Ê½"
+                          :label "æ­£äº¤æ¨¡å¼"
                           :type :choicebox}]}]
                          :options (sort-by first (protobuf-forms/make-enum-options Camera$OrthoZoomMode))}
                         {:path [:orthographic-zoom]
-                         :label "Õı½»Ëõ·Å"
+                         :label "æ­£äº¤ç¼©æ”¾"
                          :type :number}]}]
    :values {[:aspect-ratio] aspect-ratio
             [:fov] fov

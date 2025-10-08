@@ -358,15 +358,15 @@
 (def transform-tools
   {:move {:manips-fn manip-move-manips
           :manip-spaces #{:local :world}
-          :label "Move"
+          :label "移动"
           :filter-fn manip-movable?}
    :rotate {:manips-fn manip-rotate-manips
             :manip-spaces #{:local :world}
-            :label "Rotate"
+            :label "旋转"
             :filter-fn manip-rotatable?}
    :scale {:manips-fn manip-scale-manips
            :manip-spaces #{:local}
-           :label "Scale"
+           :label "缩放"
            :filter-fn manip-scalable?}})
 
 (defn- supported-manips

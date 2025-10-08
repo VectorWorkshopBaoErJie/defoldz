@@ -35,31 +35,31 @@
 (def form-data
   {:navigation false
    :sections
-   [{:title "Render Target"
+   [{:title "渲染目标"
      :fields [{:path [:color-attachments]
-               :label "Color Attachments"
+               :label "颜色附件"
                :type :table
                :columns [{:path [:width]
-                          :label "width"
+                          :label "宽度"
                           :type :integer
                           :default 128}
                          {:path [:height]
-                          :label "height"
+                          :label "高度"
                           :type :integer
                           :default 128}
                          {:path [:format]
-                          :label "format"
+                          :label "格式"
                           :type :choicebox
                           :options (protobuf-forms/make-enum-options Graphics$TextureImage$TextureFormat)
                           :default :texture-format-rgba}]}
               {:path [:depth-stencil-attachment-width]
-               :label "Depth/Stencil Width"
+               :label "深度/模板宽度"
                :type :integer}
               {:path [:depth-stencil-attachment-height]
-               :label "Depth/Stencil Height"
+               :label "深度/模板高度"
                :type :integer}
               {:path [:depth-stencil-attachment-texture-storage]
-               :label "Depth Texture Storage"
+               :label "深度纹理存储"
                :type :boolean}]}]})
 
 (g/defnk produce-form-data [_node-id color-attachments depth-stencil-attachment-width depth-stencil-attachment-height depth-stencil-attachment-texture-storage :as args]
